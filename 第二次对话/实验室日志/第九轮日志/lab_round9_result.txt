@@ -1,0 +1,49 @@
+﻿SpikeLLM / OSDSQ v2  第九轮实验结果（实验室双 3090）
+生成时间: 2026-11-08 05:50:09
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+本轮任务: addbit=2 前沿中点 + 68M Orig 基线统一（同机）
+
+---- 已有参照（fake_binary, 128x20, alpha=0.75, let_lr=1e-3, seed=2）----
+  7B  FP16            5.4722 / 6.9727
+  7B  Orig  a1=10.5726 / 13.7738    a3=10.1386 / 12.8944
+  7B  Ours  a1= 7.9792 / 10.6792    a3= 7.8978 / 10.5766
+  68M Ours  a1=156.84 / 90.53       a3=153.4056 / 88.9996
+  68M Orig  a3=176.0957 / 99.8575   (a1 基线本轮补)
+
+### r9_68m_orig_a1  (GPU0, seed=2, addbit=1)
+  说明: 68M Orig 基线 addbit=1，实验室机首跑，统一 68M 口径（开发机为 172.29/175.14）
+  [fake] wikitext2 : 179.79722595214844
+  [fake] c4 : 101.55860137939453
+  norm:nan 次数: 3
+
+### r9_68m_orig_a2  (GPU0, seed=2, addbit=2)
+  说明: 68M Orig@a2 前沿中点，参照 Orig@a1(本轮) 与 Orig@a3=176.0957
+  [fake] wikitext2 : 177.66905212402344
+  [fake] c4 : 100.42443084716797
+  norm:nan 次数: 2
+
+### r9_68m_ours_a2  (GPU0, seed=2, addbit=2)
+  说明: 68M Ours@a2 前沿中点，参照 Ours@a1=156.84 与 Ours@a3=153.4056
+  [fake] wikitext2 : 152.9550018310547
+  [fake] c4 : 89.4912338256836
+  norm:nan 次数: 3
+
+### r9_7b_orig_a2  (GPU0, seed=2, addbit=2)
+  说明: 7B Orig@a2 前沿中点，参照 a1=10.5726 / a3=10.1386
+  [fake] wikitext2 : 10.128082275390625
+  [fake] c4 : 12.965007781982422
+  norm:nan 次数: 15
+
+### r9_7b_ours_a2  (GPU1, seed=2, addbit=2)
+  说明: 7B Ours@a2 前沿中点，参照 a1=7.9792 / a3=7.8978
+  [fake] wikitext2 : 8.066408157348633
+  [fake] c4 : 10.496198654174805
+  norm:nan 次数: 6
+
+---- 对表（非判据）----
+  7B Orig@a2 预期落在 10.14 ~ 10.57；Ours@a2 预期落在 7.90 ~ 7.98
+  68M Orig@a1 预期接近开发机的 172.29~175.14（若差 >3% 属机器差异，如实记录）
+  若任一点非单调（a2 比 a1 和 a3 都差），原样回传，不要自行解释
+
+---- 环境指纹 ----
+  见 env_round9_preflight.txt（随日志一并回传）

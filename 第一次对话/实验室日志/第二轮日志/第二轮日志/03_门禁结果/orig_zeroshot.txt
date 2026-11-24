@@ -1,0 +1,38 @@
+[2026-10-29 21:57:50 root] (main.py 273): INFO Namespace(model='C:\\Users\\admin\\Desktop\\spikellm\\SpikeLLM\\models\\Llama-2-7b-hf', cache_dir='./cache', output_dir='C:\\Users\\admin\\Desktop\\spikellm\\SpikeLLM\\log\\p0_noaug_orig/zeroshot', save_dir=None, resume='C:\\Users\\admin\\Desktop\\spikellm\\SpikeLLM\\log\\p0_noaug_orig/omni_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,winogrande,hellaswag', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, aug_loss=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net='Llama-2-7b-hf', act_scales=None, act_shifts=None, addbit=1, low_p=0.9, orig_spikellm=True, ablate_no_kv_shield=False, ablate_orig_saliency=False, ablate_orig_loss=False, sim_mode='fake_binary_simulate', legacy_multibit_bug=False)
+[2026-10-29 21:57:52 root] (main.py 355): INFO === start quantization ===
+[2026-10-29 21:57:52 root] (main.py 361): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2026-10-29 21:57:52 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-29 21:57:54 root] (spike_omniquant.py 235): INFO === Start quantize layer 0 ===
+[2026-10-29 21:57:55 root] (spike_omniquant.py 235): INFO === Start quantize layer 1 ===
+[2026-10-29 21:57:56 root] (spike_omniquant.py 235): INFO === Start quantize layer 2 ===
+[2026-10-29 21:57:57 root] (spike_omniquant.py 235): INFO === Start quantize layer 3 ===
+[2026-10-29 21:57:58 root] (spike_omniquant.py 235): INFO === Start quantize layer 4 ===
+[2026-10-29 21:57:58 root] (spike_omniquant.py 235): INFO === Start quantize layer 5 ===
+[2026-10-29 21:57:59 root] (spike_omniquant.py 235): INFO === Start quantize layer 6 ===
+[2026-10-29 21:58:00 root] (spike_omniquant.py 235): INFO === Start quantize layer 7 ===
+[2026-10-29 21:58:01 root] (spike_omniquant.py 235): INFO === Start quantize layer 8 ===
+[2026-10-29 21:58:02 root] (spike_omniquant.py 235): INFO === Start quantize layer 9 ===
+[2026-10-29 21:58:03 root] (spike_omniquant.py 235): INFO === Start quantize layer 10 ===
+[2026-10-29 21:58:04 root] (spike_omniquant.py 235): INFO === Start quantize layer 11 ===
+[2026-10-29 21:58:04 root] (spike_omniquant.py 235): INFO === Start quantize layer 12 ===
+[2026-10-29 21:58:05 root] (spike_omniquant.py 235): INFO === Start quantize layer 13 ===
+[2026-10-29 21:58:06 root] (spike_omniquant.py 235): INFO === Start quantize layer 14 ===
+[2026-10-29 21:58:07 root] (spike_omniquant.py 235): INFO === Start quantize layer 15 ===
+[2026-10-29 21:58:08 root] (spike_omniquant.py 235): INFO === Start quantize layer 16 ===
+[2026-10-29 21:58:09 root] (spike_omniquant.py 235): INFO === Start quantize layer 17 ===
+[2026-10-29 21:58:10 root] (spike_omniquant.py 235): INFO === Start quantize layer 18 ===
+[2026-10-29 21:58:10 root] (spike_omniquant.py 235): INFO === Start quantize layer 19 ===
+[2026-10-29 21:58:11 root] (spike_omniquant.py 235): INFO === Start quantize layer 20 ===
+[2026-10-29 21:58:12 root] (spike_omniquant.py 235): INFO === Start quantize layer 21 ===
+[2026-10-29 21:58:13 root] (spike_omniquant.py 235): INFO === Start quantize layer 22 ===
+[2026-10-29 21:58:14 root] (spike_omniquant.py 235): INFO === Start quantize layer 23 ===
+[2026-10-29 21:58:17 root] (spike_omniquant.py 235): INFO === Start quantize layer 24 ===
+[2026-10-29 21:58:17 root] (spike_omniquant.py 235): INFO === Start quantize layer 25 ===
+[2026-10-29 21:58:18 root] (spike_omniquant.py 235): INFO === Start quantize layer 26 ===
+[2026-10-29 21:58:19 root] (spike_omniquant.py 235): INFO === Start quantize layer 27 ===
+[2026-10-29 21:58:20 root] (spike_omniquant.py 235): INFO === Start quantize layer 28 ===
+[2026-10-29 21:58:21 root] (spike_omniquant.py 235): INFO === Start quantize layer 29 ===
+[2026-10-29 21:58:22 root] (spike_omniquant.py 235): INFO === Start quantize layer 30 ===
+[2026-10-29 21:58:22 root] (spike_omniquant.py 235): INFO === Start quantize layer 31 ===
+[2026-10-29 21:58:23 root] (main.py 388): INFO 31.726646184921265
+[2026-10-30 12:39:32 root] (main.py 158): INFO {'seed': 2, 'results': {'boolq': {'acc': 0.6293577981651376, 'acc_stderr': 0.008447316806409932}, 'arc_challenge': {'acc': 0.28924914675767915, 'acc_stderr': 0.013250012579393443, 'acc_norm': 0.32764505119453924, 'acc_norm_stderr': 0.013715847940719342}, 'winogrande': {'acc': 0.5209155485398579, 'acc_stderr': 0.014040185494212949}, 'hellaswag': {'acc': 0.43527185819557856, 'acc_stderr': 0.004947793051042665, 'acc_norm': 0.5653256323441546, 'acc_norm_stderr': 0.0049470109374553555}, 'piqa': {'acc': 0.6273122959738846, 'acc_stderr': 0.011281318332897744, 'acc_norm': 0.6284004352557128, 'acc_norm_stderr': 0.011274603006724757}, 'arc_easy': {'acc': 0.4793771043771044, 'acc_stderr': 0.010251052755716122, 'acc_norm': 0.4099326599326599, 'acc_norm_stderr': 0.010091953527506246}}, 'versions': {'boolq': 1, 'arc_challenge': 0, 'winogrande': 0, 'hellaswag': 0, 'piqa': 0, 'arc_easy': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x00000173D3CA4B90>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

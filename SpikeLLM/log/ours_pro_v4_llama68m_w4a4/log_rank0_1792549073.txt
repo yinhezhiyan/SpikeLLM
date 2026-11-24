@@ -1,0 +1,52 @@
+[2026-10-20 19:17:53 root] (main.py 266): INFO Namespace(model='JackFram/llama-68m', cache_dir='./cache', output_dir='./log/ours_pro_v4_llama68m_w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='none', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.005, wd=0, epochs=20, let=False, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, addbit=1, low_p=0.9)
+[2026-10-20 19:17:56 root] (main.py 338): INFO === start quantization ===
+[2026-10-20 19:17:56 root] (main.py 344): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2026-10-20 19:17:56 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-20 19:17:56 root] (spike_omniquant.py 230): INFO === Start quantize layer 0 ===
+[2026-10-20 19:19:23 root] (spike_omniquant.py 317): INFO layer 0 iter 0 loss:0.08778281509876251 norm:nan max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:28 root] (spike_omniquant.py 317): INFO layer 0 iter 1 loss:0.08205784112215042 norm:0.00025076253223232925 max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:33 root] (spike_omniquant.py 317): INFO layer 0 iter 2 loss:0.07665957510471344 norm:0.00024292102898471057 max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:39 root] (spike_omniquant.py 317): INFO layer 0 iter 3 loss:0.0718899592757225 norm:0.0006538766901940107 max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:44 root] (spike_omniquant.py 317): INFO layer 0 iter 4 loss:0.06921885162591934 norm:0.0005003488040529191 max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:49 root] (spike_omniquant.py 317): INFO layer 0 iter 5 loss:0.06788858771324158 norm:0.0005285276565700769 max memory_allocated 2441.2568359375 
+[2026-10-20 19:19:55 root] (spike_omniquant.py 317): INFO layer 0 iter 6 loss:0.06732586771249771 norm:0.0005335065070539713 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:00 root] (spike_omniquant.py 317): INFO layer 0 iter 7 loss:0.06616170704364777 norm:0.0005575866671279073 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:05 root] (spike_omniquant.py 317): INFO layer 0 iter 8 loss:0.06551079452037811 norm:0.0005407574353739619 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:11 root] (spike_omniquant.py 317): INFO layer 0 iter 9 loss:0.06479763239622116 norm:0.0005445709102787077 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:16 root] (spike_omniquant.py 317): INFO layer 0 iter 10 loss:0.06420700252056122 norm:0.0005394777399487793 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:22 root] (spike_omniquant.py 317): INFO layer 0 iter 11 loss:0.06410960853099823 norm:0.0005197789869271219 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:27 root] (spike_omniquant.py 317): INFO layer 0 iter 12 loss:0.06394775956869125 norm:0.0005357405170798302 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:32 root] (spike_omniquant.py 317): INFO layer 0 iter 13 loss:0.0635400265455246 norm:0.0005973795196041465 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:38 root] (spike_omniquant.py 317): INFO layer 0 iter 14 loss:0.0632418692111969 norm:0.0006023120367899537 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:43 root] (spike_omniquant.py 317): INFO layer 0 iter 15 loss:0.06313583254814148 norm:0.0006010313518345356 max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:49 root] (spike_omniquant.py 317): INFO layer 0 iter 16 loss:0.06298022717237473 norm:nan max memory_allocated 2441.2568359375 
+[2026-10-20 19:20:54 root] (spike_omniquant.py 317): INFO layer 0 iter 17 loss:0.0627567246556282 norm:0.000643080216832459 max memory_allocated 2441.2568359375 
+[2026-10-20 19:21:00 root] (spike_omniquant.py 317): INFO layer 0 iter 18 loss:0.06262348592281342 norm:0.0006438025156967342 max memory_allocated 2441.2568359375 
+[2026-10-20 19:21:06 root] (spike_omniquant.py 317): INFO layer 0 iter 19 loss:0.06273456662893295 norm:0.0006624198285862803 max memory_allocated 2441.2568359375 
+[2026-10-20 19:21:07 root] (spike_omniquant.py 230): INFO === Start quantize layer 1 ===
+[2026-10-20 19:22:33 root] (spike_omniquant.py 317): INFO layer 1 iter 0 loss:2.4406638145446777 norm:nan max memory_allocated 2443.0283203125 
+[2026-10-20 19:22:38 root] (spike_omniquant.py 317): INFO layer 1 iter 1 loss:2.3433120250701904 norm:0.0018725282279774547 max memory_allocated 2443.0283203125 
+[2026-10-20 19:22:43 root] (spike_omniquant.py 317): INFO layer 1 iter 2 loss:2.1825716495513916 norm:0.0028058781754225492 max memory_allocated 2443.0283203125 
+[2026-10-20 19:22:49 root] (spike_omniquant.py 317): INFO layer 1 iter 3 loss:2.0425374507904053 norm:0.0034186423290520906 max memory_allocated 2443.0283203125 
+[2026-10-20 19:22:55 root] (spike_omniquant.py 317): INFO layer 1 iter 4 loss:1.9412699937820435 norm:0.0037492390256375074 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:00 root] (spike_omniquant.py 317): INFO layer 1 iter 5 loss:1.8905590772628784 norm:0.004278418608009815 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:05 root] (spike_omniquant.py 317): INFO layer 1 iter 6 loss:1.856899619102478 norm:0.005131854210048914 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:11 root] (spike_omniquant.py 317): INFO layer 1 iter 7 loss:1.8325450420379639 norm:0.00640899408608675 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:16 root] (spike_omniquant.py 317): INFO layer 1 iter 8 loss:1.8149771690368652 norm:0.007771642412990332 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:22 root] (spike_omniquant.py 317): INFO layer 1 iter 9 loss:1.801086187362671 norm:0.008103073574602604 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:27 root] (spike_omniquant.py 317): INFO layer 1 iter 10 loss:1.7939947843551636 norm:0.008908090181648731 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:32 root] (spike_omniquant.py 317): INFO layer 1 iter 11 loss:1.787895917892456 norm:0.009309024550020695 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:38 root] (spike_omniquant.py 317): INFO layer 1 iter 12 loss:1.7814700603485107 norm:0.009293350391089916 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:43 root] (spike_omniquant.py 317): INFO layer 1 iter 13 loss:1.7739624977111816 norm:0.009523700922727585 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:48 root] (spike_omniquant.py 317): INFO layer 1 iter 14 loss:1.7734944820404053 norm:0.010044926777482033 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:54 root] (spike_omniquant.py 317): INFO layer 1 iter 15 loss:1.769286870956421 norm:0.010268278419971466 max memory_allocated 2443.0283203125 
+[2026-10-20 19:23:59 root] (spike_omniquant.py 317): INFO layer 1 iter 16 loss:1.7645008563995361 norm:0.010116688907146454 max memory_allocated 2443.0283203125 
+[2026-10-20 19:24:04 root] (spike_omniquant.py 317): INFO layer 1 iter 17 loss:1.7628284692764282 norm:0.009993762709200382 max memory_allocated 2443.0283203125 
+[2026-10-20 19:24:10 root] (spike_omniquant.py 317): INFO layer 1 iter 18 loss:1.7619377374649048 norm:0.010298753157258034 max memory_allocated 2443.0283203125 
+[2026-10-20 19:24:15 root] (spike_omniquant.py 317): INFO layer 1 iter 19 loss:1.7612675428390503 norm:0.010320920497179031 max memory_allocated 2443.0283203125 
+[2026-10-20 19:24:17 root] (main.py 367): INFO 380.79117822647095
+[2026-10-20 19:24:17 root] (main.py 102): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2026-10-20 19:24:21 root] (main.py 146): INFO wikitext2 : 221.2584686279297
+[2026-10-20 19:24:21 root] (main.py 102): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2026-10-20 19:24:27 root] (main.py 146): INFO c4 : 133.9083709716797
+[2026-10-20 19:24:27 root] (main.py 157): INFO {'seed': 2, 'wikitext2': 221.2584686279297, 'c4': 133.9083709716797, 'results': {}, 'versions': {}, 'config': {'model': <models.LMClass.LMClass object at 0x0000025FDD3E4550>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

@@ -1,0 +1,84 @@
+[2026-10-30 19:59:32 root] (main.py 274): INFO Namespace(model='JackFram/llama-68m', cache_dir='./cache', output_dir='./log/68m_a_toggle_control', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net=None, act_scales='./act_scales/llama-68m.pt', act_shifts='./act_shifts/llama-68m.pt', addbit=1, low_p=0.9, orig_spikellm=False, ablate_no_linear_shield=False, ablate_no_kv_shield=False, ablate_orig_saliency=False, ablate_orig_loss=False, sim_mode='fake_binary_simulate', legacy_multibit_bug=False)
+[2026-10-30 19:59:42 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 581651f2-1f85-4535-b484-6fee918d1ee4)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 19:59:42 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 1s [Retry 1/5].
+[2026-10-30 19:59:53 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 1b25bf17-ed00-4a59-9b37-9288b5c232aa)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 19:59:53 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 2s [Retry 2/5].
+[2026-10-30 20:00:05 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 66e7c38e-a1e1-495c-a394-d2f88b24f33e)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 20:00:05 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 4s [Retry 3/5].
+[2026-10-30 20:00:19 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 87c936fa-dc3a-4ee9-9922-bcfd570fc999)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 20:00:19 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 4/5].
+[2026-10-30 20:00:37 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: a69a6833-cf19-45f4-bed3-000432347d32)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 20:00:37 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 5/5].
+[2026-10-30 20:00:55 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 307cef41-81ab-4782-a258-a6baa5ec1a88)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/config.json
+[2026-10-30 20:01:06 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: f043d535-0138-4b34-8a76-edeb224f4263)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:01:06 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 1s [Retry 1/5].
+[2026-10-30 20:01:17 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 5551e846-cd9a-4201-927a-2cc765b97224)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:01:17 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 2s [Retry 2/5].
+[2026-10-30 20:01:29 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 98416c59-5911-4a19-a1a8-ae0996de34ca)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:01:29 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 4s [Retry 3/5].
+[2026-10-30 20:01:43 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 3a97cc7c-409c-478e-a8cd-a07d0e318580)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:01:43 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 4/5].
+[2026-10-30 20:02:01 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 492ebec7-82aa-4501-a75c-01174d3a4c2f)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:02:01 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 5/5].
+[2026-10-30 20:02:19 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 690fb99e-4a73-4cf1-b364-0ecbf374242b)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/tokenizer_config.json
+[2026-10-30 20:02:29 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 0d3f5b83-741b-462c-8c89-e9062c791069)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:02:29 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 1s [Retry 1/5].
+[2026-10-30 20:02:40 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 9ac36f58-dddf-4b69-b774-bdfb5f00fd0e)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:02:40 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 2s [Retry 2/5].
+[2026-10-30 20:02:52 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: c65af080-0a5a-4bc8-b84a-5b900e497792)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:02:52 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 4s [Retry 3/5].
+[2026-10-30 20:03:06 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: abd315f2-f304-4234-a22a-beaf43536cd9)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:03:06 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 4/5].
+[2026-10-30 20:03:24 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 263229f8-a204-410b-91cc-ec0eed30db26)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:03:24 huggingface_hub.utils._http] (_http.py 329): WARNING Retrying in 8s [Retry 5/5].
+[2026-10-30 20:03:42 huggingface_hub.utils._http] (_http.py 320): WARNING '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: ac783944-e905-4828-b7fa-4a4e1fad4d22)')' thrown while requesting HEAD https://huggingface.co/JackFram/llama-68m/resolve/main/generation_config.json
+[2026-10-30 20:03:42 root] (main.py 359): INFO === start quantization ===
+[2026-10-30 20:03:42 root] (main.py 365): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2026-10-30 20:03:42 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-30 20:03:43 root] (spike_omniquant.py 235): INFO === Start quantize layer 0 ===
+[2026-10-30 20:05:15 root] (spike_omniquant.py 335): INFO layer 0 iter 0 loss:0.05177989602088928 norm:nan max memory_allocated 3075.50439453125 
+[2026-10-30 20:05:23 root] (spike_omniquant.py 335): INFO layer 0 iter 1 loss:0.04513820633292198 norm:0.012192335911095142 max memory_allocated 3075.50439453125 
+[2026-10-30 20:05:32 root] (spike_omniquant.py 335): INFO layer 0 iter 2 loss:0.04223545268177986 norm:0.011790720745921135 max memory_allocated 3075.50439453125 
+[2026-10-30 20:05:41 root] (spike_omniquant.py 335): INFO layer 0 iter 3 loss:0.04070208966732025 norm:0.010082961991429329 max memory_allocated 3075.50439453125 
+[2026-10-30 20:05:49 root] (spike_omniquant.py 335): INFO layer 0 iter 4 loss:0.040112532675266266 norm:0.0103757968172431 max memory_allocated 3075.50439453125 
+[2026-10-30 20:05:58 root] (spike_omniquant.py 335): INFO layer 0 iter 5 loss:0.03950289636850357 norm:0.010159218683838844 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:06 root] (spike_omniquant.py 335): INFO layer 0 iter 6 loss:0.038737643510103226 norm:0.010270005092024803 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:15 root] (spike_omniquant.py 335): INFO layer 0 iter 7 loss:0.03844371438026428 norm:0.009598152711987495 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:24 root] (spike_omniquant.py 335): INFO layer 0 iter 8 loss:0.03817645087838173 norm:0.008973165415227413 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:32 root] (spike_omniquant.py 335): INFO layer 0 iter 9 loss:0.037946682423353195 norm:0.009533513337373734 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:41 root] (spike_omniquant.py 335): INFO layer 0 iter 10 loss:0.03787945583462715 norm:0.00941188633441925 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:49 root] (spike_omniquant.py 335): INFO layer 0 iter 11 loss:0.03764823451638222 norm:0.009964263066649437 max memory_allocated 3075.50439453125 
+[2026-10-30 20:06:58 root] (spike_omniquant.py 335): INFO layer 0 iter 12 loss:0.03785964474081993 norm:0.01014337781816721 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:06 root] (spike_omniquant.py 335): INFO layer 0 iter 13 loss:0.03742823377251625 norm:0.00965815968811512 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:15 root] (spike_omniquant.py 335): INFO layer 0 iter 14 loss:0.03723309189081192 norm:0.00871533527970314 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:24 root] (spike_omniquant.py 335): INFO layer 0 iter 15 loss:0.03708355873823166 norm:0.009504363872110844 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:32 root] (spike_omniquant.py 335): INFO layer 0 iter 16 loss:0.037081677466630936 norm:0.009230062365531921 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:41 root] (spike_omniquant.py 335): INFO layer 0 iter 17 loss:0.03693119436502457 norm:0.009264284744858742 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:49 root] (spike_omniquant.py 335): INFO layer 0 iter 18 loss:0.03700943663716316 norm:0.009226527065038681 max memory_allocated 3075.50439453125 
+[2026-10-30 20:07:58 root] (spike_omniquant.py 335): INFO layer 0 iter 19 loss:0.03686206415295601 norm:0.009634824469685555 max memory_allocated 3075.50439453125 
+[2026-10-30 20:08:00 root] (spike_omniquant.py 235): INFO === Start quantize layer 1 ===
+[2026-10-30 20:09:28 root] (spike_omniquant.py 335): INFO layer 1 iter 0 loss:1.258110761642456 norm:nan max memory_allocated 3075.50439453125 
+[2026-10-30 20:09:36 root] (spike_omniquant.py 335): INFO layer 1 iter 1 loss:1.1375732421875 norm:0.03005138784646988 max memory_allocated 3075.50439453125 
+[2026-10-30 20:09:44 root] (spike_omniquant.py 335): INFO layer 1 iter 2 loss:1.0705304145812988 norm:0.025280900299549103 max memory_allocated 3075.50439453125 
+[2026-10-30 20:09:53 root] (spike_omniquant.py 335): INFO layer 1 iter 3 loss:1.0441714525222778 norm:0.02296721190214157 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:01 root] (spike_omniquant.py 335): INFO layer 1 iter 4 loss:1.0327438116073608 norm:0.022822299972176552 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:09 root] (spike_omniquant.py 335): INFO layer 1 iter 5 loss:1.027099609375 norm:0.022462686523795128 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:17 root] (spike_omniquant.py 335): INFO layer 1 iter 6 loss:1.0241432189941406 norm:nan max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:25 root] (spike_omniquant.py 335): INFO layer 1 iter 7 loss:1.0215586423873901 norm:0.02255389094352722 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:33 root] (spike_omniquant.py 335): INFO layer 1 iter 8 loss:1.0210930109024048 norm:0.022358402609825134 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:41 root] (spike_omniquant.py 335): INFO layer 1 iter 9 loss:1.021027684211731 norm:0.02230047434568405 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:50 root] (spike_omniquant.py 335): INFO layer 1 iter 10 loss:1.0211154222488403 norm:0.022486133500933647 max memory_allocated 3075.50439453125 
+[2026-10-30 20:10:59 root] (spike_omniquant.py 335): INFO layer 1 iter 11 loss:1.0212496519088745 norm:0.02253696694970131 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:07 root] (spike_omniquant.py 335): INFO layer 1 iter 12 loss:1.0211191177368164 norm:0.022474845871329308 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:16 root] (spike_omniquant.py 335): INFO layer 1 iter 13 loss:1.0194474458694458 norm:0.022477472200989723 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:25 root] (spike_omniquant.py 335): INFO layer 1 iter 14 loss:1.0190037488937378 norm:0.022236444056034088 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:33 root] (spike_omniquant.py 335): INFO layer 1 iter 15 loss:1.0188621282577515 norm:0.02181270532310009 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:42 root] (spike_omniquant.py 335): INFO layer 1 iter 16 loss:1.0179486274719238 norm:0.022229550406336784 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:50 root] (spike_omniquant.py 335): INFO layer 1 iter 17 loss:1.0182965993881226 norm:0.021669965237379074 max memory_allocated 3075.50439453125 
+[2026-10-30 20:11:59 root] (spike_omniquant.py 335): INFO layer 1 iter 18 loss:1.0186437368392944 norm:0.02170550636947155 max memory_allocated 3075.50439453125 
+[2026-10-30 20:12:08 root] (spike_omniquant.py 335): INFO layer 1 iter 19 loss:1.0188446044921875 norm:0.021091250702738762 max memory_allocated 3075.50439453125 
+[2026-10-30 20:12:10 root] (main.py 392): INFO 507.3628625869751
+[2026-10-30 20:12:10 root] (main.py 103): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2026-10-30 20:12:16 root] (main.py 147): INFO wikitext2 : 159.2802734375
+[2026-10-30 20:12:16 root] (main.py 103): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2026-10-30 20:12:25 root] (main.py 147): INFO c4 : 91.741455078125

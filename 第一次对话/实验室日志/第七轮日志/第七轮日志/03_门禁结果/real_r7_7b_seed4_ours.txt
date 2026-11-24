@@ -1,0 +1,43 @@
+[2026-11-03 04:04:01 root] (main.py 276): INFO Namespace(model='C:\\Users\\admin\\Desktop\\spikellm\\SpikeLLM\\models\\Llama-2-7b-hf', cache_dir='./cache_seed4', output_dir='./log/r7_7b_seed4_ours/real_multibit', save_dir=None, resume='./log/r7_7b_seed4_ours/omni_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=4, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net='Llama-2-7b-hf', act_scales=None, act_shifts=None, addbit=1, low_p=0.9, orig_spikellm=False, ablate_no_linear_shield=False, shield_mode='mean', ablate_no_kv_shield=False, ablate_orig_saliency=False, ablate_orig_loss=False, sim_mode='real_multibit_simulate', legacy_multibit_bug=False)
+[2026-11-03 04:04:02 root] (main.py 362): INFO === start quantization ===
+[2026-11-03 04:04:02 root] (main.py 368): INFO load calibration from ./cache_seed4/dataloader_Llama_wikitext2_128.cache
+[2026-11-03 04:04:02 root] (main.py 372): INFO permuted calibration dataloader with seed=4
+[2026-11-03 04:04:02 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-11-03 04:04:04 root] (spike_omniquant.py 235): INFO === Start quantize layer 0 ===
+[2026-11-03 04:04:05 root] (spike_omniquant.py 235): INFO === Start quantize layer 1 ===
+[2026-11-03 04:04:06 root] (spike_omniquant.py 235): INFO === Start quantize layer 2 ===
+[2026-11-03 04:04:07 root] (spike_omniquant.py 235): INFO === Start quantize layer 3 ===
+[2026-11-03 04:04:07 root] (spike_omniquant.py 235): INFO === Start quantize layer 4 ===
+[2026-11-03 04:04:08 root] (spike_omniquant.py 235): INFO === Start quantize layer 5 ===
+[2026-11-03 04:04:09 root] (spike_omniquant.py 235): INFO === Start quantize layer 6 ===
+[2026-11-03 04:04:10 root] (spike_omniquant.py 235): INFO === Start quantize layer 7 ===
+[2026-11-03 04:04:10 root] (spike_omniquant.py 235): INFO === Start quantize layer 8 ===
+[2026-11-03 04:04:11 root] (spike_omniquant.py 235): INFO === Start quantize layer 9 ===
+[2026-11-03 04:04:12 root] (spike_omniquant.py 235): INFO === Start quantize layer 10 ===
+[2026-11-03 04:04:13 root] (spike_omniquant.py 235): INFO === Start quantize layer 11 ===
+[2026-11-03 04:04:14 root] (spike_omniquant.py 235): INFO === Start quantize layer 12 ===
+[2026-11-03 04:04:14 root] (spike_omniquant.py 235): INFO === Start quantize layer 13 ===
+[2026-11-03 04:04:15 root] (spike_omniquant.py 235): INFO === Start quantize layer 14 ===
+[2026-11-03 04:04:16 root] (spike_omniquant.py 235): INFO === Start quantize layer 15 ===
+[2026-11-03 04:04:17 root] (spike_omniquant.py 235): INFO === Start quantize layer 16 ===
+[2026-11-03 04:04:17 root] (spike_omniquant.py 235): INFO === Start quantize layer 17 ===
+[2026-11-03 04:04:18 root] (spike_omniquant.py 235): INFO === Start quantize layer 18 ===
+[2026-11-03 04:04:19 root] (spike_omniquant.py 235): INFO === Start quantize layer 19 ===
+[2026-11-03 04:04:20 root] (spike_omniquant.py 235): INFO === Start quantize layer 20 ===
+[2026-11-03 04:04:21 root] (spike_omniquant.py 235): INFO === Start quantize layer 21 ===
+[2026-11-03 04:04:21 root] (spike_omniquant.py 235): INFO === Start quantize layer 22 ===
+[2026-11-03 04:04:22 root] (spike_omniquant.py 235): INFO === Start quantize layer 23 ===
+[2026-11-03 04:04:24 root] (spike_omniquant.py 235): INFO === Start quantize layer 24 ===
+[2026-11-03 04:04:25 root] (spike_omniquant.py 235): INFO === Start quantize layer 25 ===
+[2026-11-03 04:04:26 root] (spike_omniquant.py 235): INFO === Start quantize layer 26 ===
+[2026-11-03 04:04:27 root] (spike_omniquant.py 235): INFO === Start quantize layer 27 ===
+[2026-11-03 04:04:28 root] (spike_omniquant.py 235): INFO === Start quantize layer 28 ===
+[2026-11-03 04:04:29 root] (spike_omniquant.py 235): INFO === Start quantize layer 29 ===
+[2026-11-03 04:04:29 root] (spike_omniquant.py 235): INFO === Start quantize layer 30 ===
+[2026-11-03 04:04:30 root] (spike_omniquant.py 235): INFO === Start quantize layer 31 ===
+[2026-11-03 04:04:31 root] (main.py 395): INFO 29.002437829971313
+[2026-11-03 04:04:31 root] (main.py 416): INFO switched simulation mode to real_multibit_simulate (legacy_multibit_bug=False)
+[2026-11-03 04:04:37 root] (main.py 103): INFO load calibration from ./cache_seed4/testloader_Llama_wikitext2_all.cache
+[2026-11-03 04:12:41 root] (main.py 147): INFO wikitext2 : 8.084365844726562
+[2026-11-03 04:12:41 root] (main.py 103): INFO load calibration from ./cache_seed4/testloader_Llama_c4_all.cache
+[2026-11-03 04:24:52 root] (main.py 147): INFO c4 : 10.926255226135254

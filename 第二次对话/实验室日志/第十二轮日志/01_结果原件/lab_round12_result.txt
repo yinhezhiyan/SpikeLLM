@@ -1,0 +1,47 @@
+﻿SpikeLLM / OSDSQ v2  第十二轮实验结果（实验室单卡 3090）
+生成时间: 2026-11-21 01:36:18
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+任务: 7B AQ seed4 补全 + random/heuristic 消融 + AQ 零样本
+
+---- 补丁哈希（SHA-256 前 16 位）----
+  main.py                                       e898ff1da6b92e91  OK
+  spike_driven_quant\spike_omniquant.py         4f7ae925a3c1bd51  OK
+
+---- 参照 ----
+  7B Full  s2 7.9792 / 10.6792   s3 8.0948 / 10.7126   s4 8.0371 / 10.7135
+  7B AQ    s2 7.5296 / 10.1216   s3 7.5272 / 10.1423
+  7B Orig 10.5806 ± 0.0462    A-off 10.2818 ± 0.1353
+  68M 门禁参照 157.7880 / 90.8312
+
+### r12_68m_repro  (seed=2)
+  说明: 补丁忠实性硬门禁：全开关关复跑，预期 157.7880/90.8312 逐位一致
+  [fake] wikitext2 : 157.7880401611328
+  [fake] c4 : 90.83118438720703
+  norm:nan 次数: 3
+
+### r12_7b_aq_s4  (seed=4)
+  说明: 7B Stage2 seed4，补齐三种子（对照 Full s4=8.0371）
+  [fake] wikitext2 : 7.722828388214111
+  [fake] c4 : 10.13211441040039
+  norm:nan 次数: 5
+
+### r12_7b_rand_s2  (seed=2)
+  说明: 7B 等算力随机交换消融（对照 AQ s2=7.5296）
+  [fake] wikitext2 : 7.999397277832031
+  [fake] c4 : 10.725493431091309
+  norm:nan 次数: 5
+
+### r12_7b_heur_s2  (seed=2)
+  说明: 7B 固定先验规则消融（对照 AQ s2=7.5296）
+  [fake] wikitext2 : 7.805684566497803
+  [fake] c4 : 10.411378860473633
+  norm:nan 次数: 5
+
+---- 零样本（若执行）----
+  见 C:\Users\admin\Desktop\spikellm\SpikeLLM\log\r12_7b_aq_s2_zs\log_rank0_1795140491.txt
+
+---- 门禁一判定（自动）----
+  PASS：门禁一复现逐位一致（差 1.98951966012828E-13）
+
+---- 环境指纹 ----
+  见 env_round12_preflight.txt（补丁后补跑，随日志一并回传）

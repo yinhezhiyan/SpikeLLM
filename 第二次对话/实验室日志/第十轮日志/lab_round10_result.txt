@@ -1,0 +1,58 @@
+﻿SpikeLLM / OSDSQ v2  第十轮实验结果（实验室双 3090，合体版）
+生成时间: 2026-11-09 02:17:03
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+任务: A-off 补 seed3/4（主体）+ 补丁忠实性门禁 + 68M Stage2 三种子
+
+---- 补丁哈希（应与预期一致）----
+  main.py                                       49485bc7ad4e9e0b  OK
+  spike_driven_quant\spike_linear.py            857be868ad9cc740  OK
+  spike_driven_quant\spike_omniquant.py         2b17e4fcfea74fce  OK
+
+---- 参照 ----
+  7B  Ours  8.0370 ± 0.0578   Orig 10.5806 ± 0.0462   A-off seed2 10.4181
+  7B  逐种子  Ours: 7.9792 / 8.0948 / 8.0371
+              Orig: 10.5726 / 10.6303 / 10.5389
+  68M mean_check（第七轮本机）157.7880 / 90.8312
+  68M Stage2（开发机 seed2 参照）154.4269 / 88.3023
+
+### r10_68m_repro  (GPU0, seed=2)
+  说明: 补丁忠实性硬门禁：全开关关闭复跑第七轮 mean_check，预期 157.7880/90.8312 逐位一致
+  [fake] wikitext2 : 157.788040161133
+  [fake] c4 : 90.831184387207
+  norm:nan 次数: 3
+
+### r10_68m_aq_s2  (GPU0, seed=2)
+  说明: 68M Stage2 seed2（开发机参照 154.4269/88.3023）
+  [fake] wikitext2 : 155.957107543945
+  [fake] c4 : 89.0308685302734
+  norm:nan 次数: 3
+
+### r10_68m_aq_s3  (GPU0, seed=3)
+  说明: 68M Stage2 seed3 稳定性
+  [fake] wikitext2 : 155.72607421875
+  [fake] c4 : 89.0831832885742
+  norm:nan 次数: 2
+
+### r10_68m_aq_s4  (GPU0, seed=4)
+  说明: 68M Stage2 seed4 稳定性
+  [fake] wikitext2 : 153.958862304688
+  [fake] c4 : 87.2475967407227
+  norm:nan 次数: 4
+
+### r10_7b_aoff_seed3  (GPU0, seed=3)
+  说明: 7B A-off seed3，与 Orig seed3(10.6303) / Ours seed3(8.0948) 配对
+  [fake] wikitext2 : 10.1475248336792
+  [fake] c4 : 12.9787397384644
+  norm:nan 次数: 8
+
+### r10_7b_aoff_seed4  (GPU1, seed=4)
+  说明: 7B A-off seed4，与 Orig seed4(10.5389) / Ours seed4(8.0371) 配对
+  [fake] wikitext2 : 10.279709815979
+  [fake] c4 : 13.1478433609009
+  norm:nan 次数: 7
+
+---- 门禁一判定（自动）----
+  PASS：与第七轮 mean_check 逐位一致（wt2 差 0，c4 差 0）
+
+---- 环境指纹 ----
+  见 env_round10_preflight.txt（随日志一并回传）

@@ -1,0 +1,50 @@
+﻿SpikeLLM / OSDSQ v2  第七轮实验结果（实验室双 3090）
+生成时间: 2026-11-03 04:24:54
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+
+---- 既有 7B 参照（同协议：fake_binary, 128x20, alpha=0.75, let_lr=1e-3）----
+  FP16                5.4722 / 6.9727
+  Original  seed2    10.5726 / 13.7738    real 10.8108 / 14.1855
+  Original  seed3    10.6303 / 13.7965    real 10.8963 / 14.4792
+  Original  seed4    10.5389 / 13.7700    real 10.7599 / 14.3417
+  OSDSQ v2  seed2     7.9792 / 10.6792    real  8.1570 / 10.8975   <- mean 基线
+  OSDSQ v2  seed3     8.0948 / 10.7126    real  8.1234 / 10.9222
+  A-off     seed2    10.4181 / 12.9691    real 10.5408 / 13.5234
+
+---- 68M 参照（mean 基线, seed2）----
+  v2 mean             156.84 / 90.53
+
+### r7_68m_zero  (GPU0, seed=2)
+  说明: 68M 零填充对照（10min 门禁），对照 mean 基线 156.84 / 90.53
+  [fake] wikitext2 : 157.7880401611328
+  [fake] c4 : 90.83118438720703
+  [real] wikitext2 : 154.45602416992188
+  [real] c4 : 89.72161865234375
+  norm:nan 次数: 3
+
+### r7_7b_seed2_zero  (GPU0, seed=2)
+  说明: 7B 零填充对照（核心），对照 mean 基线 7.9792 / 10.6792
+  [fake] wikitext2 : 7.979187488555908
+  [fake] c4 : 10.679176330566406
+  [real] wikitext2 : 8.157027244567871
+  [real] c4 : 10.89747142791748
+  norm:nan 次数: 5
+
+### r7_7b_seed4_ours  (GPU1, seed=4)
+  说明: seed4-OSDSQv2，与 Original seed4 (10.5389/13.7700) 配第三组种子
+  [fake] wikitext2 : 8.037086486816406
+  [fake] c4 : 10.713491439819336
+  [real] wikitext2 : 8.084365844726562
+  [real] c4 : 10.926255226135254
+  norm:nan 次数: 5
+
+---- 判据（请人工核对）----
+  7B zero vs mean(7.9792):
+    >= 1.0  -> A 的必要性成立，核心创新点站得住
+    0.3~1.0 -> 弱证据，需补逐层量程统计
+    < 0.3   -> 核心创新点不成立，立刻通知开发组
+  7B seed4-Ours vs Original seed4(10.5389): 预期降幅 23%~25%
+  68M zero vs mean(156.84): 预期 zero 更高；若接近，说明小模型上 A 不敏感
+
+---- 环境指纹 ----
+  见 env_round7_preflight.txt（随日志一并回传）

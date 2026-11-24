@@ -1,0 +1,47 @@
+﻿SpikeLLM / OSDSQ v2  第十三轮实验结果（实验室单卡 3090）
+生成时间: 2026-11-21 23:30:13
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+任务: LLaMA-3-8B 跨模型验证（FP16/Orig/Stage1/AQ 四腿，nsamples=64，seed=2）
+
+---- 代码哈希（SHA-256 前 16 位）----
+  main.py                                       e898ff1da6b92e91  OK
+  spike_driven_quant\spike_linear.py            857be868ad9cc740  OK
+  spike_driven_quant\spike_omniquant.py         4f7ae925a3c1bd51  OK
+
+---- 参照（7B, nsamples=128, 三种子均值，仅供对照量级）----
+  7B FP16 5.4722 / 6.9727
+  7B Orig 10.5806 / 13.7801
+  7B Stage1 Full 8.0370 / 10.7018
+  7B Stage1+2 AQ 7.5932 / 10.1320
+
+### r13_8b_fp16  (seed=2)
+  说明: 8B FP16 参考线（无量化，对照 7B FP16=5.4722）
+  [fake] wikitext2 : 6.1358060836792
+  [fake] c4 : -1
+  norm:nan 次数: 0
+
+### r13_8b_orig  (seed=2)
+  说明: 8B Original SpikeLLM 基线
+  [fake] wikitext2 : 61.595027923584
+  [fake] c4 : -1
+  norm:nan 次数: 0
+
+### r13_8b_full  (seed=2)
+  说明: 8B Stage 1 Full（量程隔离，无配额开关）
+  [fake] wikitext2 : 16.560863494873
+  [fake] c4 : -1
+  norm:nan 次数: 0
+
+### r13_8b_aq  (seed=2)
+  说明: 8B Stage 1+2 AQ（量程隔离 + 等算力配额搜索）
+  [fake] wikitext2 : 14.7334117889404
+  [fake] c4 : -1
+  norm:nan 次数: 0
+
+---- 配对读数（自动算，供三方核对；8B 本轮为单 seed，仅作量级参考）----
+  Stage1 vs Orig: 61.595027923584 -> 16.560863494873  (-73.11%)
+  Stage2(AQ) vs Stage1: 16.560863494873 -> 14.7334117889404  (-11.03%)
+  AQ vs Orig 累计: 61.595027923584 -> 14.7334117889404  (-76.08%)
+
+---- 环境指纹 ----
+  见 env_round13_preflight.txt（随日志一并回传）

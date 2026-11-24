@@ -1,0 +1,19 @@
+--- main.py.bak_r6	2026-11-01 10:09:57.983611000 +0800
++++ main.py	2026-10-31 18:51:52.000000000 +0800
+@@ -240,6 +240,8 @@
+     parser.add_argument("--low_p", type=float, default=1.0)
+     parser.add_argument("--orig_spikellm", default=False, action="store_true", help="run original SpikeLLM baseline without OSDSQ v2 improvements")
+     parser.add_argument("--ablate_no_linear_shield", default=False, action="store_true", help="ablation: disable mean-anchored outlier shielding on SpikeQuantLinear inputs")
++    parser.add_argument("--shield_mode", type=str, default="mean", choices=["mean", "zero"],
++                        help="outlier shielding strategy for the low-bit branch: 'mean' = mean-anchored (ours, default), 'zero' = zero-padding (v1 baseline). Does not affect the no-shield path.")
+     parser.add_argument("--ablate_no_kv_shield", default=False, action="store_true", help="ablation: disable mean-anchored shielding on Attention KV MatMul")
+     parser.add_argument("--ablate_orig_saliency", default=False, action="store_true", help="ablation: use original mean saliency without step-size weighted std")
+     parser.add_argument("--ablate_orig_loss", default=False, action="store_true", help="ablation: use original equal-weight MSE loss without cosine alignment")
+@@ -307,6 +309,7 @@
+         "ablate_no_linear_shield": args.ablate_no_linear_shield,
+         "ablate_no_kv_shield": args.ablate_no_kv_shield,
+         "legacy_multibit_bug": args.legacy_multibit_bug,
++        "shield_mode": args.shield_mode,
+     }
+     args.q_quant_params = {
+         "n_bits": args.abits,

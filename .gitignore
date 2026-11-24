@@ -1,0 +1,39 @@
+# ===== Python 虚拟环境 =====
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ===== 模型权重（第三方，不纳入仓库）=====
+weights/
+**/pytorch_model.bin
+**/tf_model.h5
+**/flax_model.msgpack
+**/*.safetensors
+**/model.safetensors
+
+# ===== 训练检查点 / 中间产物 =====
+**/omni_parameters.pth
+**/*_omni_parameters.pth
+*.pth
+*.ckpt
+
+# ===== act_scale / act_shift 缓存（可再生成）=====
+act_scales/
+act_shifts/
+
+# ===== 日志运行产物 =====
+*.log
+run.log
+run.log.failed
+
+# ===== 系统文件 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 本地缓存 =====
+cache/
+cache_*/
+hf_cache/

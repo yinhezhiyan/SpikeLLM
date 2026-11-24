@@ -1,0 +1,8 @@
+c4 off-by-one diagnosis, seqlen=8192
+tokenizer loaded, vocab=128000
+valdata len = 45576
+crash_at = None
+distribution first 300: {'<8192': 299, '==8192': 0, '>8192': 1}
+len==8192 indices (first 10): []
+fix-safe (exists some >8192 for '>= -> >'): True
+DONE

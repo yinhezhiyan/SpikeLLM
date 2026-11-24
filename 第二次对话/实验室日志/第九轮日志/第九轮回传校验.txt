@@ -1,0 +1,54 @@
+==============================================================================
+第九轮回传校验   生成 2026-11-08 05:55:32
+项目路径 C:\Users\admin\Desktop\spikellm\SpikeLLM
+==============================================================================
+
+[1] 五条腿 PPL：归档 log_rank0 重取 vs lab_round9_result.txt
+    tag              wt2(归档重取)              c4(归档重取)               与 result.txt 一致
+    r9_68m_orig_a1   179.79722595214844     101.55860137939453     YES
+    r9_68m_orig_a2   177.66905212402344     100.42443084716797     YES
+    r9_68m_ours_a2   152.9550018310547      89.4912338256836       YES
+    r9_7b_orig_a2    10.128082275390625     12.965007781982422     YES
+    r9_7b_ours_a2    8.066408157348633      10.496198654174805     YES
+
+    结论：10/10 数字逐位一致
+
+[2] 本轮唯一变量
+    --wbits 4 --abits 4 --low_p 0.9 --let --lwc --aug_loss --alpha 0.75
+    --let_lr 1e-3 --lwc_lr 1e-2 --nsamples 128 --epochs 20
+    --addbit 2（本轮）  对照 --addbit 1（第 1~7 轮）/ 3（第八轮）
+    fake_binary_simulate，零样本关闭，未跑 real_multibit
+    本轮零 .py 代码改动：8 个关键文件哈希与第八轮逐字相同（见 06_环境与预检）
+
+[3] 代码级提示（判读时要用）
+    spike_matmul.py:33  KV/PV 的 x2_quantizer_high 传 Refine=(addbit>0)，
+    quantizer.py:47-48  if Refine: addbit = 1  ->  K/V 高显著恒 5 bit。
+    即 --addbit 只加宽线性层；a1/a2/a3 同口径，点间可比。
+    spike_linear.py:61  step_levels = 2**n_bits(=16)，不含 addbit
+                        -> saliency 权重与 mask 划分不随 addbit 变，变量隔离干净。
+
+[4] 文件清单（字节 / md5，均在归档目录内）
+            6337  60656057acf96f86a8a43b7d21c7b5bf  README_索引.md
+            2101  7f81722bb9323fff8b5e2263686e9689  01_结果原件/lab_round9_result.txt
+               0  d41d8cd98f00b204e9800998ecf8427e  01_结果原件/第九轮回传校验.txt
+            5444  102fad5ded2b79004cfb56a8af59b466  02_原始日志/lab_round9_console.log
+           44702  d4ebf44c9e4d1e0ccb37c1b9ad72c665  02_原始日志/lab_watch_round9.log
+            8229  bde95cf27f3a82ead3a5de97bb7468e5  02_原始日志/r9_68m_orig_a1_log_rank0_1794058995.txt
+           35862  dc971ea9f23152e73a9b8d2bc061c735  02_原始日志/r9_68m_orig_a1_run.log
+            8245  ec36a68044cb2967ff9b248262e66864  02_原始日志/r9_68m_orig_a2_log_rank0_1794059901.txt
+           35894  24923dc5dba7c6f00bc07711a569bc16  02_原始日志/r9_68m_orig_a2_run.log
+            8258  251f897314998039c96d25a891d6775a  02_原始日志/r9_68m_ours_a2_log_rank0_1794060812.txt
+           35876  45937cd9fa510c704ead4078c870f7e1  02_原始日志/r9_68m_ours_a2_run.log
+          110472  769be63ee1f08fe1827670a512ef07f6  02_原始日志/r9_7b_orig_a2_log_rank0_1794061737.txt
+          270492  f598ee7550a789d6f1305d2a8ed14509  02_原始日志/r9_7b_orig_a2_run.log
+          108377  d75c2a83d9b80db84f33efb00c41397e  02_原始日志/r9_7b_ours_a2_log_rank0_1794061737.txt
+          266262  4315e9b68f2f732319256e4b79ddfb77  02_原始日志/r9_7b_ours_a2_run.log
+            3311  880f76b1d7d4d87a46565e9f7a13250f  03_门禁结果/a1a2a3_前沿对照.txt
+          139170  49219d4ae362c87b3d6bc9253dd3bbb3  04_checkpoint/r9_68m_orig_a1_omni_parameters.pth
+          139170  4300a78eb15d6b9d785d24c769257bd2  04_checkpoint/r9_68m_orig_a2_omni_parameters.pth
+          139170  d529a7a34d91c25232672a18d0aa94eb  04_checkpoint/r9_68m_ours_a2_omni_parameters.pth
+         8983506  212f35789c63ee67bfc7a5220e84ce87  04_checkpoint/r9_7b_orig_a2_omni_parameters.pth
+         8983506  1f270f36e82872280fefb3005268bc30  04_checkpoint/r9_7b_ours_a2_omni_parameters.pth
+            2759  9b723823b96f1677451d3c6ad769f1c6  06_环境与预检/env_round9_preflight.txt
+           15671  46665a56abbca4d79afdea7422d7829e  06_环境与预检/lab_round9_runner.ps1
+    合计 23 个文件，18.46 MB（不含 05_回传包 自身）

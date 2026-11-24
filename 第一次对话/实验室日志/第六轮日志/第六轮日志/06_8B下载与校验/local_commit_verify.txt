@@ -1,0 +1,22 @@
+8B 权重本地提交与校验记录  2026-11-01 18:04:38
+
+[1] 原进程结局
+  lab_preflight_and_download.py --mode download_8b 于 2026-11-01 15:45 被外部中止，exit_code=1，无 python traceback。
+  run.log 显示最后一次安全删除守卫事件指向 model-00003 的 .lock 与 models/tmp_1c8723ec。
+  四个分片与 tokenizer.json 的数据均已完整落盘，仅差 hf_hub 提交（改名）这一步。
+
+[2] 逐文件校验（与 huggingface.co 仓库 LFS sha256 比对）
+  model-00001-of-00004.safetensors   4976698672  sha256 MATCH
+  model-00002-of-00004.safetensors   4999802720  sha256 MATCH
+  model-00003-of-00004.safetensors   4915916176  sha256 MATCH
+  model-00004-of-00004.safetensors   1168138808  sha256 MATCH
+  tokenizer.json                       9085698  尺寸/内容一致（非 LFS）
+
+[3] 提交与结构校验
+  5 个 .incomplete 就地改名为正式文件名（未重新下载任何字节）。
+  4 个分片 safetensors 头部可解析，张量数 82/104/100/5，权重字节合计 16.06 GB。
+  config.json: model_type=llama, 32 层, hidden=4096（base 版，非 Instruct）。
+  models/ 下 8 个 0 字节 tmp_* 残留文件已清理。
+
+[4] 未做的事
+  本轮未跑 8B 冒烟（按第六轮指令第 7 条，PIQA 在 24 GB 卡上极可能 OOM，另排期）。

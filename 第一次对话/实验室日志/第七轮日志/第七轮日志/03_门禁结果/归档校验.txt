@@ -1,0 +1,62 @@
+第七轮日志 归档完整性校验  2026-11-03 09:57:01
+
+[1] 文件清单 (路径 | 字节 | md5前16)  —— 不含本校验文件自身
+  01_结果原件\lab_round7_result.txt                                                2154  6b7d6c27d7bd83cb
+  02_原始日志\lab_watch_round7.log                                                19227  17910854565045d3
+  02_原始日志\run_r7_68m_mean_check.log                                           35996  28e59a0c5302f0ee
+  02_原始日志\run_r7_68m_zero.log                                                 65060  89b9031cc9414d6e
+  02_原始日志\run_r7_7b_seed2_zero.log                                           324076  8a988868b2aaf09d
+  02_原始日志\run_r7_7b_seed4_ours.log                                           324486  db26a255e5107c83
+  03_门禁结果\fake_r7_68m_mean_check.txt                                           8253  27d991f1f71a3186
+  03_门禁结果\fake_r7_68m_zero.txt                                                 8246  04b12f0a450b1d0c
+  03_门禁结果\fake_r7_7b_seed2_zero.txt                                          108385  83ffc92b677876ab
+  03_门禁结果\fake_r7_7b_seed4_ours.txt                                          108512  11f6d5c7d64ff101
+  03_门禁结果\real_r7_68m_zero.txt                                                 1935  c047edecf53f2322
+  03_门禁结果\real_r7_7b_seed2_zero.txt                                            4720  54d74cb12e9a0e56
+  03_门禁结果\real_r7_7b_seed4_ours.txt                                            4837  d9d74ca70915445b
+  03_门禁结果\zero_mean_等价性核查.txt                                                  2800  23c27a7d6f075b27
+  04_checkpoint\omni_parameters_r7_68m_mean_check.pth                        139170  a9bdb27631c380be
+  04_checkpoint\omni_parameters_r7_68m_zero.pth                              139170  a9bdb27631c380be
+  04_checkpoint\omni_parameters_r7_7b_seed2_zero.pth                        8983506  45c1b5df88acaefe
+  04_checkpoint\omni_parameters_r7_7b_seed4_ours.pth                        8983506  768622d15dd27355
+  05_代码改动留档\README_第七轮.txt                                                     3689  f9f282ebf97ff0ca
+  05_代码改动留档\env_report.py                                                      6248  5f0a2cb8dd6fbb70
+  05_代码改动留档\lab_round7_runner.ps1                                             22746  edc952eca72370aa
+  05_代码改动留档\lab_round7_runner.ps1.bak_r7                                      22496  99c0a2b8254ee346
+  05_代码改动留档\patch_diff_lab_round7_runner.ps1.diff                               615  bc9e5927d887cb38
+  05_代码改动留档\round7_patch_2026-11-02.zip                                       84324  50c0e39f673b7e9f
+  06_环境与预检\68M模型与act_stats来源.txt                                               1438  f10a5ce4db88b10d
+  06_环境与预检\act_scales_llama-68m.pt                                            70048  3353eb65c253959d
+  06_环境与预检\act_shifts_llama-68m.pt                                            70048  c731db79f9d402c4
+  06_环境与预检\env_round7_preflight.txt                                            2813  f0e2916132f38f2d
+  README_索引.md                                                                12494  238f254b271405a1
+  合计 29 文件 18.7 MB（+ 本文件）
+
+[2] checkpoint 与原件逐位比对
+  r7_68m_zero            a9bdb27631c380bebae9effc68020362  IDENTICAL
+  r7_7b_seed2_zero       45c1b5df88acaefee0fa41fac513f17b  IDENTICAL
+  r7_7b_seed4_ours       768622d15dd27355f940cca317225fe7  IDENTICAL
+  r7_68m_mean_check      a9bdb27631c380bebae9effc68020362  IDENTICAL
+
+[3] 从归档文件直接重取 PPL（不经 lab_round7_result.txt）
+  fake_r7_68m_zero.txt             [('wikitext2', '157.7880401611328'), ('c4', '90.83118438720703')]
+  real_r7_68m_zero.txt             [('wikitext2', '154.45602416992188'), ('c4', '89.72161865234375')]
+  fake_r7_7b_seed2_zero.txt        [('wikitext2', '7.979187488555908'), ('c4', '10.679176330566406')]
+  real_r7_7b_seed2_zero.txt        [('wikitext2', '8.157027244567871'), ('c4', '10.89747142791748')]
+  fake_r7_7b_seed4_ours.txt        [('wikitext2', '8.037086486816406'), ('c4', '10.713491439819336')]
+  real_r7_7b_seed4_ours.txt        [('wikitext2', '8.084365844726562'), ('c4', '10.926255226135254')]
+  fake_r7_68m_mean_check.txt       [('wikitext2', '157.7880401611328'), ('c4', '90.83118438720703')]
+
+[4] 完成标记（原件目录）
+  r7_68m_zero            done_ppl.flag,done_multibit.flag,done.flag
+  r7_7b_seed2_zero       done_ppl.flag,done_multibit.flag,done.flag
+  r7_7b_seed4_ours       done_ppl.flag,done_multibit.flag,done.flag
+  r7_68m_mean_check      无 flag（诊断腿，非 runner 作业）
+
+[5] runner 改动（相对补丁原件的唯一差异）
+  patch_diff_lab_round7_runner.ps1.diff  +4 行 / -1 行
+    (唯一被改写行) -$ErrorActionPreference = "Stop"
+
+[6] 未纳入归档的内容（体积原因）
+  JackFram/llama-68m 权重 261 MB 在 hf_cache\hub 内，来源与 sha256 见 06_环境与预检\68M模型与act_stats来源.txt
+  Llama-2-7b-hf 权重 12.56 GB 仍在 SpikeLLM\models 内，未复制

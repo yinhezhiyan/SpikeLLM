@@ -1,0 +1,40 @@
+第五轮日志 归档完整性校验  2026-11-01 09:31:01
+
+[1] 文件清单 (路径 | 字节 | md5)
+  01_结果原件\lab_round5_result.txt                                                  1150  70ad3c1d38d5ea36
+  02_原始日志\lab_watch_round5.log                                                  20384  5cebb97f42d8d97c
+  02_原始日志\lab_watch_round5.log.startup_falsealarm                                 470  1e32fe7de755e568
+  02_原始日志\run_7b_ablate_no_linear_shield.log                                   323226  7b9b5072c0596d6f
+  02_原始日志\run_7b_seed3_orig.log                                                327566  a1e0aa552299a38b
+  03_门禁结果\fake_7b_ablate_no_linear_shield.txt                                  108188  949bf2107dc729a6
+  03_门禁结果\fake_7b_seed3_orig.txt                                               110296  41f94294ea883282
+  03_门禁结果\real_7b_ablate_no_linear_shield.txt                                    4675  6c6cb8ef87fde231
+  03_门禁结果\real_7b_seed3_orig.txt                                                 4767  76a77f53c7ab2f3f
+  04_checkpoint\omni_parameters_7b_ablate_no_linear_shield.pth                8983506  97feabf91d096793
+  04_checkpoint\omni_parameters_7b_seed3_orig.pth                             8983506  7323c7e7ffcfe9bf
+  05_代码改动留档\lab_round5_patch_runner_2026-10-31.zip                              16249  16f7d4e98c48bd7a
+  05_代码改动留档\lab_round5_runner.ps1                                               18092  da1d27f1ab703759
+  05_代码改动留档\main.py                                                             18361  417ae50ef8d7db1e
+  05_代码改动留档\main.py.bak_r5                                                      17992  d7475a9281b120e8
+  05_代码改动留档\patch_diff_main.py.diff                                              2026  6fb88f2ecaa20515
+  05_代码改动留档\patch_diff_spike_linear.py.diff                                      1483  b0e6b7ccec0d8a8a
+  05_代码改动留档\patch_diff_spike_matmul.py.diff                                       968  aeddf5d18b0c4b4d
+  05_代码改动留档\spike_linear.py                                                      8830  63902fa4dd2a771b
+  05_代码改动留档\spike_linear.py.bak_r5                                               8677  7a8f66aa2167786c
+  05_代码改动留档\spike_matmul.py                                                      6468  b35126db7fc9f99f
+  05_代码改动留档\spike_matmul.py.bak_r5                                               6348  a3a978a026f98eaa
+  合计 22 文件 18.1 MB
+
+[2] checkpoint 与原件逐位比对
+  7b_ablate_no_linear_shield     97feabf91d0967936953ef05f95ac979  IDENTICAL
+  7b_seed3_orig                  7323c7e7ffcfe9bf6a9b8b7a5f6cd3b8  IDENTICAL
+
+[3] 从归档文件直接重取 PPL（不经 lab_round5_result.txt）
+  fake_7b_ablate_no_linear_shield.txt        [('wikitext2', '10.418092727661133'), ('c4', '12.96911334991455')]
+  fake_7b_seed3_orig.txt                     [('wikitext2', '10.630260467529297'), ('c4', '13.796493530273438')]
+  real_7b_ablate_no_linear_shield.txt        [('wikitext2', '10.540775299072266'), ('c4', '13.52342700958252')]
+  real_7b_seed3_orig.txt                     [('wikitext2', '10.896252632141113'), ('c4', '14.479215621948242')]
+
+[4] 完成标记（原件目录）
+  7b_ablate_no_linear_shield     done_ppl.flag,done_multibit.flag,done.flag
+  7b_seed3_orig                  done_ppl.flag,done_multibit.flag,done.flag

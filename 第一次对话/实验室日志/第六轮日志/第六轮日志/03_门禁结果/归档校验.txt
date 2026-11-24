@@ -1,0 +1,56 @@
+第六轮日志 归档完整性校验  2026-11-02 20:03:15
+
+[1] 文件清单 (路径 | 字节 | md5前16)  —— 不含本校验文件自身
+  01_结果原件\lab_round6_result.txt                                                2105  0e6b6f13ebaf6e11
+  02_原始日志\finish_seed4.log                                                      395  b14cb9b10229b8ed
+  02_原始日志\lab_watch_round6.log                                                18460  54e993dd72754bf2
+  02_原始日志\run_7b_seed3_ours.log                                              323684  430381a9464e0396
+  02_原始日志\run_7b_seed4_orig.log                                              328238  29d6d99791e5fdda
+  02_原始日志\run_7b_seed4_orig.log.failed                                         5268  664bdb746ef44dec
+  03_门禁结果\fake_7b_seed3_ours.txt                                             108392  9aea2391a2f26e6d
+  03_门禁结果\fake_7b_seed4_orig.attempt1_crashed.txt                               969  33c38835337c4fd1
+  03_门禁结果\fake_7b_seed4_orig.txt                                             110383  adf1004e3ef3c323
+  03_门禁结果\real_7b_seed3_ours.txt                                               4787  4e252e958b91e2a5
+  03_门禁结果\real_7b_seed4_orig.txt                                               4830  903ca5212fb7c07d
+  04_checkpoint\omni_parameters_7b_seed3_ours.pth                           8983506  de1840c915221ed1
+  04_checkpoint\omni_parameters_7b_seed4_orig.pth                           8983506  4a48798b24abde18
+  05_代码改动留档\lab_finish_seed4.ps1                                               4334  f1d2c16d614437d6
+  05_代码改动留档\lab_round6_runner.ps1                                             24417  68bb0f0d71fb86f7
+  05_代码改动留档\main.py                                                           18691  f201ca3a429f0e16
+  05_代码改动留档\main.py.bak_r6                                                    18361  417ae50ef8d7db1e
+  05_代码改动留档\patch_diff_main.py.diff                                            1593  804fc31a1afe9c1c
+  05_代码改动留档\patch_diff_spike_linear.py.diff                                    2003  de7e7614fbdde0e4
+  05_代码改动留档\round6_patch_2026-11-01.zip                                       16560  9b6eef17411fdfa1
+  05_代码改动留档\spike_linear.py                                                    9292  26e84e8f1a460d43
+  05_代码改动留档\spike_linear.py.bak_r6                                             8830  63902fa4dd2a771b
+  06_8B下载与校验\8B权重_file_manifest_sha256.txt                                     1410  b09583483304b917
+  06_8B下载与校验\done.flag                                                            0  d41d8cd98f00b204
+  06_8B下载与校验\exit_code.txt                                                       16  ac24a8142f0bd979
+  06_8B下载与校验\local_commit_verify.txt                                           1331  e679e1ca2df80c82
+  06_8B下载与校验\run.log.download_8b                                               8870  a186b98a7af82610
+  README_索引.md                                                                11378  7cdb39def6cec31b
+  合计 28 文件 18.1 MB（+ 本文件）
+
+[2] checkpoint 与原件逐位比对
+  7b_seed3_ours                  de1840c915221ed1fe27f6d5e8267801  IDENTICAL
+  7b_seed4_orig                  4a48798b24abde18cbf1cef7854ce4b9  IDENTICAL
+
+[3] 从归档文件直接重取 PPL（不经 lab_round6_result.txt）
+  7b_seed3_ours fake     [('wikitext2', '8.094834327697754'), ('c4', '10.712592124938965')]
+  7b_seed3_ours real     [('wikitext2', '8.123409271240234'), ('c4', '10.922171592712402')]
+  7b_seed4_orig fake     [('wikitext2', '10.53885269165039'), ('c4', '13.769993782043457')]
+  7b_seed4_orig real     [('wikitext2', '10.75993537902832'), ('c4', '14.341706275939941')]
+  seed4 attempt1         无 PPL，仅 2 行，止于 12:03 root] (main.py 362): INFO === start quantization ===
+
+[4] 完成标记（原件目录）
+  7b_seed3_ours                  done_ppl.flag,done_multibit.flag,done.flag
+  7b_seed4_orig                  done_ppl.flag,done_multibit.flag,done.flag
+  8b_download                    done.flag（本地提交后补，非下载脚本所写）
+
+[5] 代码改动（相对 main.py.bak_r6 / spike_linear.py.bak_r6）
+  patch_diff_main.py.diff          +3 行 / -0 行
+  patch_diff_spike_linear.py.diff  +7 行 / -1 行
+      (唯一被改写行) -        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_linear_shield", "ablate_no_kv_shield", "le
+
+[6] 8B 权重（不在本归档内，仅记录校验出处）
+  见 06_8B下载与校验/8B权重_file_manifest_sha256.txt（提交后实测 sha256，4 分片合计 16 060 556 376 B）

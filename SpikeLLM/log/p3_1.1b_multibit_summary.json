@@ -1,0 +1,27 @@
+{
+  "1.1b_osdsq_v2_let_fake_multibit": {
+    "wikitext2": 14.358,
+    "c4": 18.0931,
+    "elapsed_sec": 415.06
+  },
+  "1.1b_osdsq_v2_let_real_multibit_legacy_bug": {
+    "wikitext2": 140739.8906,
+    "c4": 161729.8906,
+    "elapsed_sec": 493.58
+  },
+  "1.1b_osdsq_v2_let_real_multibit_fixed": {
+    "wikitext2": 14.3579,
+    "c4": 18.1329,
+    "elapsed_sec": 496.86
+  },
+  "1.1b_orig_let_real_multibit_legacy_bug": {
+    "wikitext2": 426406.7812,
+    "c4": 524241.75,
+    "elapsed_sec": 475.4
+  },
+  "1.1b_orig_let_real_multibit_fixed": {
+    "wikitext2": 22.3904,
+    "c4": 28.4662,
+    "elapsed_sec": 479.39
+  }
+}

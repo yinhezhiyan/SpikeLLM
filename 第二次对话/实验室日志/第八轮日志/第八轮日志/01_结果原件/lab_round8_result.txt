@@ -1,0 +1,46 @@
+﻿SpikeLLM / OSDSQ v2  第八轮实验结果（实验室双 3090）
+生成时间: 2026-11-07 04:44:15
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+本轮问题: addbit(+1bit/T=2) 是否只是一个廉价的替代品
+
+---- 参照（T=2, addbit=1, fake_binary, 128x20, alpha=0.75, let_lr=1e-3）----
+  FP16 7B              5.4722 / 6.9727
+  Orig 7B  seed2      10.5726 / 13.7738
+  Ours 7B  seed2       7.9792 / 10.6792
+  Orig 68M (seed0/1)  172.29 / 175.14
+  Ours 68M seed2       156.84 / 90.53
+
+### r8_68m_orig_a3  (GPU0, seed=2, addbit=3)
+  说明: 68M 原版 +3bit（T=8）门禁，对照 Orig@T2 = 172.29~175.14
+  [fake] wikitext2 : 176.09571838378906
+  [fake] c4 : 99.85752868652344
+  norm:nan 次数: 4
+
+### r8_68m_ours_a3  (GPU0, seed=2, addbit=3)
+  说明: 68M OSDSQv2 +3bit（T=8）门禁，对照 v2@T2 = 156.84
+  [fake] wikitext2 : 153.4055938720703
+  [fake] c4 : 88.99962615966797
+  norm:nan 次数: 3
+
+### r8_7b_orig_a3  (GPU0, seed=2, addbit=3)
+  说明: 7B 原版 +3bit（T=8）核心对照，对照 Orig@T2 = 10.5726
+  [fake] wikitext2 : 10.13863468170166
+  [fake] c4 : 12.894401550292969
+  norm:nan 次数: 17
+
+### r8_7b_ours_a3  (GPU1, seed=2, addbit=3)
+  说明: 7B OSDSQv2 +3bit（T=8），对照 Ours@T2 = 7.9792 与 FP16 5.4722
+  [fake] wikitext2 : 7.897834777832031
+  [fake] c4 : 10.576604843139648
+  norm:nan 次数: 10
+
+---- 判据（回传后三方核对，勿自行解释）----
+  A = 7B Orig@a3  wt2 ,  B = 7B Ours@a3  wt2
+  A >= 9.0       -> 原叙事成立，addbit 救不回来，方法有独立价值
+  7.0 <= A < 9.0 -> 部分替代，必须画 T-PPL 前沿，不能只报单点
+  A < 7.0        -> 24% 只是打了没人用的配置，论文改成前沿叙事
+  B 比 A 小 >5%  -> 方法在高 T 下仍有效（最好结果）
+  B 与 A 差 <2%  -> 方法只在中低 T 有效，正文需限定范围
+
+---- 环境指纹 ----
+  见 env_round8_preflight.txt（随日志一并回传）

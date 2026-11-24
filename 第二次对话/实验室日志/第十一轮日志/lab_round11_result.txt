@@ -1,0 +1,41 @@
+﻿SpikeLLM / OSDSQ v2  第十一轮实验结果（实验室双 3090）
+生成时间: 2026-11-17 05:09:41
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+任务: Stage 2 上 7B（关键一跳）+ 68M uniform seed3/4 配对补齐
+
+---- 参照（addbit=1, fake_binary, 128x20, alpha=0.75）----
+  7B Full  s2 7.9792 / 10.6792    s3 8.0948 / 10.7126    s4 8.0371 / 10.7135
+  7B Orig  10.5806 ± 0.0462      A-off 10.2818 ± 0.1353（第十轮）
+  68M uniform s2 157.7880 / 90.8312
+  68M aq  s2 155.9571 / 89.0309   s3 155.7261 / 89.0832   s4 153.9589 / 87.2476
+
+### r11_68m_uni_s3  (GPU0, seed=3)
+  说明: 68M uniform seed3，补配对（aq_s3 = 155.7261 / 89.0832）
+  [fake] wikitext2 : 156.475402832031
+  [fake] c4 : 89.9601440429688
+  norm:nan 次数: 2
+
+### r11_68m_uni_s4  (GPU0, seed=4)
+  说明: 68M uniform seed4，补配对（aq_s4 = 153.9589 / 87.2476）
+  [fake] wikitext2 : 156.144393920898
+  [fake] c4 : 89.740104675293
+  norm:nan 次数: 2
+
+### r11_7b_aq_s2  (GPU0, seed=2)
+  说明: 7B Stage2 seed2，对照 Full s2 = 7.9792 / 10.6792
+  [fake] wikitext2 : 7.52956295013428
+  [fake] c4 : 10.1215877532959
+  norm:nan 次数: 5
+
+### r11_7b_aq_s3  (GPU0, seed=3)
+  说明: 7B Stage2 seed3，对照 Full s3 = 8.0948 / 10.7126
+  [fake] wikitext2 : 7.52721548080444
+  [fake] c4 : 10.1422662734985
+  norm:nan 次数: 7
+
+---- 配对读数（自动算，供三方核对）----
+  7B AQ s2 vs Full s2:  7.52956295013428 vs 7.9792  (-5.64%)
+  7B AQ s3 vs Full s3:  7.52721548080444 vs 8.0948  (-7.01%)
+
+---- 环境指纹 ----
+  见 env_round11_preflight.txt（随日志一并回传）

@@ -1,0 +1,42 @@
+shield_mode=zero 与 mean 等价性核查  2026-11-03 09:57:01
+
+背景：第七轮 7B 的 zero 腿与既有 mean 基线四个 PPL 完全相同，按 runner 判据会读成
+      「<0.3 -> 核心创新点不成立」。本文件给出三项独立核查，结论是「数学等价，
+      不是参数丢失」。全部命令与输出均由脚本现场产生。
+
+[1] checkpoint 逐位比对（zero 是否真的产出了不同的量化参数）
+  r7_7b_seed2_zero         45c1b5df88acaefee0fa41fac513f17b   8983506 B
+  7b_osdsq_v2_with_let (mean) 45c1b5df88acaefee0fa41fac513f17b   8983506 B
+  -> IDENTICAL（zero 与 mean 产出同一份量化参数）
+  r7_68m_zero              a9bdb27631c380bebae9effc68020362
+  r7_68m_mean_check (本机 mean) a9bdb27631c380bebae9effc68020362
+  -> IDENTICAL
+
+[2] LET/LWC 训练轨迹逐行比对（635 条 epoch 记录，7B seed2）
+  zero 记录 635 条 / mean 记录 635 条 / 比对 635 条 / 逐位相同 635 条
+  首条 zero=('0', '0', '0.0006647654809057713', '0.0005608301144093275')
+  末条 zero=('31', '19', '1.3650169372558594', '0.008202509954571724')
+  首条 mean=('0', '0', '0.0006647654809057713', '0.0005608301144093275')
+  末条 mean=('31', '19', '1.3650169372558594', '0.008202509954571724')
+
+[3] 合成数据：两个分支究竟何时才会分歧
+  低显著子集正负混合                mask=0.90  max|mean-zero|=0  bit-identical=True
+  低显著子集全为正（单符号）            mask=0.90  max|mean-zero|=0.268318  bit-identical=False
+  解释：两者只改 mask_low 之外的通道取值，而输出还要再乘 mask_low，
+        故结果只取决于 act_quantizer 的 min/max；mean_low 与 0 都落在低显著子集的
+        [xmin, xmax] 内时不改变量程 -> 输出逐位相同。只有子集全正或全负时，
+        0 才会把区间拉到 0，此时才分歧。
+
+[4] 接线核查：act_quant_params 里的 shield_mode 是否真的落到模块属性
+  传入 mean  -> self.shield_mode = mean 
+  传入 zero  -> self.shield_mode = zero 
+
+[5] 同机同参的 68M 对照（本轮额外跑的 15 min 诊断，未改任何算法）
+  mean（本机诊断，未传 --shield_mode）        PPL=[('wikitext2', '157.7880401611328'), ('c4', '90.83118438720703')]
+                                     norm:nan=3
+  zero（第七轮门禁）                        PPL=[('wikitext2', '157.7880401611328'), ('c4', '90.83118438720703')]
+                                     norm:nan=3
+
+[结论] zero 与 mean 在本轮两个模型（llama-68m / Llama-2-7B）上逐位等价，
+       原因是低显著子集在真实激活上恒为混合符号。zero 因此不是有效的 A 对照；
+       A 的必要性证据仍为 A-off（10.4181/12.9691 vs 7.9792/10.6792，第五轮）。

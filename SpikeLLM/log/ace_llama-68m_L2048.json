@@ -1,0 +1,63 @@
+{
+  "model": {
+    "hidden_size": 768,
+    "intermediate_size": 2048,
+    "num_hidden_layers": 2,
+    "num_attention_heads": 12,
+    "num_key_value_heads": 12,
+    "vocab_size": 32000,
+    "tie_word_embeddings": false,
+    "name": "LLAMA-68M"
+  },
+  "seqlen": 2048,
+  "low_p": 0.9,
+  "addbit": 1,
+  "orig_low_p": null,
+  "orig_addbit": null,
+  "macs": {
+    "linear": 28991029248,
+    "attention": 6442450944.0,
+    "lm_head": 50331648000,
+    "total": 85765128192.0
+  },
+  "table": [
+    {
+      "scheme": "FP16 (W16A16)",
+      "eff_bits": 256,
+      "ace": 21955872817152.0,
+      "save_vs_fp16": 1.0,
+      "save_vs_uniform_w4a4": 0.0625
+    },
+    {
+      "scheme": "W8A8",
+      "eff_bits": 64,
+      "ace": 5488968204288.0,
+      "save_vs_fp16": 4.0,
+      "save_vs_uniform_w4a4": 0.25
+    },
+    {
+      "scheme": "W4A4 uniform (无显著通道)",
+      "eff_bits": 16,
+      "ace": 1372242051072.0,
+      "save_vs_fp16": 16.0,
+      "save_vs_uniform_w4a4": 1.0
+    },
+    {
+      "scheme": "Orig SpikeLLM (p=0.9,+1bit)",
+      "eff_bits": 16.4,
+      "ace": 1406548102348.7998,
+      "save_vs_fp16": 15.6098,
+      "save_vs_uniform_w4a4": 0.9756
+    },
+    {
+      "scheme": "Ours OSDSQ v2 (p=0.9,+1bit)",
+      "eff_bits": 16.4,
+      "ace": 1406548102348.7998,
+      "save_vs_fp16": 15.6098,
+      "save_vs_uniform_w4a4": 0.9756
+    }
+  ],
+  "ours_vs_orig_pct": 0.0,
+  "firing": null,
+  "sparse_ace": null
+}

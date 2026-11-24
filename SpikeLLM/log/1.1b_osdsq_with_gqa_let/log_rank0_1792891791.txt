@@ -1,0 +1,5 @@
+[2026-10-24 18:29:51 root] (main.py 266): INFO Namespace(model='TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T', cache_dir='./cache', output_dir='./log/1.1b_osdsq_with_gqa_let', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net=None, act_scales='./act_scales/TinyLlama-1.1B-intermediate-step-1431k-3T.pt', act_shifts='./act_shifts/TinyLlama-1.1B-intermediate-step-1431k-3T.pt', addbit=1, low_p=0.9)
+[2026-10-24 18:29:53 root] (main.py 338): INFO === start quantization ===
+[2026-10-24 18:29:53 root] (main.py 344): INFO load calibration from ./cache/dataloader_TinyLlama_wikitext2_128.cache
+[2026-10-24 18:29:53 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-24 18:29:54 root] (spike_omniquant.py 230): INFO === Start quantize layer 0 ===

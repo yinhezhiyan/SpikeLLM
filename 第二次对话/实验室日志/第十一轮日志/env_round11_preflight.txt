@@ -1,0 +1,63 @@
+========================================================================
+EXPERIMENT ENVIRONMENT FINGERPRINT
+time      : 2026-11-16 12:57:29
+========================================================================
+[1] CODE STATE
+cwd       : C:\Users\admin\Desktop\spikellm\SpikeLLM
+git commit: UNKNOWN  <-- git 不可用（常见原因：dubious ownership）
+            修复: git config --global --add safe.directory <repo_path>
+            原始信息: fatal: not a git repository (or any of the parent directories): .git
+git usable: NO  (为 no 时只能靠 [2] 的文件哈希判断代码是否变化)
+
+[2] CRITICAL FILE HASHES  (任一项变化 => 与前批次结果不可比)
+  49485bc7ad4e9e0b  main.py  (18942 B)
+  857be868ad9cc740  spike_driven_quant/spike_linear.py  (9487 B)
+  0b1f5d5fc42696b0  spike_driven_quant/spike_matmul.py  (6468 B)
+  2b17e4fcfea74fce  spike_driven_quant/spike_omniquant.py  (21931 B)
+  78070c8d332cf8d5  spike_driven_quant/quantizer.py  (8567 B)
+  5c717b158ab1e4a0  models/transformation.py  (4373 B)
+  54bbaae1c48888e2  datautils.py  (6704 B)
+  b209ca43c737e583  utils.py  (3132 B)
+
+[3] RUNTIME
+python    : 3.11.11  (64bit)
+os        : Windows 10  AMD64
+torch     : 2.6.0+cu126
+transformers: 4.44.2
+accelerate: 1.7.0
+datasets  : 3.5.0
+numpy     : 1.26.4
+sentencepiece: 0.2.0
+tokenizers: 0.19.1
+lm_eval   : unknown
+cuda avail: True
+cuda ver  : 12.6
+cudnn     : 90501
+cudnn.det : False
+cudnn.bench:False
+gpu0      : NVIDIA GeForce RTX 3090  24.0 GiB  cc8.6
+gpu1      : NVIDIA GeForce RTX 3090  24.0 GiB  cc8.6
+nvidia-smi: NVIDIA GeForce RTX 3090, 610.88, 24576 MiB
+NVIDIA GeForce RTX 3090, 610.88, 24576 MiB
+
+[4] ENV VARS AFFECTING NUMERICS
+  PYTORCH_CUDA_ALLOC_CONF = <unset>
+  CUDA_VISIBLE_DEVICES = <unset>
+  OMP_NUM_THREADS = <unset>
+  CUBLAS_WORKSPACE_CONFIG = <unset>
+  PYTHONHASHSEED = <unset>
+  HF_HOME = C:\Users\admin\Desktop\spikellm\hf_cache
+  TRANSFORMERS_CACHE = <unset>
+
+[5] CALIBRATION / TEST CACHE  (校准数据若不一致，PPL 直接不可比)
+  a63dd7b84d65aac6  dataloader_Llama_wikitext2_128.cache  (24.0 MB)
+  5bf64028ef5251d9  dataloader_Llama_wikitext2_8.cache  (22.1 MB)
+  8e26a1bd520cdb50  testloader_Llama_c4_all.cache  (4.0 MB)
+  ad11d68d1922048a  testloader_Llama_wikitext2_all.cache  (5.2 MB)
+
+[6] RUN CONFIG (from command line if provided)
+  argv: --out C:\Users\admin\Desktop\spikellm\SpikeLLM\env_round11_preflight.txt
+========================================================================
+回传说明：把本文件与结果一起发回；若 [1]/[2]/[5] 与上一批次不同，
+则该批次结果不能与上一批次并列写入同一张表。
+========================================================================

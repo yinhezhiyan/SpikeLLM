@@ -1,0 +1,41 @@
+==============================================================================
+第八轮回传校验   生成 2026-11-07 04:54:15
+项目路径 C:\Users\admin\Desktop\spikellm\SpikeLLM
+==============================================================================
+
+[1] 四条腿 PPL：归档 log_rank0 重取 vs lab_round8_result.txt
+    tag              wt2(归档重取)              c4(归档重取)               与 result.txt 一致
+    r8_68m_orig_a3   176.09571838378906     99.85752868652344      YES
+    r8_68m_ours_a3   153.4055938720703      88.99962615966797      YES
+    r8_7b_orig_a3    10.13863468170166      12.894401550292969     YES
+    r8_7b_ours_a3    7.897834777832031      10.576604843139648     YES
+
+[2] 本轮唯一变量（与第七轮逐字相同的那套参数）
+    --wbits 4  --abits 4  --low_p 0.9  --let  --lwc  --aug_loss
+    --alpha 0.75  --let_lr 1e-3  --lwc_lr 1e-2  --nsamples 128  --epochs 20
+    --addbit 1 (第 1~7 轮)  ->  --addbit 3 (本轮，唯一改动)
+    fake_binary_simulate，零样本关闭，未跑 real_multibit
+
+[3] 代码级提示（判读时要用，非本轮改动）
+    spike_linear.py:141  fake_binary 分支只用 act_quantizer_high（4+addbit bit）与 _quant_low；
+                         steps=2^addbit 仅在两个 multibit 分支里起作用。
+    spike_matmul.py:33   KV/PV 的 x2_quantizer_high 传了 Refine=(addbit>0)，
+    quantizer.py:47-48   if Refine: addbit = 1  ->  K/V 高显著分支恒为 5 bit。
+    即本轮加宽的只有线性层高显著分支；a1 与 a3 同口径，A/B 判据不受影响。
+    spike_linear.py:61   step_levels = 2**n_bits(=16)，不含 addbit -> saliency 与 mask 划分不变。
+
+[4] 文件清单（字节 / md5）
+            1973  baf2b5565fc089115f17852db21a463a  lab_round8_result.txt
+            2759  c1048d65b94d4fdf1e48d95ea38e9a2c  env_round8_preflight.txt
+           18031  153c76a7e668c609e35c88c5b2dc07c0  lab_round8_runner.ps1
+           35849  453c6cc2fa779c42eed6c092b3517bb8  lab_watch_round8.log
+            4902  28ffc783fc085a7a8876391ac478bd45  lab_round8_console.log
+            8208  56b5257bd74379587d4e8542827be9da  log\r8_68m_orig_a3\log_rank0_1793969515.txt
+           35818  7cd797c60c0726d11e1ed5f7c7b3225a  log\r8_68m_orig_a3\run.log
+            8248  8520d46544cd9b99e0f9290decaaeec2  log\r8_68m_ours_a3\log_rank0_1793970424.txt
+           36072  3056082b0bb8673703ad955b7d9819d7  log\r8_68m_ours_a3\run.log
+          110424  c64ca49fee6909c5eade51fa8ddf66e8  log\r8_7b_orig_a3\log_rank0_1793971351.txt
+          270394  101155d7eb52b17d7b1cc9be68219933  log\r8_7b_orig_a3\run.log
+          108251  4a5f71e342f1aa41a2e23d2cfd56f7ba  log\r8_7b_ours_a3\log_rank0_1793971350.txt
+          266010  d2bce1604ea48cc818a2294936f962f1  log\r8_7b_ours_a3\run.log
+    合计 13 个文件，0.86 MB

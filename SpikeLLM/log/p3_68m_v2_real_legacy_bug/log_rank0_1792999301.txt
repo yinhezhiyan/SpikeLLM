@@ -1,0 +1,12 @@
+[2026-10-26 00:21:41 root] (main.py 272): INFO Namespace(model='JackFram/llama-68m', cache_dir='./cache', output_dir='./log/p3_68m_v2_real_legacy_bug', save_dir=None, resume='./log/p1_reg_v2_let_s2/omni_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, addbit=1, low_p=0.9, orig_spikellm=False, ablate_no_kv_shield=False, ablate_orig_saliency=False, ablate_orig_loss=False, sim_mode='real_multibit_simulate', legacy_multibit_bug=True)
+[2026-10-26 00:21:43 root] (main.py 354): INFO === start quantization ===
+[2026-10-26 00:21:43 root] (main.py 360): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2026-10-26 00:21:43 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-26 00:21:44 root] (spike_omniquant.py 230): INFO === Start quantize layer 0 ===
+[2026-10-26 00:21:44 root] (spike_omniquant.py 230): INFO === Start quantize layer 1 ===
+[2026-10-26 00:21:44 root] (main.py 387): INFO 1.1089963912963867
+[2026-10-26 00:21:44 root] (main.py 408): INFO switched simulation mode to real_multibit_simulate (legacy_multibit_bug=True)
+[2026-10-26 00:21:44 root] (main.py 102): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2026-10-26 00:21:53 root] (main.py 146): INFO wikitext2 : 7353333.0
+[2026-10-26 00:21:53 root] (main.py 102): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2026-10-26 00:22:05 root] (main.py 146): INFO c4 : 8202022.5

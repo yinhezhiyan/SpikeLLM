@@ -1,0 +1,65 @@
+========================================================================
+EXPERIMENT ENVIRONMENT FINGERPRINT
+time      : 2026-11-02 04:15:15
+tag       : round7_preflight
+========================================================================
+[1] CODE STATE
+cwd       : D:\spikellm\SpikeLLM
+git commit: UNKNOWN  <-- git 不可用（常见原因：dubious ownership）
+            修复: git config --global --add safe.directory <repo_path>
+            原始信息: fatal: detected dubious ownership in repository at 'D:/spikellm/SpikeLLM'
+git usable: NO  (为 no 时只能靠 [2] 的文件哈希判断代码是否变化)
+
+[2] CRITICAL FILE HASHES  (任一项变化 => 与前批次结果不可比)
+  6842f0bb479da6bc  main.py  (18691 B)
+  f19df5382e798d07  spike_driven_quant/spike_linear.py  (9292 B)
+  0b1f5d5fc42696b0  spike_driven_quant/spike_matmul.py  (6468 B)
+  18cf8d473bfc4795  spike_driven_quant/spike_omniquant.py  (16886 B)
+  78070c8d332cf8d5  spike_driven_quant/quantizer.py  (8567 B)
+  5c717b158ab1e4a0  models/transformation.py  (4373 B)
+  54bbaae1c48888e2  datautils.py  (6704 B)
+  b209ca43c737e583  utils.py  (3132 B)
+
+[3] RUNTIME
+python    : 3.10.11  (64bit)
+os        : Windows 10  AMD64
+torch     : 2.12.0.dev20260408+cu128
+transformers: 4.38.2
+accelerate: 0.28.0
+datasets  : 2.18.0
+numpy     : 2.2.6
+sentencepiece: 0.2.2
+tokenizers: 0.15.2
+lm_eval   : unknown
+cuda avail: True
+cuda ver  : 12.8
+cudnn     : 92000
+cudnn.det : False
+cudnn.bench:False
+gpu0      : NVIDIA GeForce RTX 5060 Ti  15.9 GiB  cc12.0
+nvidia-smi: NVIDIA GeForce RTX 5060 Ti, 610.88, 16311 MiB
+
+[4] ENV VARS AFFECTING NUMERICS
+  PYTORCH_CUDA_ALLOC_CONF = <unset>
+  CUDA_VISIBLE_DEVICES = <unset>
+  OMP_NUM_THREADS = <unset>
+  CUBLAS_WORKSPACE_CONFIG = <unset>
+  PYTHONHASHSEED = <unset>
+  HF_HOME = D:\AI_Cache\huggingface
+  TRANSFORMERS_CACHE = <unset>
+
+[5] CALIBRATION / TEST CACHE  (校准数据若不一致，PPL 直接不可比)
+  7b25fa31b05ca3b6  dataloader_TinyLlama_wikitext2_128.cache  (24.0 MB)
+  c98eec51b48bacd5  dataloader_llama_wikitext2_128.cache  (24.0 MB)
+  cd8c4266051bfc69  dataloader_opt_wikitext2_128.cache  (20.6 MB)
+  a5a4612067b8e2e5  testloader_TinyLlama_c4_all.cache  (4.0 MB)
+  85f8c2d2fcfa5400  testloader_TinyLlama_wikitext2_all.cache  (5.2 MB)
+  13d2218bd88ce3f7  testloader_llama_c4_all.cache  (4.0 MB)
+  09d2ec0098592d31  testloader_llama_wikitext2_all.cache  (5.2 MB)
+
+[6] RUN CONFIG (from command line if provided)
+  argv: --note round7_preflight --out D:\spikellm\SpikeLLM\env_round7_preflight.txt
+========================================================================
+回传说明：把本文件与结果一起发回；若 [1]/[2]/[5] 与上一批次不同，
+则该批次结果不能与上一批次并列写入同一张表。
+========================================================================

@@ -1,0 +1,10 @@
+﻿===== watchdog started 2026-10-31 14:40:09 =====
+[2026-10-31 14:40:09] python_procs=0
+  7b_ablate_no_linear_shield: (no log yet)
+  7b_seed3_orig: (no log yet)
+  GPU: 0, 195 MiB, 2 % || 1, 306 MiB, 0 %
+[2026-10-31 14:40:09] FATAL: no python process while done.flag is missing (orig=False ours=False)
+  7b_ablate_no_linear_shield: (no log yet)
+  7b_seed3_orig: (no log yet)
+  GPU: 0, 195 MiB, 3 % || 1, 306 MiB, 0 %
+===== watchdog stopped: abnormal end =====

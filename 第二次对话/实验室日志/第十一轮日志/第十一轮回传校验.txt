@@ -1,0 +1,53 @@
+================================================================================
+第十一轮回传校验   生成 2026-11-17 05:19:43
+项目路径 C:\Users\admin\Desktop\spikellm\SpikeLLM
+================================================================================
+
+[1] 四条腿 PPL：log_rank0 原始值 vs lab_round11_result.txt
+    result.txt 由 runner 用 PowerShell [double] 拼接，与日志同为 15~16 位
+    最短往返表示；比对用数值容差 abs<1e-6。
+    tag                wt2(raw)                 c4(raw)                  与 txt 一致
+    r11_68m_uni_s3     156.47540283203125       89.96014404296875        YES
+    r11_68m_uni_s4     156.14439392089844       89.74010467529297        YES
+    r11_7b_aq_s2       7.529562950134277        10.121587753295898       YES
+    r11_7b_aq_s3       7.527215480804443        10.142266273498535       YES
+
+    结论：8/8 数字一致
+
+[2] 本轮 argv
+    --wbits 4 --abits 4 --addbit 1 --low_p 0.9 --let --lwc --aug_loss
+    --alpha 0.75 --let_lr 1e-3 --lwc_lr 1e-2 --nsamples 128 --epochs 20
+    fake_binary_simulate，零样本关闭，未跑 real_multibit
+    68M 两腿 = uniform（无开关），cache ./cache
+    7B 两腿 = --adaptive_quota，cache ./cache 与 ./cache_seed3
+
+[3] 单卡运行说明（本轮方案调整，非数值改动）
+    实验室当时只有 GPU0 空闲（GPU1 被他人进程占用 18.7 GB）。
+    runner 改动两处：r11_7b_aq_s3 的 Gpu 1->0；7B 并行段改为串行调用。
+    均标 NOTE (lab machine fix 2026-11-16)；diff 见 06_环境与预检/r11_runner_singleGPU_diff.txt。
+    argv / seed / cache 与原设计一致，数值口径不变；仅墙钟时间由约 8.5 h 增至 16.2 h。
+
+[4] 文件清单（字节 / md5，不含 05_回传包 自身）
+            6470  d2ef183e42f589b5217be4c4ec3d54e1  README_索引.md
+            1635  7fd0fe488e9549cc8595a9165f39e140  01_结果原件/lab_round11_result.txt
+            5060  6480efc805181191c999c87f547fe10d  02_原始日志/lab_round11_console.log
+           68489  dd982167af9fe096903b4affa695f5c3  02_原始日志/lab_watch_round11.log
+            8383  65938c2b804568e5fb4208ecd2775870  02_原始日志/r11_68m_uni_s3_log_rank0_1794805079.txt
+           36228  c25e5ca7973395dd9f01becdc22e12a8  02_原始日志/r11_68m_uni_s3_run.log
+            8399  6bd61ce5c35c649e6b5c1c9b80f8e780  02_原始日志/r11_68m_uni_s4_log_rank0_1794806014.txt
+           37348  bc508f72d6ba879b9409d0ca893a610a  02_原始日志/r11_68m_uni_s4_run.log
+          119362  80752e15c55e33efdebb7b464a3de47c  02_原始日志/r11_7b_aq_s2_log_rank0_1794806931.txt
+          289256  619646f3ffb6e616ced160dfe1b01add  02_原始日志/r11_7b_aq_s2_run.log
+          119437  af395335253d2d22c8fba1d733bd1d61  02_原始日志/r11_7b_aq_s3_log_rank0_1794835227.txt
+          289416  bcc337b09f3c823a418487e2f3decfc8  02_原始日志/r11_7b_aq_s3_run.log
+            1796  b33c52f1e67a9b0f3864281a7df7fe14  03_门禁结果/Stage2_等算力验证.txt
+          139170  a46e1d104b077cf56e584112157b6cd9  04_checkpoint/r11_68m_uni_s3_omni_parameters.pth
+          139170  88f2fb1ecf1f6ff193d7186d615d4b79  04_checkpoint/r11_68m_uni_s4_omni_parameters.pth
+         8983506  deea33aeadaea610761a3ee1ea02d840  04_checkpoint/r11_7b_aq_s2_omni_parameters.pth
+         8983506  68fd09a34b8cfeb1261651025afa8ee4  04_checkpoint/r11_7b_aq_s3_omni_parameters.pth
+            2760  19b3e8e64a78cb7b9454fa6efdc239e8  06_环境与预检/env_round11_preflight.txt
+           18786  5b7ae825e76953669b6c8955135a95f0  06_环境与预检/lab_round11_runner.ps1
+           18705  ef1fcb92dc16a67b2b6c6b5ca59b937e  06_环境与预检/lab_round11_runner.ps1.bak_r11
+            2345  7da74a1e7a770a942440ecf216299891  06_环境与预检/r11_runner_singleGPU_diff.txt
+            2041  17c6b1d46149016d1984bc4cc13266e9  07_Stage2与配对统计/Stage2效果与68M配对.txt
+    合计 22 个文件，18.39 MB（不含 05_回传包 自身）

@@ -1,0 +1,49 @@
+第十三轮 实验配置摘要（供开发组比对复现）
+================================================================
+生成: 2026-11-22  实验室
+
+【一、代码状态（SHA-256 前 16 位）】
+  main.py                                e898ff1da6b92e91   OK（= 第十二轮补丁后）
+  spike_driven_quant/spike_linear.py     857be868ad9cc740   OK
+  spike_driven_quant/spike_omniquant.py  4f7ae925a3c1bd51   OK
+  本轮无新补丁（lab_round13 只带 runner + 操作说明）
+
+【二、环境】
+  python 3.11.11 / torch 2.6.0+cu126 / CUDA 12.6 / transformers 4.44.2
+  GPU: RTX 3090 24GB × 2，本轮全程只用 GPU0（GPU1 被他人 opentslm 占用）
+  HF_HOME = C:\Users\admin\Desktop\spikellm\hf_cache
+  HF_ENDPOINT = https://hf-mirror.com
+  HF_DATASETS_TRUST_REMOTE_CODE = 1
+
+【三、模型】
+  models/Llama-3-8B  （原目录名 Meta-Llama-3-8B，按操作说明重命名）
+  4 个 safetensors 分片，合计 15,693,170 B * 计 14.97 GiB
+  config: 32 层 / hidden 4096 / intermediate 14336 / heads 32 / kv_heads 8(GQA)
+          vocab_size 128256 / max_position_embeddings 8192 / torch_dtype bfloat16
+  运行日志打印 vocab size: 128000（8B tokenizer 生效，无 Llama-2 词表碰撞）
+
+【四、act_scale（本轮自动生成，成功）】
+  act_scales/Llama-3-8B.pt   5,066,207 B
+  act_shifts/Llama-3-8B.pt   5,066,207 B
+  生成参数: --calib_dataset wikitext2 --num-samples 64 --seq-len 2048 --seed 2
+
+【五、四条腿参数（全部 seed=2、nsamples=64、cache=./cache_llama3_8b、--eval_ppl）】
+  r13_8b_fp16  wbits16 abits16 addbit1  extra=(none)           -> FP16 参考
+  r13_8b_orig  wbits4  abits4  addbit1  extra=--orig_spikellm  -> Original
+  r13_8b_full  wbits4  abits4  addbit1  extra=(none)           -> Stage1 Full
+  r13_8b_aq    wbits4  abits4  addbit1  extra=--adaptive_quota -> Stage1+2 AQ
+  统一: --let --lwc --aug_loss --alpha 0.75 --let_lr 1e-3 --lwc_lr 1e-2 --epochs 20 --low_p 0.9
+  8B 本轮不跑零样本（单卡 24GB 会 OOM，设计排除）
+
+【六、c4 数据（失败点相关）】
+  allenai/c4  validation 第一分片 en/c4-validation.00000-of-00008.json.gz
+  arrow 缓存: hf_cache/datasets/allenai___c4/default-c7bc8b0aefc5e48f/...
+  valdata 条数: 45576
+  seqlen = lm.seqlen = max_position_embeddings = 8192（7B 是 4096）
+
+【七、四腿耗时（从日志时间戳）】
+  fp16  11:53 启动 → 12:00 wikitext2 出数 → c4 崩（约 7 min）
+  orig  之后启动 → 约 8 h 量化 → wikitext2 → c4 崩
+  full  约 8 h → 崩
+  aq    约 8 h → 崩
+  总计 11:53 → 23:30（约 11.6 h），四腿量化均完整 32 层 × 640 iter

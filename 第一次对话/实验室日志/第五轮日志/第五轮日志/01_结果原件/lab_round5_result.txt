@@ -1,0 +1,20 @@
+﻿SpikeLLM / OSDSQ v2  第五轮实验结果（实验室双 3090）
+生成时间: 2026-10-31 22:47:16
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+
+7b_ablate_no_linear_shield  (GPU0, seed=2, cache=./cache)
+  说明: A-off：关闭低显著子集均值锚定屏蔽（论文因果链核心）
+  [fake] [2026-10-31 22:19:50 root] (main.py 147): INFO wikitext2 : 10.418092727661133
+  [fake] [2026-10-31 22:26:43 root] (main.py 147): INFO c4 : 12.96911334991455
+  [real] [2026-10-31 22:35:00 root] (main.py 147): INFO wikitext2 : 10.540775299072266
+  [real] [2026-10-31 22:46:31 root] (main.py 147): INFO c4 : 13.52342700958252
+  norm:nan 次数: 4
+
+7b_seed3_orig  (GPU1, seed=3, cache=./cache_seed3)
+  说明: seed3 原版基线（为 seed3 成对比较做准备）
+  [fake] [2026-10-31 21:49:50 root] (main.py 147): INFO wikitext2 : 10.630260467529297
+  [fake] [2026-10-31 21:56:55 root] (main.py 147): INFO c4 : 13.796493530273438
+  [real] [2026-10-31 22:05:31 root] (main.py 147): INFO wikitext2 : 10.896252632141113
+  [real] [2026-10-31 22:17:25 root] (main.py 147): INFO c4 : 14.479215621948242
+  norm:nan 次数: 12
+

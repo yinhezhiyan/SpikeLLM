@@ -1,0 +1,58 @@
+[
+  {
+    "scenario": "signed",
+    "method": "none",
+    "exact": false,
+    "mean_abs_inflation": 120.292,
+    "max_abs_inflation": 334.81
+  },
+  {
+    "scenario": "signed",
+    "method": "zero",
+    "exact": true,
+    "mean_abs_inflation": 1.0,
+    "max_abs_inflation": 1.0
+  },
+  {
+    "scenario": "signed",
+    "method": "mean",
+    "exact": true,
+    "mean_abs_inflation": 1.0,
+    "max_abs_inflation": 1.0
+  },
+  {
+    "scenario": "signed",
+    "method": "exact",
+    "exact": true,
+    "mean_abs_inflation": 1.0,
+    "max_abs_inflation": 1.0
+  },
+  {
+    "scenario": "positive",
+    "method": "none",
+    "exact": false,
+    "mean_abs_inflation": 558.611,
+    "max_abs_inflation": 1256.64
+  },
+  {
+    "scenario": "positive",
+    "method": "zero",
+    "exact": false,
+    "mean_abs_inflation": 5.16,
+    "max_abs_inflation": 6.0
+  },
+  {
+    "scenario": "positive",
+    "method": "mean",
+    "exact": true,
+    "mean_abs_inflation": 1.0,
+    "max_abs_inflation": 1.0
+  },
+  {
+    "scenario": "positive",
+    "method": "exact",
+    "exact": true,
+    "mean_abs_inflation": 1.0,
+    "max_abs_inflation": 1.0
+  }
+]

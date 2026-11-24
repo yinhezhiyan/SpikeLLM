@@ -1,0 +1,12 @@
+--- spike_driven_quant/spike_matmul.py.bak_r5	2026-10-31 14:39:05.432008200 +0800
++++ spike_driven_quant/spike_matmul.py	2026-10-30 19:54:30.000000000 +0800
+@@ -22,7 +22,8 @@
+         self.orig_spikellm = x2_quant_params.get("orig_spikellm", False)
+         self.ablate_orig_saliency = x2_quant_params.get("ablate_orig_saliency", False)
+         self.ablate_no_kv_shield = x2_quant_params.get("ablate_no_kv_shield", False)
+-        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_kv_shield", "legacy_multibit_bug"}
++        self.ablate_no_linear_shield = x2_quant_params.get("ablate_no_linear_shield", False)
++        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_linear_shield", "ablate_no_kv_shield", "legacy_multibit_bug"}
+         x1_quant_params_clean = {k: v for k, v in x1_quant_params.items() if k not in _extra_keys}
+         x2_quant_params_clean = {k: v for k, v in x2_quant_params.items() if k not in _extra_keys}
+ 

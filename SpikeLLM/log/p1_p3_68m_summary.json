@@ -1,0 +1,98 @@
+{
+  "reg_v2_let_seed2": {
+    "wikitext2": 156.84039306640625,
+    "c4": 90.53092956542969,
+    "elapsed_sec": 590.05,
+    "returncode": 0
+  },
+  "abl_step1_linear_only": {
+    "wikitext2": 160.30677795410156,
+    "c4": 91.43470001220703,
+    "elapsed_sec": 582.6,
+    "returncode": 0
+  },
+  "abl_step2_linear_kv": {
+    "wikitext2": 162.93089294433594,
+    "c4": 91.6400146484375,
+    "elapsed_sec": 584.54,
+    "returncode": 0
+  },
+  "abl_step3_plus_saliency": {
+    "wikitext2": 161.27920532226562,
+    "c4": 91.46539306640625,
+    "elapsed_sec": 582.97,
+    "returncode": 0
+  },
+  "ext_omniquant_w4a4_s2": {
+    "wikitext2": 179.78025817871094,
+    "c4": 108.447265625,
+    "elapsed_sec": 573.02,
+    "returncode": 0
+  },
+  "orig_let_seed0": {
+    "wikitext2": 172.2919464111328,
+    "c4": 99.59275817871094,
+    "elapsed_sec": 574.98,
+    "returncode": 0
+  },
+  "orig_let_seed1": {
+    "wikitext2": 175.1410675048828,
+    "c4": 100.20477294921875,
+    "elapsed_sec": 575.1,
+    "returncode": 0
+  },
+  "v2_let_seed0": {
+    "wikitext2": 153.9009552001953,
+    "c4": 89.81133270263672,
+    "elapsed_sec": 588.76,
+    "returncode": 0
+  },
+  "v2_let_seed1": {
+    "wikitext2": 155.67840576171875,
+    "c4": 90.30052947998047,
+    "elapsed_sec": 588.08,
+    "returncode": 0
+  },
+  "p3_v2_fake_multibit": {
+    "wikitext2": 154.28890991210938,
+    "c4": 89.48918151855469,
+    "elapsed_sec": 29.1,
+    "returncode": 0
+  },
+  "p3_v2_real_multibit_legacy_bug": {
+    "wikitext2": 7353333.0,
+    "c4": 8202022.5,
+    "elapsed_sec": 31.14,
+    "returncode": 0
+  },
+  "p3_v2_real_multibit_fixed": {
+    "wikitext2": 154.60147094726562,
+    "c4": 89.55953216552734,
+    "elapsed_sec": 30.85,
+    "returncode": 0
+  },
+  "p3_orig_real_multibit_legacy_bug": {
+    "wikitext2": 12604177.0,
+    "c4": 16503442.0,
+    "elapsed_sec": 30.32,
+    "returncode": 0
+  },
+  "p3_orig_real_multibit_fixed": {
+    "wikitext2": 169.32568359375,
+    "c4": 98.77249908447266,
+    "elapsed_sec": 30.34,
+    "returncode": 0
+  },
+  "loo_minus_kv_shield": {
+    "wikitext2": 158.4503173828125,
+    "c4": 90.52816009521484,
+    "elapsed_sec": 663.52,
+    "returncode": 0
+  },
+  "loo_minus_saliency": {
+    "wikitext2": 159.16781616210938,
+    "c4": 90.63182067871094,
+    "elapsed_sec": 758.19,
+    "returncode": 0
+  }
+}

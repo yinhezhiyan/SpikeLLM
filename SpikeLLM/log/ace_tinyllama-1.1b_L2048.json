@@ -1,0 +1,63 @@
+{
+  "model": {
+    "hidden_size": 2048,
+    "intermediate_size": 5632,
+    "num_hidden_layers": 22,
+    "num_attention_heads": 32,
+    "num_key_value_heads": 4,
+    "vocab_size": 32000,
+    "tie_word_embeddings": false,
+    "name": "TinyLlama-1.1B"
+  },
+  "seqlen": 2048,
+  "low_p": 0.9,
+  "addbit": 1,
+  "orig_low_p": null,
+  "orig_addbit": null,
+  "macs": {
+    "linear": 1984274890752,
+    "attention": 188978561024.0,
+    "lm_head": 134217728000,
+    "total": 2307471179776.0
+  },
+  "table": [
+    {
+      "scheme": "FP16 (W16A16)",
+      "eff_bits": 256,
+      "ace": 590712622022656.0,
+      "save_vs_fp16": 1.0,
+      "save_vs_uniform_w4a4": 0.0625
+    },
+    {
+      "scheme": "W8A8",
+      "eff_bits": 64,
+      "ace": 147678155505664.0,
+      "save_vs_fp16": 4.0,
+      "save_vs_uniform_w4a4": 0.25
+    },
+    {
+      "scheme": "W4A4 uniform (无显著通道)",
+      "eff_bits": 16,
+      "ace": 36919538876416.0,
+      "save_vs_fp16": 16.0,
+      "save_vs_uniform_w4a4": 1.0
+    },
+    {
+      "scheme": "Orig SpikeLLM (p=0.9,+1bit)",
+      "eff_bits": 16.4,
+      "ace": 37842527348326.4,
+      "save_vs_fp16": 15.6098,
+      "save_vs_uniform_w4a4": 0.9756
+    },
+    {
+      "scheme": "Ours OSDSQ v2 (p=0.9,+1bit)",
+      "eff_bits": 16.4,
+      "ace": 37842527348326.4,
+      "save_vs_fp16": 15.6098,
+      "save_vs_uniform_w4a4": 0.9756
+    }
+  ],
+  "ours_vs_orig_pct": 0.0,
+  "firing": null,
+  "sparse_ace": null
+}

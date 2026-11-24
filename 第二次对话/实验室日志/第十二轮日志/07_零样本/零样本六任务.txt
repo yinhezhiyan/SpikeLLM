@@ -1,0 +1,16 @@
+第十二轮 零样本六任务（r12_7b_aq_s2_zs，复用 r11_7b_aq_s2 checkpoint，全量评测）
+==================================================================
+
+口径: PIQA/ARC-e/ARC-c/HellaSwag 取 acc_norm；BoolQ/Winogrande 取 acc。
+
+  piqa             acc=0.6969532100108814  acc_norm=0.691512513601741  → 采 acc_norm = 0.6915
+  arc_easy         acc=0.5925925925925926  acc_norm=0.47264309764309764  → 采 acc_norm = 0.4726
+  arc_challenge    acc=0.3412969283276451  acc_norm=0.35665529010238906  → 采 acc_norm = 0.3567
+  boolq            acc=0.6305810397553517  acc_norm=None  → 采 acc = 0.6306
+  hellaswag        acc=0.4840669189404501  acc_norm=0.6361282613025294  → 采 acc_norm = 0.6361
+  winogrande       acc=0.5619573796369376  acc_norm=None  → 采 acc = 0.5620
+
+六任务均值 = 55.8246 %（0.6915 / 0.4726 / 0.3567 / 0.6306 / 0.6361 / 0.5620）
+
+说明：run.log 为 UTF-16；log_rank0 为 UTF-8，两者编码不同。
+      --limit -1（全量）导致 67078 次 loglikelihood 调用、约 15.5 h，非卡死。

@@ -1,0 +1,22 @@
+--- spike_driven_quant/spike_linear.py.bak_r5	2026-10-31 14:39:04.535352000 +0800
++++ spike_driven_quant/spike_linear.py	2026-10-30 19:54:26.000000000 +0800
+@@ -34,8 +34,9 @@
+         
+         self.orig_spikellm = act_quant_params.get("orig_spikellm", False)
+         self.ablate_orig_saliency = act_quant_params.get("ablate_orig_saliency", False)
++        self.ablate_no_linear_shield = act_quant_params.get("ablate_no_linear_shield", False)
+         self.legacy_multibit_bug = act_quant_params.get("legacy_multibit_bug", False)
+-        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_kv_shield", "legacy_multibit_bug"}
++        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_linear_shield", "ablate_no_kv_shield", "legacy_multibit_bug"}
+         act_quant_params_clean = {k: v for k, v in act_quant_params.items() if k not in _extra_keys}
+         if not disable_input_quant:
+             self.act_quantizer = UniformAffineQuantizer(**act_quant_params_clean)
+@@ -98,7 +99,7 @@
+         return mean, mask_low
+ 
+     def _quant_low(self, inputs: torch.Tensor, mask_low: torch.Tensor):
+-        if self.orig_spikellm:
++        if self.orig_spikellm or self.ablate_no_linear_shield:
+             return self.act_quantizer(inputs) * mask_low
+         # Mean-anchored outlier shielding: replaces high-saliency outlier channels (~mask_low)
+         # with the exact mean of the low-saliency subset (mask_low) prior to dynamic min-max calibration.

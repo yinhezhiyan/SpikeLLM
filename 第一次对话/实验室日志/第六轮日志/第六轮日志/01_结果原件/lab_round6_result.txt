@@ -1,0 +1,39 @@
+﻿SpikeLLM / OSDSQ v2  第六轮实验结果（实验室双 3090）
+生成时间: 2026-11-01 17:59:35
+项目路径: C:\Users\admin\Desktop\spikellm\SpikeLLM
+
+---- 既有 7B 参照（同协议：fake_binary, 128x20, alpha=0.75, let_lr=1e-3）----
+  FP16                5.4722 / 6.9727
+  Original  seed2    10.5726 / 13.7738    real 10.8108 / 14.1855
+  Original  seed3    10.6303 / 13.7965    real 10.8963 / 14.4792
+  OSDSQ v2  seed2     7.9792 / 10.6792    real  8.1570 / 10.8975
+  A-off     seed2    10.4181 / 12.9691    real 10.5408 / 13.5234
+
+### 7b_seed3_ours  (GPU0, seed=3, cache=./cache_seed3)
+  说明: seed3-OSDSQv2：与 seed3-Original 配对，产出主结果 mean±std
+  [fake] [2026-11-01 17:27:32 root] (main.py 147): INFO wikitext2 : 8.094834327697754
+  [fake] [2026-11-01 17:34:46 root] (main.py 147): INFO c4 : 10.712592124938965
+  [real] [2026-11-01 17:43:17 root] (main.py 147): INFO wikitext2 : 8.123409271240234
+  [real] [2026-11-01 17:55:08 root] (main.py 147): INFO c4 : 10.922171592712402
+  norm:nan 次数: 7
+
+### 7b_seed4_orig  (GPU1, seed=4, cache=./cache_seed4)
+  说明: seed4-Original：为下一轮 seed4-Ours 配对铺路（3 组种子误差棒）
+  [fake] [2026-11-01 17:28:46 root] (main.py 147): INFO wikitext2 : 10.53885269165039
+  [fake] [2026-11-01 17:35:55 root] (main.py 147): INFO c4 : 13.769993782043457
+  [real] [2026-11-01 17:45:48 root] (main.py 147): INFO wikitext2 : 10.75993537902832
+  [real] [2026-11-01 17:57:48 root] (main.py 147): INFO c4 : 14.341706275939941
+  norm:nan 次数: 12
+
+---- seed3 配对（本轮 Ours vs 既有 Original）----
+  Original seed3 : 10.6303 / 13.7965
+  上方 [fake] 两行即本轮 Ours；请人工相减得到 seed3 相对降幅，
+  再与 seed2 的 -24.5% / -22.5% 比较，判断种子间波动是否可接受（噪声带 0.55% / 0.16%）。
+
+---- 8B 下载状态 ----
+  INCOMPLETE：8B 未下完或失败，本轮主结果不受影响。
+  若 exit_code 非 0，请把 log/8b_download/run.log 尾部一并发回。
+
+---- 峰值显存 ----
+0, 11 MiB, 24576 MiB
+1, 306 MiB, 24576 MiB

@@ -1,0 +1,14 @@
+--- lab_round7_runner.ps1.bak_r7	2026-11-02 20:20:07.790431000 +0800
++++ lab_round7_runner.ps1	2026-11-02 20:20:31.144581800 +0800
+@@ -126,7 +126,10 @@
+     [switch]$Skip68M
+ )
+ 
+-$ErrorActionPreference = "Stop"
++# NOTE (lab machine fix 2026-11-02): PS 5.1 turns a native command's stderr line
++# into a terminating error when the preference is Stop, which kills the python child.
++# Rounds 5 and 6 both run with Continue plus explicit $LASTEXITCODE checks.
++$ErrorActionPreference = "Continue"
+ $Root = $PSScriptRoot
+ if ([string]::IsNullOrWhiteSpace($Root)) { $Root = (Get-Location).Path }
+ Set-Location $Root

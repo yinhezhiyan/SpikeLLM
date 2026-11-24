@@ -1,0 +1,77 @@
+================================================================================
+第十轮回传校验   生成 2026-11-09 02:34:24
+项目路径 C:\Users\admin\Desktop\spikellm\SpikeLLM
+================================================================================
+
+[1] 六条腿 PPL：log_rank0 原始值 vs lab_round10_result.txt
+    注：日志与 result.txt 里的数字都是 Python repr(float) 的最短往返表示，
+        位数在 15~16 位之间浮动（如 10.1475248336792 / 153.9588623046875），
+        不是精度损失。比对用数值容差 abs<1e-6。
+    tag                wt2(raw)               c4(raw)                与 txt 一致
+    r10_68m_repro      157.7880401611328      90.83118438720703      YES
+    r10_68m_aq_s2      155.9571075439453      89.03086853027344      YES
+    r10_68m_aq_s3      155.72607421875        89.08318328857422      YES
+    r10_68m_aq_s4      153.9588623046875      87.24759674072266      YES
+    r10_7b_aoff_seed3  10.1475248336792       12.978739738464355     YES
+    r10_7b_aoff_seed4  10.279709815979004     13.147843360900879     YES
+
+    结论：12/12 数字一致
+
+[2] 门禁一（硬门禁）判定
+    判据：与第七轮 r7_68m_mean_check 的 157.7880401611328 / 90.83118438720703 差 <0.0001
+    实测 157.7880401611328 / 90.83118438720703
+    差   wt2 0.000e+00   c4 0.000e+00
+    判定 PASS —— 补丁在开关关闭时逐位忠实
+
+[3] 本轮 argv 与可比性
+    --wbits 4 --abits 4 --addbit 1 --low_p 0.9 --let --lwc --aug_loss
+    --alpha 0.75 --let_lr 1e-3 --lwc_lr 1e-2 --nsamples 128 --epochs 20
+    fake_binary_simulate，零样本关闭，未跑 real_multibit
+    门禁一/门禁二 = 68M，cache ./cache；7B 两腿 = cache_seed3 / cache_seed4
+    7B 两腿额外带 --ablate_no_linear_shield；未传 --adaptive_quota。
+
+[4] 代码改动（3 文件，纯追加，唯一改写行见下）
+    main.py            +2 行（--adaptive_quota 参数、q_quant_params 传参）
+    spike_linear.py    +3 行（self.adaptive_quota、_extra_keys 追加、static() 存 saliency_score）
+    spike_omniquant.py +130 行（allocate_layer_quota + 1 处调用）
+    唯一被改写的一行：spike_linear.py 原 `_, mask_low_mse = self.get_channel_mask(self.sum)`
+      -> `mean, mask_low_mse = ...`。get_channel_mask 本就返回 (mean, mask_low)，
+      原丢弃的 mean 现存入 self.saliency_score，量化路径未变。
+    `import lab_compat`（lab 兼容修复）在 main.py:3 保留，未回退。
+    全文 diff 见 06_代码补丁与预检/r10_patch_diff.txt（192 行）。
+
+[5] 文件清单（字节 / md5，不含 05_回传包 自身）
+            8365  ba97816c3e4daeaf860adf1637702f26  README_索引.md
+            2234  2799e9fee4d95a05d88ca3ccbf602631  01_结果原件/lab_round10_result.txt
+            7026  841e137a154d8c377cc2a845a0d50a67  02_原始日志/lab_round10_console.log
+           64762  135fe255e474538ea0e0b32ccdd512e9  02_原始日志/lab_watch_round10.log
+            8924  39b19db4511451697bf59a7ba6319425  02_原始日志/r10_68m_aq_s2_log_rank0_1794127115.txt
+           38294  232ec17c616e8aecc5ca1e2243b9802b  02_原始日志/r10_68m_aq_s2_run.log
+            9038  5d934a7b890768264339713d85c8cf82  02_原始日志/r10_68m_aq_s3_log_rank0_1794128098.txt
+           38622  3112b930be37aa74970b37b20b880540  02_原始日志/r10_68m_aq_s3_run.log
+            9014  95e2e8381ea64495ed4fab38bd10aaa4  02_原始日志/r10_68m_aq_s4_log_rank0_1794129083.txt
+           38472  8c0ade070d7099aadbd6fcada297d8ab  02_原始日志/r10_68m_aq_s4_run.log
+            8272  dfa1c807a14060666b8666cfa47b86e1  02_原始日志/r10_68m_repro_log_rank0_1794126197.txt
+           36436  034e5b92580f7b0af8f2842c1ae1b63c  02_原始日志/r10_68m_repro_run.log
+          108365  18f5ea847539e35d5af79323552a469e  02_原始日志/r10_7b_aoff_seed3_log_rank0_1794130068.txt
+          266314  ffc98aa69c0612592bdc4860dfacecb2  02_原始日志/r10_7b_aoff_seed3_run.log
+          108345  623c81f149ff2d820ef7d79d813e8e80  02_原始日志/r10_7b_aoff_seed4_log_rank0_1794130068.txt
+          266278  4b2e743415f6e8d1c0a39cd78f79ae35  02_原始日志/r10_7b_aoff_seed4_run.log
+            1767  e20821f404b3dcfe1c1a61c44f25205f  03_门禁结果/补丁忠实性与Stage2门禁.txt
+          139170  2465945c0efe42e4339e77f58843e2c1  04_checkpoint/r10_68m_aq_s2_omni_parameters.pth
+          139170  f8622ef4f70b984f5e30dd3bdaa9b210  04_checkpoint/r10_68m_aq_s3_omni_parameters.pth
+          139170  12528ec1567667fe99bee0d8b0cabff5  04_checkpoint/r10_68m_aq_s4_omni_parameters.pth
+          139170  a9bdb27631c380bebae9effc68020362  04_checkpoint/r10_68m_repro_omni_parameters.pth
+         8983506  80da6a2a5cf5a1862d3afa4dcc37317e  04_checkpoint/r10_7b_aoff_seed3_omni_parameters.pth
+         8983506  c6c3a5de7e2c2f7f49d3169eb64ff60f  04_checkpoint/r10_7b_aoff_seed4_omni_parameters.pth
+            2760  ebdd0fc665e4955a169f8fff9d1512dc  06_代码补丁与预检/env_round10_preflight.txt
+           23012  d413b34462ff1e1e2da6ed9b62bdfa45  06_代码补丁与预检/lab_round10_runner.ps1
+            8777  2e466b04a2784067ecffefcaa83ed634  06_代码补丁与预检/r10_patch_diff.txt
+           18691  f201ca3a429f0e168da66a306ca80e7a  06_代码补丁与预检/backup_round10/main.py
+            9292  26e84e8f1a460d43ac071426c43b2c21  06_代码补丁与预检/backup_round10/spike_driven_quant/spike_linear.py
+           16886  ec2d2e594cc12cc26919f55c1cccc5dd  06_代码补丁与预检/backup_round10/spike_driven_quant/spike_omniquant.py
+           18942  ff2822496e959a13c8c54555b456699c  06_代码补丁与预检/patch/main.py
+            9487  6cb8959761f5776264b6697000ce79f9  06_代码补丁与预检/patch/spike_driven_quant/spike_linear.py
+           21931  b9f68c3ac306a6500b445071bd6b2175  06_代码补丁与预检/patch/spike_driven_quant/spike_omniquant.py
+            2741  cefc3b050a89cc8b36fd18ae471cf488  07_三种子统计/三种子与A贡献.txt
+    合计 33 个文件，18.77 MB（不含 05_回传包 自身）

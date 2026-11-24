@@ -1,0 +1,19 @@
+68M 模型与 act_stats 来源记录  2026-11-03 09:55:45
+
+[1] 模型（HF 缓存内，本轮首次下载，约 261 MB）
+  repo    : JackFram/llama-68m  (revision 9de84537b6aa98de634ad0fbb1608e9d6a019355)
+  snapshot: C:/Users/admin/Desktop/spikellm/hf_cache/hub/models--JackFram--llama-68m/snapshots/9de84537b6aa98de634ad0fbb1608e9d6a019355
+  config.json                     545  sha256 f8bd20739c51d3c398d5143a3267cc76a283f73037f62ecc6af589bae265ab95
+  pytorch_model.bin         272128630  sha256 e13fbc9fc40633b8c98c5462782b01564733574cb57c13b0f91319717e4b46a0
+  tokenizer.model              499723  sha256 9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347
+  tokenizer_config.json           747  sha256 c4cf64e7244037aa815bbb5aaba5a359606f31aea4f7c880729935e9e139ed90
+  config  : model_type=llama  layers=2  hidden=768  heads=12
+
+[2] act_stats（开发组随补丁提供，各 70048 B）
+  act_scales        70048  sha256 bd98757b0dd52e3fe75cc67dcc2f96a5213c3912eb127e414217970f8771648b
+  act_shifts        70048  sha256 ad66bb25207e66e338bf241a7ef260d90cdb51d833a3d1a583b15750b9f95e6d
+
+[3] 备注
+  7B 的 act_stats 沿用既有 act_scales|act_shifts\Llama-2-7b-hf.pt，未改动。
+  68M 分词器与 Llama-2-7b-hf 逐 token 等价（同一句 26 tokens、id 逐一相同），
+  故两者共用 ./cache 下的 testloader_llama_* 不会污染评测数字（Windows 文件名不区分大小写）。

@@ -1,0 +1,20 @@
+{
+  "model": "JackFram/llama-68m",
+  "nsamples": 8,
+  "seqlen": 2048,
+  "low_p": 0.9,
+  "overall_mean_r": 2.0002,
+  "overall_mean_r2": 4.0595,
+  "layers": [
+    {
+      "layer": 0,
+      "r_mean": 1.7576,
+      "r2_mean": 3.089
+    },
+    {
+      "layer": 1,
+      "r_mean": 2.2428,
+      "r2_mean": 5.03
+    }
+  ]
+}

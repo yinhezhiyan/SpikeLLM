@@ -1,0 +1,62 @@
+{
+  "fp16": {
+    "tasks": {
+      "arc_easy": 45.12,
+      "arc_challenge": 31.14,
+      "winogrande": 56.35,
+      "piqa": 71.76,
+      "boolq": 60.67,
+      "hellaswag": 57.6
+    },
+    "avg_acc": 53.77,
+    "elapsed_sec": 355.53
+  },
+  "orig_no_let": {
+    "tasks": {
+      "arc_easy": 33.5,
+      "arc_challenge": 24.66,
+      "winogrande": 49.09,
+      "piqa": 54.73,
+      "boolq": 60.31,
+      "hellaswag": 35.4
+    },
+    "avg_acc": 42.95,
+    "elapsed_sec": 1233.49
+  },
+  "orig_with_gqa_let": {
+    "tasks": {
+      "boolq": 59.82,
+      "arc_challenge": 27.82,
+      "arc_easy": 37.46,
+      "winogrande": 52.57,
+      "piqa": 60.23,
+      "hellaswag": 44.4
+    },
+    "avg_acc": 47.05,
+    "elapsed_sec": 2073.35
+  },
+  "osdsq_v2_no_let": {
+    "tasks": {
+      "boolq": 55.41,
+      "arc_challenge": 26.96,
+      "arc_easy": 36.78,
+      "winogrande": 50.04,
+      "piqa": 59.47,
+      "hellaswag": 46.0
+    },
+    "avg_acc": 45.78,
+    "elapsed_sec": 2310.95
+  },
+  "osdsq_v2_with_gqa_let": {
+    "tasks": {
+      "boolq": 58.23,
+      "arc_challenge": 27.22,
+      "arc_easy": 38.43,
+      "winogrande": 53.75,
+      "piqa": 63.33,
+      "hellaswag": 45.9
+    },
+    "avg_acc": 47.81,
+    "elapsed_sec": 2344.01
+  }
+}

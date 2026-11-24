@@ -1,0 +1,25 @@
+--- spike_driven_quant/spike_linear.py.bak_r6	2026-11-01 10:09:58.799760800 +0800
++++ spike_driven_quant/spike_linear.py	2026-10-31 18:52:02.000000000 +0800
+@@ -35,8 +35,9 @@
+         self.orig_spikellm = act_quant_params.get("orig_spikellm", False)
+         self.ablate_orig_saliency = act_quant_params.get("ablate_orig_saliency", False)
+         self.ablate_no_linear_shield = act_quant_params.get("ablate_no_linear_shield", False)
++        self.shield_mode = act_quant_params.get("shield_mode", "mean")
+         self.legacy_multibit_bug = act_quant_params.get("legacy_multibit_bug", False)
+-        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_linear_shield", "ablate_no_kv_shield", "legacy_multibit_bug"}
++        _extra_keys = {"orig_spikellm", "ablate_orig_saliency", "ablate_no_linear_shield", "ablate_no_kv_shield", "legacy_multibit_bug", "shield_mode"}
+         act_quant_params_clean = {k: v for k, v in act_quant_params.items() if k not in _extra_keys}
+         if not disable_input_quant:
+             self.act_quantizer = UniformAffineQuantizer(**act_quant_params_clean)
+@@ -101,6 +102,11 @@
+     def _quant_low(self, inputs: torch.Tensor, mask_low: torch.Tensor):
+         if self.orig_spikellm or self.ablate_no_linear_shield:
+             return self.act_quantizer(inputs) * mask_low
++        if self.shield_mode == "zero":
++            # v1 baseline: zero-padding the outlier channels. Kept only for controlled
++            # comparison; it biases [xmin, xmax] toward 0 when the low-saliency subset
++            # is entirely positive or entirely negative.
++            return self.act_quantizer(torch.where(mask_low, inputs, torch.zeros_like(inputs))) * mask_low
+         # Mean-anchored outlier shielding: replaces high-saliency outlier channels (~mask_low)
+         # with the exact mean of the low-saliency subset (mask_low) prior to dynamic min-max calibration.
+         # Because min(S) <= mean(S) <= max(S) for any non-empty set S, this preserves the exact

@@ -1,0 +1,11 @@
+[2026-10-18 22:05:47 root] (main.py 266): INFO Namespace(model='JackFram/llama-68m', cache_dir='./cache', output_dir='./log/llama-68m', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=2, let=False, lwc=True, aug_loss=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, addbit=1, low_p=0.9)
+[2026-10-18 22:05:50 root] (main.py 338): INFO === start quantization ===
+[2026-10-18 22:05:50 root] (main.py 344): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2026-10-18 22:05:50 root] (spike_omniquant.py 87): INFO Starting ...
+[2026-10-18 22:05:50 root] (spike_omniquant.py 230): INFO === Start quantize layer 0 ===
+[2026-10-18 22:07:20 root] (spike_omniquant.py 312): INFO layer 0 iter 0 loss:0.0832323357462883 norm:nan max memory_allocated 2064.755859375 
+[2026-10-18 22:07:27 root] (spike_omniquant.py 312): INFO layer 0 iter 1 loss:0.07279351353645325 norm:0.0003991368575952947 max memory_allocated 2064.755859375 
+[2026-10-18 22:07:29 root] (spike_omniquant.py 230): INFO === Start quantize layer 1 ===
+[2026-10-18 22:08:56 root] (spike_omniquant.py 312): INFO layer 1 iter 0 loss:2.7914812564849854 norm:nan max memory_allocated 2064.755859375 
+[2026-10-18 22:09:04 root] (spike_omniquant.py 312): INFO layer 1 iter 1 loss:2.484776258468628 norm:0.0035923882387578487 max memory_allocated 2064.755859375 
+[2026-10-18 22:09:06 root] (main.py 367): INFO 195.94618201255798

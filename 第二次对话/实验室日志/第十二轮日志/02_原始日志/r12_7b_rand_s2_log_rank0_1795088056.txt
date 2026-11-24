@@ -1,0 +1,713 @@
+[2026-11-19 19:34:16 root] (main.py 279): INFO Namespace(model='C:\\Users\\admin\\Desktop\\spikellm\\SpikeLLM\\models\\Llama-2-7b-hf', cache_dir='./cache', output_dir='./log/r12_7b_rand_s2', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.75, let_lr=0.001, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, aug_loss=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=False, attn_implementation='eager', net='Llama-2-7b-hf', act_scales=None, act_shifts=None, addbit=1, low_p=0.9, orig_spikellm=False, ablate_no_linear_shield=False, shield_mode='mean', ablate_no_kv_shield=False, ablate_orig_saliency=False, ablate_orig_loss=False, adaptive_quota=True, quota_policy='random', sim_mode='fake_binary_simulate', legacy_multibit_bug=False)
+[2026-11-19 19:34:17 root] (main.py 366): INFO === start quantization ===
+[2026-11-19 19:34:17 root] (main.py 372): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2026-11-19 19:34:17 root] (spike_omniquant.py 273): INFO Starting ...
+[2026-11-19 19:34:19 root] (spike_omniquant.py 421): INFO === Start quantize layer 0 ===
+[2026-11-19 19:36:52 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.000075 -> 0.000075 (+0.00%) | high_MACs 20253696 -> 20249344 (-0.02%) | k_proj:3686/4096(0.900), v_proj:3686/4096(0.900), q_proj:3466/4096(0.846), o_proj:3684/4096(0.899), gate_proj:3605/4096(0.880), down_proj:9907/11008(0.900), up_proj:3850/4096(0.940)
+[2026-11-19 19:37:27 root] (spike_omniquant.py 526): INFO layer 0 iter 0 loss:0.0006668240530416369 norm:0.0005639151786454022 max memory_allocated 18303.0234375 
+[2026-11-19 19:37:58 root] (spike_omniquant.py 526): INFO layer 0 iter 1 loss:0.0003732569166459143 norm:5.508948743226938e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:38:30 root] (spike_omniquant.py 526): INFO layer 0 iter 2 loss:0.00034876566496677697 norm:4.5334778405958787e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:39:01 root] (spike_omniquant.py 526): INFO layer 0 iter 3 loss:0.0003356000524945557 norm:3.998760075774044e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:39:33 root] (spike_omniquant.py 526): INFO layer 0 iter 4 loss:0.0003279769734945148 norm:3.506445136736147e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:40:04 root] (spike_omniquant.py 526): INFO layer 0 iter 5 loss:0.00031913421116769314 norm:3.0376804716070183e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:40:35 root] (spike_omniquant.py 526): INFO layer 0 iter 6 loss:0.00031396778649650514 norm:2.8126929464633577e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:41:07 root] (spike_omniquant.py 526): INFO layer 0 iter 7 loss:0.00030983510077930987 norm:2.717857205425389e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:41:38 root] (spike_omniquant.py 526): INFO layer 0 iter 8 loss:0.00030794928898103535 norm:2.9307002478162758e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:42:10 root] (spike_omniquant.py 526): INFO layer 0 iter 9 loss:0.0003056511632166803 norm:2.5624225600040518e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:42:41 root] (spike_omniquant.py 526): INFO layer 0 iter 10 loss:0.0003056833811569959 norm:2.669766399776563e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:43:12 root] (spike_omniquant.py 526): INFO layer 0 iter 11 loss:0.0003031547530554235 norm:2.2784966859035194e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:43:44 root] (spike_omniquant.py 526): INFO layer 0 iter 12 loss:0.00029969465686008334 norm:2.2235148207983002e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:44:15 root] (spike_omniquant.py 526): INFO layer 0 iter 13 loss:0.0002991358342114836 norm:2.2650687242276035e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:44:47 root] (spike_omniquant.py 526): INFO layer 0 iter 14 loss:0.0002992445370182395 norm:2.2093086954555474e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:45:18 root] (spike_omniquant.py 526): INFO layer 0 iter 15 loss:0.0002977063995786011 norm:2.1419553377199918e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:45:49 root] (spike_omniquant.py 526): INFO layer 0 iter 16 loss:0.0002970457717310637 norm:2.0174709788989276e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:46:21 root] (spike_omniquant.py 526): INFO layer 0 iter 17 loss:0.0002972522343043238 norm:2.1910447685513645e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:46:52 root] (spike_omniquant.py 526): INFO layer 0 iter 18 loss:0.0002956968382932246 norm:2.2502345018438064e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:47:24 root] (spike_omniquant.py 526): INFO layer 0 iter 19 loss:0.0002951714850496501 norm:2.4013244910747744e-05 max memory_allocated 18303.0234375 
+[2026-11-19 19:47:31 root] (spike_omniquant.py 421): INFO === Start quantize layer 1 ===
+[2026-11-19 19:50:04 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.030443 -> 0.030004 (-1.44%) | high_MACs 20253696 -> 20252416 (-0.01%) | k_proj:3904/4096(0.953), v_proj:3686/4096(0.900), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3605/4096(0.880), down_proj:10127/11008(0.920), up_proj:3686/4096(0.900)
+[2026-11-19 19:50:36 root] (spike_omniquant.py 526): INFO layer 1 iter 0 loss:0.03682955354452133 norm:nan max memory_allocated 18304.421875 
+[2026-11-19 19:51:07 root] (spike_omniquant.py 526): INFO layer 1 iter 1 loss:0.019991379231214523 norm:0.013781677931547165 max memory_allocated 18304.421875 
+[2026-11-19 19:51:39 root] (spike_omniquant.py 526): INFO layer 1 iter 2 loss:0.014125741086900234 norm:0.010992104187607765 max memory_allocated 18304.421875 
+[2026-11-19 19:52:10 root] (spike_omniquant.py 526): INFO layer 1 iter 3 loss:0.010775596834719181 norm:0.008763733319938183 max memory_allocated 18304.421875 
+[2026-11-19 19:52:42 root] (spike_omniquant.py 526): INFO layer 1 iter 4 loss:0.00949292816221714 norm:0.007666922174394131 max memory_allocated 18304.421875 
+[2026-11-19 19:53:14 root] (spike_omniquant.py 526): INFO layer 1 iter 5 loss:0.00855104811489582 norm:0.006710641086101532 max memory_allocated 18304.421875 
+[2026-11-19 19:53:45 root] (spike_omniquant.py 526): INFO layer 1 iter 6 loss:0.008349861949682236 norm:0.006283514201641083 max memory_allocated 18304.421875 
+[2026-11-19 19:54:17 root] (spike_omniquant.py 526): INFO layer 1 iter 7 loss:0.008349379524588585 norm:0.00600593164563179 max memory_allocated 18304.421875 
+[2026-11-19 19:54:48 root] (spike_omniquant.py 526): INFO layer 1 iter 8 loss:0.007806778885424137 norm:0.005369442980736494 max memory_allocated 18304.421875 
+[2026-11-19 19:55:20 root] (spike_omniquant.py 526): INFO layer 1 iter 9 loss:0.007772549986839294 norm:0.004855096340179443 max memory_allocated 18304.421875 
+[2026-11-19 19:55:52 root] (spike_omniquant.py 526): INFO layer 1 iter 10 loss:0.0076062302105128765 norm:0.004786136094480753 max memory_allocated 18304.421875 
+[2026-11-19 19:56:24 root] (spike_omniquant.py 526): INFO layer 1 iter 11 loss:0.007455209270119667 norm:0.00437420466914773 max memory_allocated 18304.421875 
+[2026-11-19 19:56:55 root] (spike_omniquant.py 526): INFO layer 1 iter 12 loss:0.007473750039935112 norm:0.004647011868655682 max memory_allocated 18304.421875 
+[2026-11-19 19:57:27 root] (spike_omniquant.py 526): INFO layer 1 iter 13 loss:0.007498668506741524 norm:0.0046842508018016815 max memory_allocated 18304.421875 
+[2026-11-19 19:57:58 root] (spike_omniquant.py 526): INFO layer 1 iter 14 loss:0.007288587279617786 norm:0.004434232600033283 max memory_allocated 18304.421875 
+[2026-11-19 19:58:30 root] (spike_omniquant.py 526): INFO layer 1 iter 15 loss:0.007229963783174753 norm:0.004216195549815893 max memory_allocated 18304.421875 
+[2026-11-19 19:59:01 root] (spike_omniquant.py 526): INFO layer 1 iter 16 loss:0.0072777122259140015 norm:0.004373204428702593 max memory_allocated 18304.421875 
+[2026-11-19 19:59:33 root] (spike_omniquant.py 526): INFO layer 1 iter 17 loss:0.0071351369842886925 norm:0.004026251845061779 max memory_allocated 18304.421875 
+[2026-11-19 20:00:04 root] (spike_omniquant.py 526): INFO layer 1 iter 18 loss:0.007121702190488577 norm:0.0038042294327169657 max memory_allocated 18304.421875 
+[2026-11-19 20:00:35 root] (spike_omniquant.py 526): INFO layer 1 iter 19 loss:0.00709193293005228 norm:0.004063471220433712 max memory_allocated 18304.421875 
+[2026-11-19 20:00:43 root] (spike_omniquant.py 421): INFO === Start quantize layer 2 ===
+[2026-11-19 20:03:16 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.000484 -> 0.000494 (+2.17%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3466/4096(0.846), v_proj:3466/4096(0.846), q_proj:3904/4096(0.953), o_proj:3686/4096(0.900), gate_proj:3605/4096(0.880), down_proj:10127/11008(0.920), up_proj:3768/4096(0.920)
+[2026-11-19 20:03:47 root] (spike_omniquant.py 526): INFO layer 2 iter 0 loss:0.006958662532269955 norm:0.0008077541715465486 max memory_allocated 18305.8203125 
+[2026-11-19 20:04:19 root] (spike_omniquant.py 526): INFO layer 2 iter 1 loss:0.006253063213080168 norm:0.00039502562140114605 max memory_allocated 18305.8203125 
+[2026-11-19 20:04:50 root] (spike_omniquant.py 526): INFO layer 2 iter 2 loss:0.0059775435365736485 norm:0.00021499484137166291 max memory_allocated 18305.8203125 
+[2026-11-19 20:05:22 root] (spike_omniquant.py 526): INFO layer 2 iter 3 loss:0.005851393565535545 norm:0.00014535967784468085 max memory_allocated 18305.8203125 
+[2026-11-19 20:05:53 root] (spike_omniquant.py 526): INFO layer 2 iter 4 loss:0.005793244577944279 norm:0.00012311231694184244 max memory_allocated 18305.8203125 
+[2026-11-19 20:06:24 root] (spike_omniquant.py 526): INFO layer 2 iter 5 loss:0.0057494789361953735 norm:0.00010506574471946806 max memory_allocated 18305.8203125 
+[2026-11-19 20:06:56 root] (spike_omniquant.py 526): INFO layer 2 iter 6 loss:0.005707298405468464 norm:9.068742656381801e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:07:27 root] (spike_omniquant.py 526): INFO layer 2 iter 7 loss:0.005682623945176601 norm:8.544835145585239e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:07:59 root] (spike_omniquant.py 526): INFO layer 2 iter 8 loss:0.005669109523296356 norm:8.384673128603026e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:08:30 root] (spike_omniquant.py 526): INFO layer 2 iter 9 loss:0.005663646385073662 norm:8.140531281242147e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:09:02 root] (spike_omniquant.py 526): INFO layer 2 iter 10 loss:0.005655393004417419 norm:7.995800842763856e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:09:33 root] (spike_omniquant.py 526): INFO layer 2 iter 11 loss:0.005640359595417976 norm:7.601121615152806e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:10:05 root] (spike_omniquant.py 526): INFO layer 2 iter 12 loss:0.005629801191389561 norm:7.37313530407846e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:10:36 root] (spike_omniquant.py 526): INFO layer 2 iter 13 loss:0.005618128925561905 norm:7.02740580891259e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:11:08 root] (spike_omniquant.py 526): INFO layer 2 iter 14 loss:0.005609295796602964 norm:6.8083951191511e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:11:39 root] (spike_omniquant.py 526): INFO layer 2 iter 15 loss:0.005602661054581404 norm:6.877875421196222e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:12:11 root] (spike_omniquant.py 526): INFO layer 2 iter 16 loss:0.00559581583365798 norm:6.701562233502045e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:12:42 root] (spike_omniquant.py 526): INFO layer 2 iter 17 loss:0.005589426029473543 norm:6.47038541501388e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:13:14 root] (spike_omniquant.py 526): INFO layer 2 iter 18 loss:0.0055828578770160675 norm:6.409746856661513e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:13:45 root] (spike_omniquant.py 526): INFO layer 2 iter 19 loss:0.005578481126576662 norm:6.434189708670601e-05 max memory_allocated 18305.8203125 
+[2026-11-19 20:13:52 root] (spike_omniquant.py 421): INFO === Start quantize layer 3 ===
+[2026-11-19 20:16:26 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.000952 -> 0.000952 (-0.05%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3466/4096(0.846), v_proj:3686/4096(0.900), q_proj:3906/4096(0.954), o_proj:3684/4096(0.899), gate_proj:3605/4096(0.880), down_proj:9907/11008(0.900), up_proj:3768/4096(0.920)
+[2026-11-19 20:16:57 root] (spike_omniquant.py 526): INFO layer 3 iter 0 loss:0.007995142601430416 norm:0.0006608741823583841 max memory_allocated 18307.21875 
+[2026-11-19 20:17:28 root] (spike_omniquant.py 526): INFO layer 3 iter 1 loss:0.007427840493619442 norm:0.00028168302378617227 max memory_allocated 18307.21875 
+[2026-11-19 20:18:00 root] (spike_omniquant.py 526): INFO layer 3 iter 2 loss:0.007219450548291206 norm:0.00016091774159576744 max memory_allocated 18307.21875 
+[2026-11-19 20:18:31 root] (spike_omniquant.py 526): INFO layer 3 iter 3 loss:0.007103464566171169 norm:0.00012051322119077668 max memory_allocated 18307.21875 
+[2026-11-19 20:19:03 root] (spike_omniquant.py 526): INFO layer 3 iter 4 loss:0.007041634060442448 norm:0.00011024261038983241 max memory_allocated 18307.21875 
+[2026-11-19 20:19:34 root] (spike_omniquant.py 526): INFO layer 3 iter 5 loss:0.006985568441450596 norm:9.819468687055632e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:20:06 root] (spike_omniquant.py 526): INFO layer 3 iter 6 loss:0.006955823861062527 norm:9.003583545563743e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:20:37 root] (spike_omniquant.py 526): INFO layer 3 iter 7 loss:0.00693860650062561 norm:8.654185512568802e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:21:09 root] (spike_omniquant.py 526): INFO layer 3 iter 8 loss:0.006912921089679003 norm:8.254584099631757e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:21:40 root] (spike_omniquant.py 526): INFO layer 3 iter 9 loss:0.006895534694194794 norm:8.005741983652115e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:22:12 root] (spike_omniquant.py 526): INFO layer 3 iter 10 loss:0.006888341624289751 norm:8.000447996892035e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:22:43 root] (spike_omniquant.py 526): INFO layer 3 iter 11 loss:0.00687828753143549 norm:7.681769784539938e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:23:14 root] (spike_omniquant.py 526): INFO layer 3 iter 12 loss:0.006869439501315355 norm:7.431210542563349e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:23:46 root] (spike_omniquant.py 526): INFO layer 3 iter 13 loss:0.006864332593977451 norm:7.28340310161002e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:24:17 root] (spike_omniquant.py 526): INFO layer 3 iter 14 loss:0.0068544358946383 norm:7.123400428099558e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:24:49 root] (spike_omniquant.py 526): INFO layer 3 iter 15 loss:0.006849031895399094 norm:6.871775985928252e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:25:20 root] (spike_omniquant.py 526): INFO layer 3 iter 16 loss:0.006840197369456291 norm:6.896970444358885e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:25:52 root] (spike_omniquant.py 526): INFO layer 3 iter 17 loss:0.006829349789768457 norm:6.645426765317097e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:26:23 root] (spike_omniquant.py 526): INFO layer 3 iter 18 loss:0.006819137372076511 norm:6.506945646833628e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:26:55 root] (spike_omniquant.py 526): INFO layer 3 iter 19 loss:0.006811460014432669 norm:6.363921420415863e-05 max memory_allocated 18307.21875 
+[2026-11-19 20:27:02 root] (spike_omniquant.py 421): INFO === Start quantize layer 4 ===
+[2026-11-19 20:29:35 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.001169 -> 0.001144 (-2.21%) | high_MACs 20253696 -> 20253696 (+0.00%) | k_proj:3906/4096(0.954), v_proj:3906/4096(0.954), q_proj:3466/4096(0.846), o_proj:3906/4096(0.954), gate_proj:3686/4096(0.900), down_proj:9467/11008(0.860), up_proj:3686/4096(0.900)
+[2026-11-19 20:30:07 root] (spike_omniquant.py 526): INFO layer 4 iter 0 loss:0.009255688637495041 norm:0.00025024532806128263 max memory_allocated 18308.6171875 
+[2026-11-19 20:30:38 root] (spike_omniquant.py 526): INFO layer 4 iter 1 loss:0.009027395397424698 norm:0.00014859254588373005 max memory_allocated 18308.6171875 
+[2026-11-19 20:31:10 root] (spike_omniquant.py 526): INFO layer 4 iter 2 loss:0.008832080289721489 norm:0.00010671737982193008 max memory_allocated 18308.6171875 
+[2026-11-19 20:31:41 root] (spike_omniquant.py 526): INFO layer 4 iter 3 loss:0.008699157275259495 norm:9.158429747913033e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:32:12 root] (spike_omniquant.py 526): INFO layer 4 iter 4 loss:0.0086209112778306 norm:8.007691212696955e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:32:44 root] (spike_omniquant.py 526): INFO layer 4 iter 5 loss:0.008582818321883678 norm:7.63732023187913e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:33:15 root] (spike_omniquant.py 526): INFO layer 4 iter 6 loss:0.008553714491426945 norm:7.352283864747733e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:33:47 root] (spike_omniquant.py 526): INFO layer 4 iter 7 loss:0.008523617871105671 norm:7.092666055541486e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:34:18 root] (spike_omniquant.py 526): INFO layer 4 iter 8 loss:0.008493542671203613 norm:6.833430961705744e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:34:50 root] (spike_omniquant.py 526): INFO layer 4 iter 9 loss:0.00847296416759491 norm:6.497680442407727e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:35:21 root] (spike_omniquant.py 526): INFO layer 4 iter 10 loss:0.008459256961941719 norm:6.426070467568934e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:35:53 root] (spike_omniquant.py 526): INFO layer 4 iter 11 loss:0.008447491563856602 norm:6.299259985098615e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:36:24 root] (spike_omniquant.py 526): INFO layer 4 iter 12 loss:0.008433111011981964 norm:6.136426236480474e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:36:56 root] (spike_omniquant.py 526): INFO layer 4 iter 13 loss:0.008420371450483799 norm:6.068336369935423e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:37:27 root] (spike_omniquant.py 526): INFO layer 4 iter 14 loss:0.008404199033975601 norm:5.8577654272085056e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:37:59 root] (spike_omniquant.py 526): INFO layer 4 iter 15 loss:0.008392749354243279 norm:5.8483201428316534e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:38:30 root] (spike_omniquant.py 526): INFO layer 4 iter 16 loss:0.008383081294596195 norm:5.831637099618092e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:39:02 root] (spike_omniquant.py 526): INFO layer 4 iter 17 loss:0.00837179459631443 norm:5.8185323723591864e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:39:33 root] (spike_omniquant.py 526): INFO layer 4 iter 18 loss:0.008360853418707848 norm:5.707410673494451e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:40:05 root] (spike_omniquant.py 526): INFO layer 4 iter 19 loss:0.008349365554749966 norm:5.5780503316782415e-05 max memory_allocated 18308.6171875 
+[2026-11-19 20:40:12 root] (spike_omniquant.py 421): INFO === Start quantize layer 5 ===
+[2026-11-19 20:42:45 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.002163 -> 0.002031 (-6.10%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3904/4096(0.953), v_proj:3466/4096(0.846), q_proj:3906/4096(0.954), o_proj:3466/4096(0.846), gate_proj:3687/4096(0.900), down_proj:9907/11008(0.900), up_proj:3686/4096(0.900)
+[2026-11-19 20:43:16 root] (spike_omniquant.py 526): INFO layer 5 iter 0 loss:0.011320916935801506 norm:0.0003656615735962987 max memory_allocated 18310.015625 
+[2026-11-19 20:43:48 root] (spike_omniquant.py 526): INFO layer 5 iter 1 loss:0.01093085203319788 norm:0.00017614493845030665 max memory_allocated 18310.015625 
+[2026-11-19 20:44:19 root] (spike_omniquant.py 526): INFO layer 5 iter 2 loss:0.010736732743680477 norm:0.00014742405619472265 max memory_allocated 18310.015625 
+[2026-11-19 20:44:50 root] (spike_omniquant.py 526): INFO layer 5 iter 3 loss:0.010608470998704433 norm:0.00013331606169231236 max memory_allocated 18310.015625 
+[2026-11-19 20:45:22 root] (spike_omniquant.py 526): INFO layer 5 iter 4 loss:0.01052695419639349 norm:0.00012004263408016413 max memory_allocated 18310.015625 
+[2026-11-19 20:45:53 root] (spike_omniquant.py 526): INFO layer 5 iter 5 loss:0.010476499795913696 norm:0.00011134029773529619 max memory_allocated 18310.015625 
+[2026-11-19 20:46:25 root] (spike_omniquant.py 526): INFO layer 5 iter 6 loss:0.010433614253997803 norm:0.00010588628356344998 max memory_allocated 18310.015625 
+[2026-11-19 20:46:56 root] (spike_omniquant.py 526): INFO layer 5 iter 7 loss:0.01040557399392128 norm:0.00010644519352354109 max memory_allocated 18310.015625 
+[2026-11-19 20:47:28 root] (spike_omniquant.py 526): INFO layer 5 iter 8 loss:0.010381772182881832 norm:0.00010380289313616231 max memory_allocated 18310.015625 
+[2026-11-19 20:47:59 root] (spike_omniquant.py 526): INFO layer 5 iter 9 loss:0.010354632511734962 norm:0.0001014350273180753 max memory_allocated 18310.015625 
+[2026-11-19 20:48:31 root] (spike_omniquant.py 526): INFO layer 5 iter 10 loss:0.010330278426408768 norm:9.951087122317404e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:49:02 root] (spike_omniquant.py 526): INFO layer 5 iter 11 loss:0.010312996804714203 norm:9.574043360771611e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:49:33 root] (spike_omniquant.py 526): INFO layer 5 iter 12 loss:0.010294416919350624 norm:9.594506263965741e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:50:05 root] (spike_omniquant.py 526): INFO layer 5 iter 13 loss:0.01027296856045723 norm:9.207770926877856e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:50:36 root] (spike_omniquant.py 526): INFO layer 5 iter 14 loss:0.010255622677505016 norm:8.918981620809063e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:51:08 root] (spike_omniquant.py 526): INFO layer 5 iter 15 loss:0.010235384106636047 norm:8.814776811050251e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:51:39 root] (spike_omniquant.py 526): INFO layer 5 iter 16 loss:0.010216707363724709 norm:8.373518357984722e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:52:11 root] (spike_omniquant.py 526): INFO layer 5 iter 17 loss:0.0102001978084445 norm:8.354426245205104e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:52:42 root] (spike_omniquant.py 526): INFO layer 5 iter 18 loss:0.010181115940213203 norm:8.297667227452621e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:53:14 root] (spike_omniquant.py 526): INFO layer 5 iter 19 loss:0.010170095600187778 norm:8.393836469622329e-05 max memory_allocated 18310.015625 
+[2026-11-19 20:53:21 root] (spike_omniquant.py 421): INFO === Start quantize layer 6 ===
+[2026-11-19 20:55:53 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.003990 -> 0.003798 (-4.81%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3906/4096(0.954), v_proj:3684/4096(0.899), q_proj:3466/4096(0.846), o_proj:3906/4096(0.954), gate_proj:3605/4096(0.880), down_proj:9687/11008(0.880), up_proj:3768/4096(0.920)
+[2026-11-19 20:56:25 root] (spike_omniquant.py 526): INFO layer 6 iter 0 loss:0.01465591974556446 norm:0.0010546889388933778 max memory_allocated 18311.4140625 
+[2026-11-19 20:56:56 root] (spike_omniquant.py 526): INFO layer 6 iter 1 loss:0.01365351490676403 norm:0.0003774103824980557 max memory_allocated 18311.4140625 
+[2026-11-19 20:57:27 root] (spike_omniquant.py 526): INFO layer 6 iter 2 loss:0.013319818302989006 norm:0.00021085119806230068 max memory_allocated 18311.4140625 
+[2026-11-19 20:57:59 root] (spike_omniquant.py 526): INFO layer 6 iter 3 loss:0.013052672147750854 norm:0.00018789716705214232 max memory_allocated 18311.4140625 
+[2026-11-19 20:58:30 root] (spike_omniquant.py 526): INFO layer 6 iter 4 loss:0.012915977276861668 norm:0.00016265622980426997 max memory_allocated 18311.4140625 
+[2026-11-19 20:59:02 root] (spike_omniquant.py 526): INFO layer 6 iter 5 loss:0.012833434157073498 norm:0.00014945455768611282 max memory_allocated 18311.4140625 
+[2026-11-19 20:59:33 root] (spike_omniquant.py 526): INFO layer 6 iter 6 loss:0.012780701741576195 norm:0.00013632452464662492 max memory_allocated 18311.4140625 
+[2026-11-19 21:00:05 root] (spike_omniquant.py 526): INFO layer 6 iter 7 loss:0.01273440383374691 norm:0.00013043248327448964 max memory_allocated 18311.4140625 
+[2026-11-19 21:00:36 root] (spike_omniquant.py 526): INFO layer 6 iter 8 loss:0.012697462923824787 norm:0.00012496703129727393 max memory_allocated 18311.4140625 
+[2026-11-19 21:01:08 root] (spike_omniquant.py 526): INFO layer 6 iter 9 loss:0.012661231681704521 norm:0.0001202519706566818 max memory_allocated 18311.4140625 
+[2026-11-19 21:01:39 root] (spike_omniquant.py 526): INFO layer 6 iter 10 loss:0.012633188627660275 norm:0.00011703670315910131 max memory_allocated 18311.4140625 
+[2026-11-19 21:02:10 root] (spike_omniquant.py 526): INFO layer 6 iter 11 loss:0.012598346918821335 norm:0.00011285603977739811 max memory_allocated 18311.4140625 
+[2026-11-19 21:02:42 root] (spike_omniquant.py 526): INFO layer 6 iter 12 loss:0.012561255134642124 norm:0.00011113027721876279 max memory_allocated 18311.4140625 
+[2026-11-19 21:03:13 root] (spike_omniquant.py 526): INFO layer 6 iter 13 loss:0.012521340511739254 norm:0.00010906060197157785 max memory_allocated 18311.4140625 
+[2026-11-19 21:03:45 root] (spike_omniquant.py 526): INFO layer 6 iter 14 loss:0.012488598003983498 norm:0.00010852231207536533 max memory_allocated 18311.4140625 
+[2026-11-19 21:04:16 root] (spike_omniquant.py 526): INFO layer 6 iter 15 loss:0.012460015714168549 norm:0.00010712620860431343 max memory_allocated 18311.4140625 
+[2026-11-19 21:04:48 root] (spike_omniquant.py 526): INFO layer 6 iter 16 loss:0.012439150363206863 norm:0.00010655630467226729 max memory_allocated 18311.4140625 
+[2026-11-19 21:05:19 root] (spike_omniquant.py 526): INFO layer 6 iter 17 loss:0.012425062246620655 norm:0.00010523296805331483 max memory_allocated 18311.4140625 
+[2026-11-19 21:05:51 root] (spike_omniquant.py 526): INFO layer 6 iter 18 loss:0.01241015549749136 norm:0.00010522793309064582 max memory_allocated 18311.4140625 
+[2026-11-19 21:06:22 root] (spike_omniquant.py 526): INFO layer 6 iter 19 loss:0.012396790087223053 norm:0.00010500948701519519 max memory_allocated 18311.4140625 
+[2026-11-19 21:06:29 root] (spike_omniquant.py 421): INFO === Start quantize layer 7 ===
+[2026-11-19 21:09:02 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.005523 -> 0.005187 (-6.07%) | high_MACs 20253696 -> 20250624 (-0.02%) | k_proj:3906/4096(0.954), v_proj:3686/4096(0.900), q_proj:3686/4096(0.900), o_proj:3686/4096(0.900), gate_proj:3768/4096(0.920), down_proj:9247/11008(0.840), up_proj:3768/4096(0.920)
+[2026-11-19 21:09:33 root] (spike_omniquant.py 526): INFO layer 7 iter 0 loss:0.017608901485800743 norm:0.0009703412652015686 max memory_allocated 18312.8125 
+[2026-11-19 21:10:05 root] (spike_omniquant.py 526): INFO layer 7 iter 1 loss:0.01652240939438343 norm:0.0003879977739416063 max memory_allocated 18312.8125 
+[2026-11-19 21:10:36 root] (spike_omniquant.py 526): INFO layer 7 iter 2 loss:0.01597447320818901 norm:0.00022549621644429862 max memory_allocated 18312.8125 
+[2026-11-19 21:11:08 root] (spike_omniquant.py 526): INFO layer 7 iter 3 loss:0.015683047473430634 norm:0.00020338075410109013 max memory_allocated 18312.8125 
+[2026-11-19 21:11:39 root] (spike_omniquant.py 526): INFO layer 7 iter 4 loss:0.015536594204604626 norm:0.00016430096002295613 max memory_allocated 18312.8125 
+[2026-11-19 21:12:11 root] (spike_omniquant.py 526): INFO layer 7 iter 5 loss:0.015441362746059895 norm:0.00014667461800854653 max memory_allocated 18312.8125 
+[2026-11-19 21:12:42 root] (spike_omniquant.py 526): INFO layer 7 iter 6 loss:0.01536525972187519 norm:0.00013843308261130005 max memory_allocated 18312.8125 
+[2026-11-19 21:13:14 root] (spike_omniquant.py 526): INFO layer 7 iter 7 loss:0.015307774767279625 norm:0.00013043791113886982 max memory_allocated 18312.8125 
+[2026-11-19 21:13:45 root] (spike_omniquant.py 526): INFO layer 7 iter 8 loss:0.015253027901053429 norm:0.00012791785411536694 max memory_allocated 18312.8125 
+[2026-11-19 21:14:16 root] (spike_omniquant.py 526): INFO layer 7 iter 9 loss:0.01519533060491085 norm:0.00012719440564978868 max memory_allocated 18312.8125 
+[2026-11-19 21:14:48 root] (spike_omniquant.py 526): INFO layer 7 iter 10 loss:0.0151332076638937 norm:0.00012371092452667654 max memory_allocated 18312.8125 
+[2026-11-19 21:15:19 root] (spike_omniquant.py 526): INFO layer 7 iter 11 loss:0.015091714449226856 norm:0.00012085019261576235 max memory_allocated 18312.8125 
+[2026-11-19 21:15:51 root] (spike_omniquant.py 526): INFO layer 7 iter 12 loss:0.015043599531054497 norm:0.00011756183812394738 max memory_allocated 18312.8125 
+[2026-11-19 21:16:22 root] (spike_omniquant.py 526): INFO layer 7 iter 13 loss:0.015011882409453392 norm:0.00011552498472156003 max memory_allocated 18312.8125 
+[2026-11-19 21:16:54 root] (spike_omniquant.py 526): INFO layer 7 iter 14 loss:0.014976303093135357 norm:0.00011464138515293598 max memory_allocated 18312.8125 
+[2026-11-19 21:17:25 root] (spike_omniquant.py 526): INFO layer 7 iter 15 loss:0.01495729386806488 norm:0.00011238877050345764 max memory_allocated 18312.8125 
+[2026-11-19 21:17:57 root] (spike_omniquant.py 526): INFO layer 7 iter 16 loss:0.014938636682927608 norm:0.00010990134614985436 max memory_allocated 18312.8125 
+[2026-11-19 21:18:28 root] (spike_omniquant.py 526): INFO layer 7 iter 17 loss:0.014929019846022129 norm:0.00011137776891700923 max memory_allocated 18312.8125 
+[2026-11-19 21:18:59 root] (spike_omniquant.py 526): INFO layer 7 iter 18 loss:0.0149072902277112 norm:0.00011180244473507628 max memory_allocated 18312.8125 
+[2026-11-19 21:19:31 root] (spike_omniquant.py 526): INFO layer 7 iter 19 loss:0.014892946928739548 norm:0.00011055923823732883 max memory_allocated 18312.8125 
+[2026-11-19 21:19:38 root] (spike_omniquant.py 421): INFO === Start quantize layer 8 ===
+[2026-11-19 21:22:11 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.006601 -> 0.006571 (-0.44%) | high_MACs 20253696 -> 20250624 (-0.02%) | k_proj:3466/4096(0.846), v_proj:3906/4096(0.954), q_proj:3906/4096(0.954), o_proj:3686/4096(0.900), gate_proj:3686/4096(0.900), down_proj:9247/11008(0.840), up_proj:3850/4096(0.940)
+[2026-11-19 21:22:42 root] (spike_omniquant.py 526): INFO layer 8 iter 0 loss:0.021279513835906982 norm:0.0009263332467526197 max memory_allocated 18314.2109375 
+[2026-11-19 21:23:14 root] (spike_omniquant.py 526): INFO layer 8 iter 1 loss:0.020171839743852615 norm:0.0003918521397281438 max memory_allocated 18314.2109375 
+[2026-11-19 21:23:45 root] (spike_omniquant.py 526): INFO layer 8 iter 2 loss:0.01948678120970726 norm:0.00024520629085600376 max memory_allocated 18314.2109375 
+[2026-11-19 21:24:17 root] (spike_omniquant.py 526): INFO layer 8 iter 3 loss:0.01905779540538788 norm:0.0002343689848203212 max memory_allocated 18314.2109375 
+[2026-11-19 21:24:48 root] (spike_omniquant.py 526): INFO layer 8 iter 4 loss:0.01882813312113285 norm:0.00020433081954251975 max memory_allocated 18314.2109375 
+[2026-11-19 21:25:19 root] (spike_omniquant.py 526): INFO layer 8 iter 5 loss:0.018688935786485672 norm:0.00018196368182543665 max memory_allocated 18314.2109375 
+[2026-11-19 21:25:51 root] (spike_omniquant.py 526): INFO layer 8 iter 6 loss:0.01858256757259369 norm:0.0001675771491136402 max memory_allocated 18314.2109375 
+[2026-11-19 21:26:22 root] (spike_omniquant.py 526): INFO layer 8 iter 7 loss:0.018499618396162987 norm:0.00015225466631818563 max memory_allocated 18314.2109375 
+[2026-11-19 21:26:54 root] (spike_omniquant.py 526): INFO layer 8 iter 8 loss:0.018420729786157608 norm:0.00015272723976522684 max memory_allocated 18314.2109375 
+[2026-11-19 21:27:25 root] (spike_omniquant.py 526): INFO layer 8 iter 9 loss:0.018340278416872025 norm:0.00014650842058472335 max memory_allocated 18314.2109375 
+[2026-11-19 21:27:57 root] (spike_omniquant.py 526): INFO layer 8 iter 10 loss:0.018268398940563202 norm:0.00013748620403930545 max memory_allocated 18314.2109375 
+[2026-11-19 21:28:28 root] (spike_omniquant.py 526): INFO layer 8 iter 11 loss:0.018205516040325165 norm:0.0001378052111249417 max memory_allocated 18314.2109375 
+[2026-11-19 21:28:59 root] (spike_omniquant.py 526): INFO layer 8 iter 12 loss:0.018156586214900017 norm:0.00013014501018915325 max memory_allocated 18314.2109375 
+[2026-11-19 21:29:31 root] (spike_omniquant.py 526): INFO layer 8 iter 13 loss:0.01812458038330078 norm:0.000126419952721335 max memory_allocated 18314.2109375 
+[2026-11-19 21:30:02 root] (spike_omniquant.py 526): INFO layer 8 iter 14 loss:0.018098916858434677 norm:0.0001256319519598037 max memory_allocated 18314.2109375 
+[2026-11-19 21:30:34 root] (spike_omniquant.py 526): INFO layer 8 iter 15 loss:0.018070939928293228 norm:0.00012091943062841892 max memory_allocated 18314.2109375 
+[2026-11-19 21:31:05 root] (spike_omniquant.py 526): INFO layer 8 iter 16 loss:0.01805494911968708 norm:0.0001230205234605819 max memory_allocated 18314.2109375 
+[2026-11-19 21:31:37 root] (spike_omniquant.py 526): INFO layer 8 iter 17 loss:0.018033292144536972 norm:0.00012309291923884302 max memory_allocated 18314.2109375 
+[2026-11-19 21:32:08 root] (spike_omniquant.py 526): INFO layer 8 iter 18 loss:0.018009532243013382 norm:0.00012100259482394904 max memory_allocated 18314.2109375 
+[2026-11-19 21:32:39 root] (spike_omniquant.py 526): INFO layer 8 iter 19 loss:0.01799473725259304 norm:0.00011834639008156955 max memory_allocated 18314.2109375 
+[2026-11-19 21:32:47 root] (spike_omniquant.py 421): INFO === Start quantize layer 9 ===
+[2026-11-19 21:35:19 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.008026 -> 0.008001 (-0.32%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3684/4096(0.899), v_proj:3906/4096(0.954), q_proj:3686/4096(0.900), o_proj:3466/4096(0.846), gate_proj:3605/4096(0.880), down_proj:9907/11008(0.900), up_proj:3768/4096(0.920)
+[2026-11-19 21:35:51 root] (spike_omniquant.py 526): INFO layer 9 iter 0 loss:0.025801600888371468 norm:0.0009574252180755138 max memory_allocated 18315.609375 
+[2026-11-19 21:36:22 root] (spike_omniquant.py 526): INFO layer 9 iter 1 loss:0.024469368159770966 norm:0.000421138945966959 max memory_allocated 18315.609375 
+[2026-11-19 21:36:53 root] (spike_omniquant.py 526): INFO layer 9 iter 2 loss:0.02341626212000847 norm:0.00027126207714900374 max memory_allocated 18315.609375 
+[2026-11-19 21:37:25 root] (spike_omniquant.py 526): INFO layer 9 iter 3 loss:0.0228413175791502 norm:0.000222271541133523 max memory_allocated 18315.609375 
+[2026-11-19 21:37:56 root] (spike_omniquant.py 526): INFO layer 9 iter 4 loss:0.02251814305782318 norm:0.0001772665127646178 max memory_allocated 18315.609375 
+[2026-11-19 21:38:28 root] (spike_omniquant.py 526): INFO layer 9 iter 5 loss:0.022339701652526855 norm:0.00014879793161526322 max memory_allocated 18315.609375 
+[2026-11-19 21:38:59 root] (spike_omniquant.py 526): INFO layer 9 iter 6 loss:0.022225866094231606 norm:0.00013798386498820037 max memory_allocated 18315.609375 
+[2026-11-19 21:39:30 root] (spike_omniquant.py 526): INFO layer 9 iter 7 loss:0.02210751175880432 norm:0.00013016790035180748 max memory_allocated 18315.609375 
+[2026-11-19 21:40:02 root] (spike_omniquant.py 526): INFO layer 9 iter 8 loss:0.021997816860675812 norm:0.000125087724882178 max memory_allocated 18315.609375 
+[2026-11-19 21:40:33 root] (spike_omniquant.py 526): INFO layer 9 iter 9 loss:0.021895620971918106 norm:0.00011932123743463308 max memory_allocated 18315.609375 
+[2026-11-19 21:41:05 root] (spike_omniquant.py 526): INFO layer 9 iter 10 loss:0.021811945363879204 norm:0.00011448177974671125 max memory_allocated 18315.609375 
+[2026-11-19 21:41:36 root] (spike_omniquant.py 526): INFO layer 9 iter 11 loss:0.02175765670835972 norm:0.00011199601431144401 max memory_allocated 18315.609375 
+[2026-11-19 21:42:08 root] (spike_omniquant.py 526): INFO layer 9 iter 12 loss:0.021713081747293472 norm:0.00011014706979040056 max memory_allocated 18315.609375 
+[2026-11-19 21:42:39 root] (spike_omniquant.py 526): INFO layer 9 iter 13 loss:0.021679772064089775 norm:0.00010904922237386927 max memory_allocated 18315.609375 
+[2026-11-19 21:43:10 root] (spike_omniquant.py 526): INFO layer 9 iter 14 loss:0.021651040762662888 norm:0.00010736394324339926 max memory_allocated 18315.609375 
+[2026-11-19 21:43:42 root] (spike_omniquant.py 526): INFO layer 9 iter 15 loss:0.02162611298263073 norm:0.00010834293789230287 max memory_allocated 18315.609375 
+[2026-11-19 21:44:13 root] (spike_omniquant.py 526): INFO layer 9 iter 16 loss:0.02160220965743065 norm:0.0001085985277313739 max memory_allocated 18315.609375 
+[2026-11-19 21:44:45 root] (spike_omniquant.py 526): INFO layer 9 iter 17 loss:0.021575333550572395 norm:0.00010635869693942368 max memory_allocated 18315.609375 
+[2026-11-19 21:45:16 root] (spike_omniquant.py 526): INFO layer 9 iter 18 loss:0.02155568078160286 norm:0.00010657509119482711 max memory_allocated 18315.609375 
+[2026-11-19 21:45:48 root] (spike_omniquant.py 526): INFO layer 9 iter 19 loss:0.021534385159611702 norm:0.00010726858454290777 max memory_allocated 18315.609375 
+[2026-11-19 21:45:55 root] (spike_omniquant.py 421): INFO === Start quantize layer 10 ===
+[2026-11-19 21:48:28 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.007631 -> 0.007448 (-2.40%) | high_MACs 20253696 -> 20252416 (-0.01%) | k_proj:3906/4096(0.954), v_proj:3684/4096(0.899), q_proj:3906/4096(0.954), o_proj:3686/4096(0.900), gate_proj:3605/4096(0.880), down_proj:9687/11008(0.880), up_proj:3686/4096(0.900)
+[2026-11-19 21:48:59 root] (spike_omniquant.py 526): INFO layer 10 iter 0 loss:0.029243910685181618 norm:0.00046985523658804595 max memory_allocated 18317.0078125 
+[2026-11-19 21:49:30 root] (spike_omniquant.py 526): INFO layer 10 iter 1 loss:0.02825670875608921 norm:0.00028950077830813825 max memory_allocated 18317.0078125 
+[2026-11-19 21:50:02 root] (spike_omniquant.py 526): INFO layer 10 iter 2 loss:0.027300303801894188 norm:0.00021923502208665013 max memory_allocated 18317.0078125 
+[2026-11-19 21:50:33 root] (spike_omniquant.py 526): INFO layer 10 iter 3 loss:0.02657685987651348 norm:0.0001745986082823947 max memory_allocated 18317.0078125 
+[2026-11-19 21:51:05 root] (spike_omniquant.py 526): INFO layer 10 iter 4 loss:0.026226483285427094 norm:0.0001564426493132487 max memory_allocated 18317.0078125 
+[2026-11-19 21:51:36 root] (spike_omniquant.py 526): INFO layer 10 iter 5 loss:0.026000389829277992 norm:0.00013769105134997517 max memory_allocated 18317.0078125 
+[2026-11-19 21:52:08 root] (spike_omniquant.py 526): INFO layer 10 iter 6 loss:0.025831375271081924 norm:0.00013016707089263946 max memory_allocated 18317.0078125 
+[2026-11-19 21:52:39 root] (spike_omniquant.py 526): INFO layer 10 iter 7 loss:0.025686446577310562 norm:0.0001239317934960127 max memory_allocated 18317.0078125 
+[2026-11-19 21:53:10 root] (spike_omniquant.py 526): INFO layer 10 iter 8 loss:0.025558270514011383 norm:0.00011829623690573499 max memory_allocated 18317.0078125 
+[2026-11-19 21:53:42 root] (spike_omniquant.py 526): INFO layer 10 iter 9 loss:0.025438599288463593 norm:0.00011414918844820932 max memory_allocated 18317.0078125 
+[2026-11-19 21:54:13 root] (spike_omniquant.py 526): INFO layer 10 iter 10 loss:0.025359170511364937 norm:0.0001137260696850717 max memory_allocated 18317.0078125 
+[2026-11-19 21:54:45 root] (spike_omniquant.py 526): INFO layer 10 iter 11 loss:0.025308459997177124 norm:0.00010725745232775807 max memory_allocated 18317.0078125 
+[2026-11-19 21:55:16 root] (spike_omniquant.py 526): INFO layer 10 iter 12 loss:0.025261929258704185 norm:0.00010728237975854427 max memory_allocated 18317.0078125 
+[2026-11-19 21:55:48 root] (spike_omniquant.py 526): INFO layer 10 iter 13 loss:0.02522652968764305 norm:0.00010409645619802177 max memory_allocated 18317.0078125 
+[2026-11-19 21:56:19 root] (spike_omniquant.py 526): INFO layer 10 iter 14 loss:0.025198940187692642 norm:0.00010453791765030473 max memory_allocated 18317.0078125 
+[2026-11-19 21:56:50 root] (spike_omniquant.py 526): INFO layer 10 iter 15 loss:0.025168901309370995 norm:0.00010162085527554154 max memory_allocated 18317.0078125 
+[2026-11-19 21:57:22 root] (spike_omniquant.py 526): INFO layer 10 iter 16 loss:0.02514861896634102 norm:0.00010013778955908492 max memory_allocated 18317.0078125 
+[2026-11-19 21:57:53 root] (spike_omniquant.py 526): INFO layer 10 iter 17 loss:0.02512773685157299 norm:9.983347990782931e-05 max memory_allocated 18317.0078125 
+[2026-11-19 21:58:25 root] (spike_omniquant.py 526): INFO layer 10 iter 18 loss:0.025105249136686325 norm:9.833765216171741e-05 max memory_allocated 18317.0078125 
+[2026-11-19 21:58:56 root] (spike_omniquant.py 526): INFO layer 10 iter 19 loss:0.025084488093852997 norm:9.729582234285772e-05 max memory_allocated 18317.0078125 
+[2026-11-19 21:59:03 root] (spike_omniquant.py 421): INFO === Start quantize layer 11 ===
+[2026-11-19 22:01:37 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.009946 -> 0.009981 (+0.36%) | high_MACs 20253696 -> 20253696 (+0.00%) | k_proj:3686/4096(0.900), v_proj:3466/4096(0.846), q_proj:3686/4096(0.900), o_proj:3906/4096(0.954), gate_proj:3686/4096(0.900), down_proj:9907/11008(0.900), up_proj:3686/4096(0.900)
+[2026-11-19 22:02:09 root] (spike_omniquant.py 526): INFO layer 11 iter 0 loss:0.03321803733706474 norm:0.0009566851076669991 max memory_allocated 18318.40625 
+[2026-11-19 22:02:40 root] (spike_omniquant.py 526): INFO layer 11 iter 1 loss:0.031845200806856155 norm:0.00045144729665480554 max memory_allocated 18318.40625 
+[2026-11-19 22:03:11 root] (spike_omniquant.py 526): INFO layer 11 iter 2 loss:0.030667223036289215 norm:0.00026817864272743464 max memory_allocated 18318.40625 
+[2026-11-19 22:03:43 root] (spike_omniquant.py 526): INFO layer 11 iter 3 loss:0.030005676671862602 norm:0.00023784340010024607 max memory_allocated 18318.40625 
+[2026-11-19 22:04:14 root] (spike_omniquant.py 526): INFO layer 11 iter 4 loss:0.029643721878528595 norm:0.00020085161668248475 max memory_allocated 18318.40625 
+[2026-11-19 22:04:46 root] (spike_omniquant.py 526): INFO layer 11 iter 5 loss:0.02941305749118328 norm:0.00019154952315147966 max memory_allocated 18318.40625 
+[2026-11-19 22:05:17 root] (spike_omniquant.py 526): INFO layer 11 iter 6 loss:0.029227064922451973 norm:0.00018268291023559868 max memory_allocated 18318.40625 
+[2026-11-19 22:05:48 root] (spike_omniquant.py 526): INFO layer 11 iter 7 loss:0.02905433438718319 norm:0.00016731637879274786 max memory_allocated 18318.40625 
+[2026-11-19 22:06:20 root] (spike_omniquant.py 526): INFO layer 11 iter 8 loss:0.028895851224660873 norm:0.00016246036102529615 max memory_allocated 18318.40625 
+[2026-11-19 22:06:51 root] (spike_omniquant.py 526): INFO layer 11 iter 9 loss:0.028781982138752937 norm:0.0001545873674331233 max memory_allocated 18318.40625 
+[2026-11-19 22:07:23 root] (spike_omniquant.py 526): INFO layer 11 iter 10 loss:0.028697416186332703 norm:0.00014908492448739707 max memory_allocated 18318.40625 
+[2026-11-19 22:07:54 root] (spike_omniquant.py 526): INFO layer 11 iter 11 loss:0.02863622084259987 norm:0.0001390304823871702 max memory_allocated 18318.40625 
+[2026-11-19 22:08:25 root] (spike_omniquant.py 526): INFO layer 11 iter 12 loss:0.028587382286787033 norm:0.00013590333401225507 max memory_allocated 18318.40625 
+[2026-11-19 22:08:57 root] (spike_omniquant.py 526): INFO layer 11 iter 13 loss:0.028550945222377777 norm:0.0001366695505566895 max memory_allocated 18318.40625 
+[2026-11-19 22:09:28 root] (spike_omniquant.py 526): INFO layer 11 iter 14 loss:0.02851727046072483 norm:0.00013174695777706802 max memory_allocated 18318.40625 
+[2026-11-19 22:10:00 root] (spike_omniquant.py 526): INFO layer 11 iter 15 loss:0.028489332646131516 norm:0.00012997290468774736 max memory_allocated 18318.40625 
+[2026-11-19 22:10:31 root] (spike_omniquant.py 526): INFO layer 11 iter 16 loss:0.02845926024019718 norm:0.00012984004570171237 max memory_allocated 18318.40625 
+[2026-11-19 22:11:02 root] (spike_omniquant.py 526): INFO layer 11 iter 17 loss:0.02843182533979416 norm:0.00012740306556224823 max memory_allocated 18318.40625 
+[2026-11-19 22:11:34 root] (spike_omniquant.py 526): INFO layer 11 iter 18 loss:0.02840232662856579 norm:0.00012536643771454692 max memory_allocated 18318.40625 
+[2026-11-19 22:12:05 root] (spike_omniquant.py 526): INFO layer 11 iter 19 loss:0.02837604656815529 norm:0.00012208895350340754 max memory_allocated 18318.40625 
+[2026-11-19 22:12:12 root] (spike_omniquant.py 421): INFO === Start quantize layer 12 ===
+[2026-11-19 22:14:46 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.012123 -> 0.012035 (-0.73%) | high_MACs 20253696 -> 20249344 (-0.02%) | k_proj:3684/4096(0.899), v_proj:3686/4096(0.900), q_proj:3686/4096(0.900), o_proj:3686/4096(0.900), gate_proj:3687/4096(0.900), down_proj:9687/11008(0.880), up_proj:3768/4096(0.920)
+[2026-11-19 22:15:17 root] (spike_omniquant.py 526): INFO layer 12 iter 0 loss:0.03818831592798233 norm:0.0008160253637470305 max memory_allocated 18319.8046875 
+[2026-11-19 22:15:48 root] (spike_omniquant.py 526): INFO layer 12 iter 1 loss:0.036603108048439026 norm:0.0004261896829120815 max memory_allocated 18319.8046875 
+[2026-11-19 22:16:20 root] (spike_omniquant.py 526): INFO layer 12 iter 2 loss:0.035277727991342545 norm:0.0002862492110580206 max memory_allocated 18319.8046875 
+[2026-11-19 22:16:51 root] (spike_omniquant.py 526): INFO layer 12 iter 3 loss:0.034374020993709564 norm:0.0002117554540745914 max memory_allocated 18319.8046875 
+[2026-11-19 22:17:23 root] (spike_omniquant.py 526): INFO layer 12 iter 4 loss:0.03389635309576988 norm:0.0001833318528952077 max memory_allocated 18319.8046875 
+[2026-11-19 22:17:54 root] (spike_omniquant.py 526): INFO layer 12 iter 5 loss:0.03361042961478233 norm:0.00016378960572183132 max memory_allocated 18319.8046875 
+[2026-11-19 22:18:25 root] (spike_omniquant.py 526): INFO layer 12 iter 6 loss:0.03338361904025078 norm:0.00015362976409960538 max memory_allocated 18319.8046875 
+[2026-11-19 22:18:57 root] (spike_omniquant.py 526): INFO layer 12 iter 7 loss:0.03316279873251915 norm:0.00014715816359966993 max memory_allocated 18319.8046875 
+[2026-11-19 22:19:28 root] (spike_omniquant.py 526): INFO layer 12 iter 8 loss:0.032989367842674255 norm:0.0001376670552417636 max memory_allocated 18319.8046875 
+[2026-11-19 22:20:00 root] (spike_omniquant.py 526): INFO layer 12 iter 9 loss:0.03288281708955765 norm:0.00013434456195682287 max memory_allocated 18319.8046875 
+[2026-11-19 22:20:31 root] (spike_omniquant.py 526): INFO layer 12 iter 10 loss:0.03281283378601074 norm:0.00013090608990751207 max memory_allocated 18319.8046875 
+[2026-11-19 22:21:02 root] (spike_omniquant.py 526): INFO layer 12 iter 11 loss:0.032751716673374176 norm:0.00012764031998813152 max memory_allocated 18319.8046875 
+[2026-11-19 22:21:34 root] (spike_omniquant.py 526): INFO layer 12 iter 12 loss:0.032704610377550125 norm:0.00012473248352762312 max memory_allocated 18319.8046875 
+[2026-11-19 22:22:05 root] (spike_omniquant.py 526): INFO layer 12 iter 13 loss:0.03266243636608124 norm:0.00012363726273179054 max memory_allocated 18319.8046875 
+[2026-11-19 22:22:37 root] (spike_omniquant.py 526): INFO layer 12 iter 14 loss:0.03262824937701225 norm:0.00012248061830177903 max memory_allocated 18319.8046875 
+[2026-11-19 22:23:08 root] (spike_omniquant.py 526): INFO layer 12 iter 15 loss:0.03259458392858505 norm:0.0001203126012114808 max memory_allocated 18319.8046875 
+[2026-11-19 22:23:39 root] (spike_omniquant.py 526): INFO layer 12 iter 16 loss:0.03256190940737724 norm:0.00011620609438978136 max memory_allocated 18319.8046875 
+[2026-11-19 22:24:11 root] (spike_omniquant.py 526): INFO layer 12 iter 17 loss:0.032529301941394806 norm:0.00011645846825558692 max memory_allocated 18319.8046875 
+[2026-11-19 22:24:42 root] (spike_omniquant.py 526): INFO layer 12 iter 18 loss:0.032503366470336914 norm:0.00011432130850153044 max memory_allocated 18319.8046875 
+[2026-11-19 22:25:14 root] (spike_omniquant.py 526): INFO layer 12 iter 19 loss:0.03247985616326332 norm:0.00011417568020988256 max memory_allocated 18319.8046875 
+[2026-11-19 22:25:21 root] (spike_omniquant.py 421): INFO === Start quantize layer 13 ===
+[2026-11-19 22:27:54 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.014609 -> 0.014752 (+0.98%) | high_MACs 20253696 -> 20249344 (-0.02%) | k_proj:3684/4096(0.899), v_proj:3466/4096(0.846), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3850/4096(0.940), down_proj:10127/11008(0.920), up_proj:3605/4096(0.880)
+[2026-11-19 22:28:25 root] (spike_omniquant.py 526): INFO layer 13 iter 0 loss:0.043560758233070374 norm:0.001300994772464037 max memory_allocated 18321.203125 
+[2026-11-19 22:28:57 root] (spike_omniquant.py 526): INFO layer 13 iter 1 loss:0.04135022312402725 norm:0.0006473729154095054 max memory_allocated 18321.203125 
+[2026-11-19 22:29:28 root] (spike_omniquant.py 526): INFO layer 13 iter 2 loss:0.03992907330393791 norm:0.00031985557870939374 max memory_allocated 18321.203125 
+[2026-11-19 22:29:59 root] (spike_omniquant.py 526): INFO layer 13 iter 3 loss:0.039125990122556686 norm:0.00027924042660743 max memory_allocated 18321.203125 
+[2026-11-19 22:30:31 root] (spike_omniquant.py 526): INFO layer 13 iter 4 loss:0.03868768736720085 norm:0.00022787306807003915 max memory_allocated 18321.203125 
+[2026-11-19 22:31:02 root] (spike_omniquant.py 526): INFO layer 13 iter 5 loss:0.0383763387799263 norm:0.00019986960978712887 max memory_allocated 18321.203125 
+[2026-11-19 22:31:34 root] (spike_omniquant.py 526): INFO layer 13 iter 6 loss:0.03808073699474335 norm:0.00019298393453937024 max memory_allocated 18321.203125 
+[2026-11-19 22:32:05 root] (spike_omniquant.py 526): INFO layer 13 iter 7 loss:0.037873007357120514 norm:0.0001823788188630715 max memory_allocated 18321.203125 
+[2026-11-19 22:32:36 root] (spike_omniquant.py 526): INFO layer 13 iter 8 loss:0.03773768991231918 norm:0.0001758366561261937 max memory_allocated 18321.203125 
+[2026-11-19 22:33:08 root] (spike_omniquant.py 526): INFO layer 13 iter 9 loss:0.037644535303115845 norm:0.00016852619592100382 max memory_allocated 18321.203125 
+[2026-11-19 22:33:39 root] (spike_omniquant.py 526): INFO layer 13 iter 10 loss:0.037576816976070404 norm:0.00016271772619802505 max memory_allocated 18321.203125 
+[2026-11-19 22:34:11 root] (spike_omniquant.py 526): INFO layer 13 iter 11 loss:0.037515852600336075 norm:0.0001623900607228279 max memory_allocated 18321.203125 
+[2026-11-19 22:34:42 root] (spike_omniquant.py 526): INFO layer 13 iter 12 loss:0.03745293989777565 norm:0.00015502447786275297 max memory_allocated 18321.203125 
+[2026-11-19 22:35:13 root] (spike_omniquant.py 526): INFO layer 13 iter 13 loss:0.037404708564281464 norm:0.00015429874474648386 max memory_allocated 18321.203125 
+[2026-11-19 22:35:45 root] (spike_omniquant.py 526): INFO layer 13 iter 14 loss:0.03736669570207596 norm:0.00015504605835303664 max memory_allocated 18321.203125 
+[2026-11-19 22:36:16 root] (spike_omniquant.py 526): INFO layer 13 iter 15 loss:0.03733481839299202 norm:0.00015049999637994915 max memory_allocated 18321.203125 
+[2026-11-19 22:36:48 root] (spike_omniquant.py 526): INFO layer 13 iter 16 loss:0.037294045090675354 norm:0.00014836323680356145 max memory_allocated 18321.203125 
+[2026-11-19 22:37:19 root] (spike_omniquant.py 526): INFO layer 13 iter 17 loss:0.03725128620862961 norm:0.00014135183300822973 max memory_allocated 18321.203125 
+[2026-11-19 22:37:50 root] (spike_omniquant.py 526): INFO layer 13 iter 18 loss:0.03721798211336136 norm:0.00014145940076559782 max memory_allocated 18321.203125 
+[2026-11-19 22:38:22 root] (spike_omniquant.py 526): INFO layer 13 iter 19 loss:0.03718339651823044 norm:0.00014322050265036523 max memory_allocated 18321.203125 
+[2026-11-19 22:38:29 root] (spike_omniquant.py 421): INFO === Start quantize layer 14 ===
+[2026-11-19 22:41:02 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.012945 -> 0.012595 (-2.71%) | high_MACs 20253696 -> 20249600 (-0.02%) | k_proj:3906/4096(0.954), v_proj:3684/4096(0.899), q_proj:3904/4096(0.953), o_proj:3466/4096(0.846), gate_proj:3686/4096(0.900), down_proj:9907/11008(0.900), up_proj:3606/4096(0.880)
+[2026-11-19 22:41:33 root] (spike_omniquant.py 526): INFO layer 14 iter 0 loss:0.04755355417728424 norm:0.0005970409838482738 max memory_allocated 18322.6015625 
+[2026-11-19 22:42:04 root] (spike_omniquant.py 526): INFO layer 14 iter 1 loss:0.04629655182361603 norm:0.0003437285777181387 max memory_allocated 18322.6015625 
+[2026-11-19 22:42:36 root] (spike_omniquant.py 526): INFO layer 14 iter 2 loss:0.04522110894322395 norm:0.0002569467178545892 max memory_allocated 18322.6015625 
+[2026-11-19 22:43:07 root] (spike_omniquant.py 526): INFO layer 14 iter 3 loss:0.044441986829042435 norm:0.00022936864115763456 max memory_allocated 18322.6015625 
+[2026-11-19 22:43:39 root] (spike_omniquant.py 526): INFO layer 14 iter 4 loss:0.043975990265607834 norm:0.00019263522699475288 max memory_allocated 18322.6015625 
+[2026-11-19 22:44:10 root] (spike_omniquant.py 526): INFO layer 14 iter 5 loss:0.04360244423151016 norm:0.0001719175634207204 max memory_allocated 18322.6015625 
+[2026-11-19 22:44:41 root] (spike_omniquant.py 526): INFO layer 14 iter 6 loss:0.043286047875881195 norm:0.00015880244609434158 max memory_allocated 18322.6015625 
+[2026-11-19 22:45:13 root] (spike_omniquant.py 526): INFO layer 14 iter 7 loss:0.04310047999024391 norm:0.00015142231131903827 max memory_allocated 18322.6015625 
+[2026-11-19 22:45:44 root] (spike_omniquant.py 526): INFO layer 14 iter 8 loss:0.04298475384712219 norm:0.00014570636267308146 max memory_allocated 18322.6015625 
+[2026-11-19 22:46:15 root] (spike_omniquant.py 526): INFO layer 14 iter 9 loss:0.04289574921131134 norm:0.00014306277444120497 max memory_allocated 18322.6015625 
+[2026-11-19 22:46:47 root] (spike_omniquant.py 526): INFO layer 14 iter 10 loss:0.0428117960691452 norm:0.00013794962433166802 max memory_allocated 18322.6015625 
+[2026-11-19 22:47:18 root] (spike_omniquant.py 526): INFO layer 14 iter 11 loss:0.04274417459964752 norm:0.0001359392626909539 max memory_allocated 18322.6015625 
+[2026-11-19 22:47:50 root] (spike_omniquant.py 526): INFO layer 14 iter 12 loss:0.0426863357424736 norm:0.00013476474850904197 max memory_allocated 18322.6015625 
+[2026-11-19 22:48:21 root] (spike_omniquant.py 526): INFO layer 14 iter 13 loss:0.04264053702354431 norm:0.0001356811262667179 max memory_allocated 18322.6015625 
+[2026-11-19 22:48:52 root] (spike_omniquant.py 526): INFO layer 14 iter 14 loss:0.04258793219923973 norm:0.0001343824405921623 max memory_allocated 18322.6015625 
+[2026-11-19 22:49:24 root] (spike_omniquant.py 526): INFO layer 14 iter 15 loss:0.04254698008298874 norm:0.00013263532309792936 max memory_allocated 18322.6015625 
+[2026-11-19 22:49:55 root] (spike_omniquant.py 526): INFO layer 14 iter 16 loss:0.04250151291489601 norm:0.00013146760466042906 max memory_allocated 18322.6015625 
+[2026-11-19 22:50:27 root] (spike_omniquant.py 526): INFO layer 14 iter 17 loss:0.04246076941490173 norm:0.00012994813732802868 max memory_allocated 18322.6015625 
+[2026-11-19 22:50:58 root] (spike_omniquant.py 526): INFO layer 14 iter 18 loss:0.04242616891860962 norm:0.0001312738750129938 max memory_allocated 18322.6015625 
+[2026-11-19 22:51:29 root] (spike_omniquant.py 526): INFO layer 14 iter 19 loss:0.042388830333948135 norm:0.00012749378220178187 max memory_allocated 18322.6015625 
+[2026-11-19 22:51:37 root] (spike_omniquant.py 421): INFO === Start quantize layer 15 ===
+[2026-11-19 22:54:09 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.021055 -> 0.021149 (+0.45%) | high_MACs 20253696 -> 20252416 (-0.01%) | k_proj:3906/4096(0.954), v_proj:3686/4096(0.900), q_proj:3466/4096(0.846), o_proj:3906/4096(0.954), gate_proj:3687/4096(0.900), down_proj:9905/11008(0.900), up_proj:3604/4096(0.880)
+[2026-11-19 22:54:41 root] (spike_omniquant.py 526): INFO layer 15 iter 0 loss:0.058722708374261856 norm:0.002157235983759165 max memory_allocated 18324.0 
+[2026-11-19 22:55:12 root] (spike_omniquant.py 526): INFO layer 15 iter 1 loss:0.05634970963001251 norm:0.0014842961682006717 max memory_allocated 18324.0 
+[2026-11-19 22:55:43 root] (spike_omniquant.py 526): INFO layer 15 iter 2 loss:0.053660690784454346 norm:0.0006770433974452317 max memory_allocated 18324.0 
+[2026-11-19 22:56:15 root] (spike_omniquant.py 526): INFO layer 15 iter 3 loss:0.05229266732931137 norm:0.0004196269146632403 max memory_allocated 18324.0 
+[2026-11-19 22:56:46 root] (spike_omniquant.py 526): INFO layer 15 iter 4 loss:0.051535464823246 norm:0.00033672654535621405 max memory_allocated 18324.0 
+[2026-11-19 22:57:18 root] (spike_omniquant.py 526): INFO layer 15 iter 5 loss:0.050992202013731 norm:0.0002964946033898741 max memory_allocated 18324.0 
+[2026-11-19 22:57:49 root] (spike_omniquant.py 526): INFO layer 15 iter 6 loss:0.05067289620637894 norm:0.0002638145524542779 max memory_allocated 18324.0 
+[2026-11-19 22:58:20 root] (spike_omniquant.py 526): INFO layer 15 iter 7 loss:0.05048669874668121 norm:0.000243854068685323 max memory_allocated 18324.0 
+[2026-11-19 22:58:52 root] (spike_omniquant.py 526): INFO layer 15 iter 8 loss:0.05036517232656479 norm:0.00023424271785188466 max memory_allocated 18324.0 
+[2026-11-19 22:59:23 root] (spike_omniquant.py 526): INFO layer 15 iter 9 loss:0.050262708216905594 norm:0.00022621139942202717 max memory_allocated 18324.0 
+[2026-11-19 22:59:54 root] (spike_omniquant.py 526): INFO layer 15 iter 10 loss:0.050178445875644684 norm:0.00021916988771408796 max memory_allocated 18324.0 
+[2026-11-19 23:00:26 root] (spike_omniquant.py 526): INFO layer 15 iter 11 loss:0.05010621249675751 norm:0.00021658261539414525 max memory_allocated 18324.0 
+[2026-11-19 23:00:57 root] (spike_omniquant.py 526): INFO layer 15 iter 12 loss:0.050025951117277145 norm:0.00021204624499659985 max memory_allocated 18324.0 
+[2026-11-19 23:01:29 root] (spike_omniquant.py 526): INFO layer 15 iter 13 loss:0.04995280131697655 norm:0.00020476820645853877 max memory_allocated 18324.0 
+[2026-11-19 23:02:00 root] (spike_omniquant.py 526): INFO layer 15 iter 14 loss:0.04988344386219978 norm:0.00019847392104566097 max memory_allocated 18324.0 
+[2026-11-19 23:02:31 root] (spike_omniquant.py 526): INFO layer 15 iter 15 loss:0.04982192814350128 norm:0.00019541649089660496 max memory_allocated 18324.0 
+[2026-11-19 23:03:03 root] (spike_omniquant.py 526): INFO layer 15 iter 16 loss:0.04976825788617134 norm:0.00019331577641423792 max memory_allocated 18324.0 
+[2026-11-19 23:03:34 root] (spike_omniquant.py 526): INFO layer 15 iter 17 loss:0.049718424677848816 norm:0.0001918869384098798 max memory_allocated 18324.0 
+[2026-11-19 23:04:05 root] (spike_omniquant.py 526): INFO layer 15 iter 18 loss:0.04967612400650978 norm:0.00019239044922869653 max memory_allocated 18324.0 
+[2026-11-19 23:04:37 root] (spike_omniquant.py 526): INFO layer 15 iter 19 loss:0.04962771758437157 norm:0.00019120387150906026 max memory_allocated 18324.0 
+[2026-11-19 23:04:44 root] (spike_omniquant.py 421): INFO === Start quantize layer 16 ===
+[2026-11-19 23:07:17 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.026697 -> 0.026966 (+1.01%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3686/4096(0.900), v_proj:3466/4096(0.846), q_proj:3906/4096(0.954), o_proj:3466/4096(0.846), gate_proj:3605/4096(0.880), down_proj:10125/11008(0.920), up_proj:3768/4096(0.920)
+[2026-11-19 23:07:48 root] (spike_omniquant.py 526): INFO layer 16 iter 0 loss:0.07314936816692352 norm:0.0019901427440345287 max memory_allocated 18325.3984375 
+[2026-11-19 23:08:19 root] (spike_omniquant.py 526): INFO layer 16 iter 1 loss:0.07012863457202911 norm:0.0011438427027314901 max memory_allocated 18325.3984375 
+[2026-11-19 23:08:51 root] (spike_omniquant.py 526): INFO layer 16 iter 2 loss:0.0678580030798912 norm:0.0007015230366960168 max memory_allocated 18325.3984375 
+[2026-11-19 23:09:22 root] (spike_omniquant.py 526): INFO layer 16 iter 3 loss:0.06612978875637054 norm:0.0004864088259637356 max memory_allocated 18325.3984375 
+[2026-11-19 23:09:54 root] (spike_omniquant.py 526): INFO layer 16 iter 4 loss:0.06499882787466049 norm:0.00038211920764297247 max memory_allocated 18325.3984375 
+[2026-11-19 23:10:25 root] (spike_omniquant.py 526): INFO layer 16 iter 5 loss:0.06439793854951859 norm:0.0003276413772255182 max memory_allocated 18325.3984375 
+[2026-11-19 23:10:56 root] (spike_omniquant.py 526): INFO layer 16 iter 6 loss:0.06410425901412964 norm:0.00029813521541655064 max memory_allocated 18325.3984375 
+[2026-11-19 23:11:28 root] (spike_omniquant.py 526): INFO layer 16 iter 7 loss:0.06390073895454407 norm:0.00027757324278354645 max memory_allocated 18325.3984375 
+[2026-11-19 23:11:59 root] (spike_omniquant.py 526): INFO layer 16 iter 8 loss:0.06373165547847748 norm:0.00025998978526331484 max memory_allocated 18325.3984375 
+[2026-11-19 23:12:31 root] (spike_omniquant.py 526): INFO layer 16 iter 9 loss:0.06359424442052841 norm:0.00024530087830498815 max memory_allocated 18325.3984375 
+[2026-11-19 23:13:02 root] (spike_omniquant.py 526): INFO layer 16 iter 10 loss:0.06349383294582367 norm:0.00024011384812183678 max memory_allocated 18325.3984375 
+[2026-11-19 23:13:34 root] (spike_omniquant.py 526): INFO layer 16 iter 11 loss:0.06338950991630554 norm:0.0002373001625528559 max memory_allocated 18325.3984375 
+[2026-11-19 23:14:05 root] (spike_omniquant.py 526): INFO layer 16 iter 12 loss:0.06330801546573639 norm:0.00023168335610534996 max memory_allocated 18325.3984375 
+[2026-11-19 23:14:37 root] (spike_omniquant.py 526): INFO layer 16 iter 13 loss:0.06322827935218811 norm:0.0002270299883093685 max memory_allocated 18325.3984375 
+[2026-11-19 23:15:08 root] (spike_omniquant.py 526): INFO layer 16 iter 14 loss:0.06314920634031296 norm:0.00022645574063062668 max memory_allocated 18325.3984375 
+[2026-11-19 23:15:39 root] (spike_omniquant.py 526): INFO layer 16 iter 15 loss:0.06306587904691696 norm:0.00022048421669751406 max memory_allocated 18325.3984375 
+[2026-11-19 23:16:11 root] (spike_omniquant.py 526): INFO layer 16 iter 16 loss:0.06297333538532257 norm:0.00021573397680185735 max memory_allocated 18325.3984375 
+[2026-11-19 23:16:42 root] (spike_omniquant.py 526): INFO layer 16 iter 17 loss:0.06288468837738037 norm:0.00021290572476573288 max memory_allocated 18325.3984375 
+[2026-11-19 23:17:13 root] (spike_omniquant.py 526): INFO layer 16 iter 18 loss:0.06280917674303055 norm:0.00020479578233789653 max memory_allocated 18325.3984375 
+[2026-11-19 23:17:45 root] (spike_omniquant.py 526): INFO layer 16 iter 19 loss:0.06277124583721161 norm:0.00020656842389144003 max memory_allocated 18325.3984375 
+[2026-11-19 23:17:52 root] (spike_omniquant.py 421): INFO === Start quantize layer 17 ===
+[2026-11-19 23:20:25 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.034147 -> 0.034643 (+1.45%) | high_MACs 20253696 -> 20250624 (-0.02%) | k_proj:3466/4096(0.846), v_proj:3906/4096(0.954), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3850/4096(0.940), down_proj:9687/11008(0.880), up_proj:3686/4096(0.900)
+[2026-11-19 23:20:56 root] (spike_omniquant.py 526): INFO layer 17 iter 0 loss:0.08756177127361298 norm:0.0030839196406304836 max memory_allocated 18326.796875 
+[2026-11-19 23:21:28 root] (spike_omniquant.py 526): INFO layer 17 iter 1 loss:0.08251604437828064 norm:0.0016031258273869753 max memory_allocated 18326.796875 
+[2026-11-19 23:21:59 root] (spike_omniquant.py 526): INFO layer 17 iter 2 loss:0.07866792380809784 norm:0.0006722807884216309 max memory_allocated 18326.796875 
+[2026-11-19 23:22:30 root] (spike_omniquant.py 526): INFO layer 17 iter 3 loss:0.07668709009885788 norm:0.00047386554069817066 max memory_allocated 18326.796875 
+[2026-11-19 23:23:02 root] (spike_omniquant.py 526): INFO layer 17 iter 4 loss:0.07579562813043594 norm:0.00039003361598588526 max memory_allocated 18326.796875 
+[2026-11-19 23:23:33 root] (spike_omniquant.py 526): INFO layer 17 iter 5 loss:0.07535728812217712 norm:0.00033922697184607387 max memory_allocated 18326.796875 
+[2026-11-19 23:24:04 root] (spike_omniquant.py 526): INFO layer 17 iter 6 loss:0.0751124918460846 norm:0.0003123945207335055 max memory_allocated 18326.796875 
+[2026-11-19 23:24:36 root] (spike_omniquant.py 526): INFO layer 17 iter 7 loss:0.07492708414793015 norm:0.0002892289776355028 max memory_allocated 18326.796875 
+[2026-11-19 23:25:07 root] (spike_omniquant.py 526): INFO layer 17 iter 8 loss:0.07477685809135437 norm:0.00027600492467172444 max memory_allocated 18326.796875 
+[2026-11-19 23:25:39 root] (spike_omniquant.py 526): INFO layer 17 iter 9 loss:0.0746476948261261 norm:0.0002693907299544662 max memory_allocated 18326.796875 
+[2026-11-19 23:26:10 root] (spike_omniquant.py 526): INFO layer 17 iter 10 loss:0.07452791929244995 norm:0.00026202149456366897 max memory_allocated 18326.796875 
+[2026-11-19 23:26:41 root] (spike_omniquant.py 526): INFO layer 17 iter 11 loss:0.07442863285541534 norm:0.0002563180751167238 max memory_allocated 18326.796875 
+[2026-11-19 23:27:13 root] (spike_omniquant.py 526): INFO layer 17 iter 12 loss:0.07432994246482849 norm:0.00025332163204438984 max memory_allocated 18326.796875 
+[2026-11-19 23:27:44 root] (spike_omniquant.py 526): INFO layer 17 iter 13 loss:0.07423245906829834 norm:0.00024102930910885334 max memory_allocated 18326.796875 
+[2026-11-19 23:28:16 root] (spike_omniquant.py 526): INFO layer 17 iter 14 loss:0.07414529472589493 norm:0.00024026019673328847 max memory_allocated 18326.796875 
+[2026-11-19 23:28:47 root] (spike_omniquant.py 526): INFO layer 17 iter 15 loss:0.07406924664974213 norm:0.00023702697944827378 max memory_allocated 18326.796875 
+[2026-11-19 23:29:18 root] (spike_omniquant.py 526): INFO layer 17 iter 16 loss:0.07398577779531479 norm:0.0002365409309277311 max memory_allocated 18326.796875 
+[2026-11-19 23:29:50 root] (spike_omniquant.py 526): INFO layer 17 iter 17 loss:0.07390653342008591 norm:0.0002362979867029935 max memory_allocated 18326.796875 
+[2026-11-19 23:30:21 root] (spike_omniquant.py 526): INFO layer 17 iter 18 loss:0.07383504509925842 norm:0.00023664880427531898 max memory_allocated 18326.796875 
+[2026-11-19 23:30:53 root] (spike_omniquant.py 526): INFO layer 17 iter 19 loss:0.07377550005912781 norm:0.00023491887259297073 max memory_allocated 18326.796875 
+[2026-11-19 23:31:00 root] (spike_omniquant.py 421): INFO === Start quantize layer 18 ===
+[2026-11-19 23:33:33 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.051830 -> 0.051731 (-0.19%) | high_MACs 20253696 -> 20253696 (+0.00%) | k_proj:3686/4096(0.900), v_proj:3906/4096(0.954), q_proj:3686/4096(0.900), o_proj:3466/4096(0.846), gate_proj:3604/4096(0.880), down_proj:9907/11008(0.900), up_proj:3768/4096(0.920)
+[2026-11-19 23:34:04 root] (spike_omniquant.py 526): INFO layer 18 iter 0 loss:0.11304730921983719 norm:nan max memory_allocated 18328.1953125 
+[2026-11-19 23:34:35 root] (spike_omniquant.py 526): INFO layer 18 iter 1 loss:0.1028137356042862 norm:0.003773882519453764 max memory_allocated 18328.1953125 
+[2026-11-19 23:35:07 root] (spike_omniquant.py 526): INFO layer 18 iter 2 loss:0.0970223993062973 norm:0.0009649515268392861 max memory_allocated 18328.1953125 
+[2026-11-19 23:35:38 root] (spike_omniquant.py 526): INFO layer 18 iter 3 loss:0.09470653533935547 norm:0.0005605507176369429 max memory_allocated 18328.1953125 
+[2026-11-19 23:36:09 root] (spike_omniquant.py 526): INFO layer 18 iter 4 loss:0.09371554851531982 norm:0.0005259746685624123 max memory_allocated 18328.1953125 
+[2026-11-19 23:36:41 root] (spike_omniquant.py 526): INFO layer 18 iter 5 loss:0.0932542085647583 norm:0.000471323961392045 max memory_allocated 18328.1953125 
+[2026-11-19 23:37:12 root] (spike_omniquant.py 526): INFO layer 18 iter 6 loss:0.09302027523517609 norm:0.00042532224324531853 max memory_allocated 18328.1953125 
+[2026-11-19 23:37:44 root] (spike_omniquant.py 526): INFO layer 18 iter 7 loss:0.09284079074859619 norm:0.00040478978189639747 max memory_allocated 18328.1953125 
+[2026-11-19 23:38:15 root] (spike_omniquant.py 526): INFO layer 18 iter 8 loss:0.09266237914562225 norm:0.00037787831388413906 max memory_allocated 18328.1953125 
+[2026-11-19 23:38:46 root] (spike_omniquant.py 526): INFO layer 18 iter 9 loss:0.09251877665519714 norm:0.00037159104249440134 max memory_allocated 18328.1953125 
+[2026-11-19 23:39:18 root] (spike_omniquant.py 526): INFO layer 18 iter 10 loss:0.09237881004810333 norm:0.0003567913663573563 max memory_allocated 18328.1953125 
+[2026-11-19 23:39:49 root] (spike_omniquant.py 526): INFO layer 18 iter 11 loss:0.09224610030651093 norm:0.0003492302494123578 max memory_allocated 18328.1953125 
+[2026-11-19 23:40:21 root] (spike_omniquant.py 526): INFO layer 18 iter 12 loss:0.09212549775838852 norm:0.0003452104574535042 max memory_allocated 18328.1953125 
+[2026-11-19 23:40:52 root] (spike_omniquant.py 526): INFO layer 18 iter 13 loss:0.09201736748218536 norm:0.0003343712305650115 max memory_allocated 18328.1953125 
+[2026-11-19 23:41:23 root] (spike_omniquant.py 526): INFO layer 18 iter 14 loss:0.09191934019327164 norm:0.0003309843013994396 max memory_allocated 18328.1953125 
+[2026-11-19 23:41:55 root] (spike_omniquant.py 526): INFO layer 18 iter 15 loss:0.09184063971042633 norm:0.00032491653109900653 max memory_allocated 18328.1953125 
+[2026-11-19 23:42:26 root] (spike_omniquant.py 526): INFO layer 18 iter 16 loss:0.09174227714538574 norm:0.0003288144653197378 max memory_allocated 18328.1953125 
+[2026-11-19 23:42:58 root] (spike_omniquant.py 526): INFO layer 18 iter 17 loss:0.09165868908166885 norm:0.0003292483452241868 max memory_allocated 18328.1953125 
+[2026-11-19 23:43:29 root] (spike_omniquant.py 526): INFO layer 18 iter 18 loss:0.09158243238925934 norm:0.0003261298988945782 max memory_allocated 18328.1953125 
+[2026-11-19 23:44:00 root] (spike_omniquant.py 526): INFO layer 18 iter 19 loss:0.09151382744312286 norm:0.00032210914650931954 max memory_allocated 18328.1953125 
+[2026-11-19 23:44:08 root] (spike_omniquant.py 421): INFO === Start quantize layer 19 ===
+[2026-11-19 23:46:40 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.042999 -> 0.042385 (-1.43%) | high_MACs 20253696 -> 20249344 (-0.02%) | k_proj:3686/4096(0.900), v_proj:3466/4096(0.846), q_proj:3906/4096(0.954), o_proj:3904/4096(0.953), gate_proj:3769/4096(0.920), down_proj:9467/11008(0.860), up_proj:3686/4096(0.900)
+[2026-11-19 23:47:12 root] (spike_omniquant.py 526): INFO layer 19 iter 0 loss:0.12698860466480255 norm:0.005244400352239609 max memory_allocated 18329.59375 
+[2026-11-19 23:47:43 root] (spike_omniquant.py 526): INFO layer 19 iter 1 loss:0.12079699337482452 norm:0.0024265251122415066 max memory_allocated 18329.59375 
+[2026-11-19 23:48:14 root] (spike_omniquant.py 526): INFO layer 19 iter 2 loss:0.11654401570558548 norm:0.0007749509532004595 max memory_allocated 18329.59375 
+[2026-11-19 23:48:46 root] (spike_omniquant.py 526): INFO layer 19 iter 3 loss:0.11460603028535843 norm:0.000486899574752897 max memory_allocated 18329.59375 
+[2026-11-19 23:49:17 root] (spike_omniquant.py 526): INFO layer 19 iter 4 loss:0.11365428566932678 norm:0.00043126149103045464 max memory_allocated 18329.59375 
+[2026-11-19 23:49:49 root] (spike_omniquant.py 526): INFO layer 19 iter 5 loss:0.11325114965438843 norm:0.0003932650724891573 max memory_allocated 18329.59375 
+[2026-11-19 23:50:20 root] (spike_omniquant.py 526): INFO layer 19 iter 6 loss:0.11302327364683151 norm:0.0003782652784138918 max memory_allocated 18329.59375 
+[2026-11-19 23:50:51 root] (spike_omniquant.py 526): INFO layer 19 iter 7 loss:0.11278244853019714 norm:0.0003542223712429404 max memory_allocated 18329.59375 
+[2026-11-19 23:51:23 root] (spike_omniquant.py 526): INFO layer 19 iter 8 loss:0.11261525750160217 norm:0.000333127478370443 max memory_allocated 18329.59375 
+[2026-11-19 23:51:54 root] (spike_omniquant.py 526): INFO layer 19 iter 9 loss:0.11245279014110565 norm:0.00032713107066228986 max memory_allocated 18329.59375 
+[2026-11-19 23:52:26 root] (spike_omniquant.py 526): INFO layer 19 iter 10 loss:0.11230567842721939 norm:0.00032143155112862587 max memory_allocated 18329.59375 
+[2026-11-19 23:52:57 root] (spike_omniquant.py 526): INFO layer 19 iter 11 loss:0.1121671125292778 norm:0.0003158635227009654 max memory_allocated 18329.59375 
+[2026-11-19 23:53:28 root] (spike_omniquant.py 526): INFO layer 19 iter 12 loss:0.11204180121421814 norm:0.00031245785066857934 max memory_allocated 18329.59375 
+[2026-11-19 23:54:00 root] (spike_omniquant.py 526): INFO layer 19 iter 13 loss:0.11189927160739899 norm:0.00030821291147731245 max memory_allocated 18329.59375 
+[2026-11-19 23:54:31 root] (spike_omniquant.py 526): INFO layer 19 iter 14 loss:0.1117885634303093 norm:0.0003074539708904922 max memory_allocated 18329.59375 
+[2026-11-19 23:55:03 root] (spike_omniquant.py 526): INFO layer 19 iter 15 loss:0.11168686300516129 norm:0.0003037889255210757 max memory_allocated 18329.59375 
+[2026-11-19 23:55:34 root] (spike_omniquant.py 526): INFO layer 19 iter 16 loss:0.11159265041351318 norm:0.00029215161339379847 max memory_allocated 18329.59375 
+[2026-11-19 23:56:05 root] (spike_omniquant.py 526): INFO layer 19 iter 17 loss:0.11151283979415894 norm:0.0002982357400469482 max memory_allocated 18329.59375 
+[2026-11-19 23:56:37 root] (spike_omniquant.py 526): INFO layer 19 iter 18 loss:0.11144058406352997 norm:0.00029713334515690804 max memory_allocated 18329.59375 
+[2026-11-19 23:57:08 root] (spike_omniquant.py 526): INFO layer 19 iter 19 loss:0.11137808114290237 norm:0.00029730022652074695 max memory_allocated 18329.59375 
+[2026-11-19 23:57:16 root] (spike_omniquant.py 421): INFO === Start quantize layer 20 ===
+[2026-11-19 23:59:48 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.049091 -> 0.049637 (+1.11%) | high_MACs 20253696 -> 20248320 (-0.03%) | k_proj:3686/4096(0.900), v_proj:3904/4096(0.953), q_proj:3686/4096(0.900), o_proj:3684/4096(0.899), gate_proj:3687/4096(0.900), down_proj:10125/11008(0.920), up_proj:3524/4096(0.860)
+[2026-11-20 00:00:20 root] (spike_omniquant.py 526): INFO layer 20 iter 0 loss:0.16088159382343292 norm:0.006940825376659632 max memory_allocated 18330.9921875 
+[2026-11-20 00:00:51 root] (spike_omniquant.py 526): INFO layer 20 iter 1 loss:0.154058039188385 norm:0.0029693134129047394 max memory_allocated 18330.9921875 
+[2026-11-20 00:01:23 root] (spike_omniquant.py 526): INFO layer 20 iter 2 loss:0.14833404123783112 norm:0.001306414371356368 max memory_allocated 18330.9921875 
+[2026-11-20 00:01:54 root] (spike_omniquant.py 526): INFO layer 20 iter 3 loss:0.14526794850826263 norm:0.000829556374810636 max memory_allocated 18330.9921875 
+[2026-11-20 00:02:25 root] (spike_omniquant.py 526): INFO layer 20 iter 4 loss:0.14399117231369019 norm:0.0006976710865274072 max memory_allocated 18330.9921875 
+[2026-11-20 00:02:57 root] (spike_omniquant.py 526): INFO layer 20 iter 5 loss:0.14349311590194702 norm:0.0006523479823954403 max memory_allocated 18330.9921875 
+[2026-11-20 00:03:28 root] (spike_omniquant.py 526): INFO layer 20 iter 6 loss:0.14314109086990356 norm:0.0005977011751383543 max memory_allocated 18330.9921875 
+[2026-11-20 00:04:00 root] (spike_omniquant.py 526): INFO layer 20 iter 7 loss:0.14286816120147705 norm:0.0005773758748546243 max memory_allocated 18330.9921875 
+[2026-11-20 00:04:31 root] (spike_omniquant.py 526): INFO layer 20 iter 8 loss:0.14265714585781097 norm:0.0005584268365055323 max memory_allocated 18330.9921875 
+[2026-11-20 00:05:02 root] (spike_omniquant.py 526): INFO layer 20 iter 9 loss:0.14246606826782227 norm:0.0005545680760405958 max memory_allocated 18330.9921875 
+[2026-11-20 00:05:34 root] (spike_omniquant.py 526): INFO layer 20 iter 10 loss:0.14230017364025116 norm:0.0005334282177500427 max memory_allocated 18330.9921875 
+[2026-11-20 00:06:05 root] (spike_omniquant.py 526): INFO layer 20 iter 11 loss:0.14208991825580597 norm:0.0005394617328420281 max memory_allocated 18330.9921875 
+[2026-11-20 00:06:37 root] (spike_omniquant.py 526): INFO layer 20 iter 12 loss:0.1419237107038498 norm:0.0005188083159737289 max memory_allocated 18330.9921875 
+[2026-11-20 00:07:08 root] (spike_omniquant.py 526): INFO layer 20 iter 13 loss:0.14178916811943054 norm:0.0005164822796359658 max memory_allocated 18330.9921875 
+[2026-11-20 00:07:39 root] (spike_omniquant.py 526): INFO layer 20 iter 14 loss:0.14166027307510376 norm:0.000508310564327985 max memory_allocated 18330.9921875 
+[2026-11-20 00:08:11 root] (spike_omniquant.py 526): INFO layer 20 iter 15 loss:0.14152322709560394 norm:0.0005106425960548222 max memory_allocated 18330.9921875 
+[2026-11-20 00:08:42 root] (spike_omniquant.py 526): INFO layer 20 iter 16 loss:0.14140081405639648 norm:0.0005103556904941797 max memory_allocated 18330.9921875 
+[2026-11-20 00:09:14 root] (spike_omniquant.py 526): INFO layer 20 iter 17 loss:0.14129137992858887 norm:0.0005103133153170347 max memory_allocated 18330.9921875 
+[2026-11-20 00:09:45 root] (spike_omniquant.py 526): INFO layer 20 iter 18 loss:0.14118695259094238 norm:0.0005082290153950453 max memory_allocated 18330.9921875 
+[2026-11-20 00:10:16 root] (spike_omniquant.py 526): INFO layer 20 iter 19 loss:0.14110253751277924 norm:0.0005069584585726261 max memory_allocated 18330.9921875 
+[2026-11-20 00:10:24 root] (spike_omniquant.py 421): INFO === Start quantize layer 21 ===
+[2026-11-20 00:12:56 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.044066 -> 0.044587 (+1.18%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3686/4096(0.900), v_proj:3906/4096(0.954), q_proj:3466/4096(0.846), o_proj:3466/4096(0.846), gate_proj:3523/4096(0.860), down_proj:10125/11008(0.920), up_proj:3850/4096(0.940)
+[2026-11-20 00:13:28 root] (spike_omniquant.py 526): INFO layer 21 iter 0 loss:0.18740084767341614 norm:0.0029520359821617603 max memory_allocated 18332.390625 
+[2026-11-20 00:13:59 root] (spike_omniquant.py 526): INFO layer 21 iter 1 loss:0.18114975094795227 norm:0.0016824742779135704 max memory_allocated 18332.390625 
+[2026-11-20 00:14:31 root] (spike_omniquant.py 526): INFO layer 21 iter 2 loss:0.17659762501716614 norm:0.0007449411787092686 max memory_allocated 18332.390625 
+[2026-11-20 00:15:03 root] (spike_omniquant.py 526): INFO layer 21 iter 3 loss:0.17426642775535583 norm:0.0005130433710291982 max memory_allocated 18332.390625 
+[2026-11-20 00:15:35 root] (spike_omniquant.py 526): INFO layer 21 iter 4 loss:0.17317050695419312 norm:0.00044881919166073203 max memory_allocated 18332.390625 
+[2026-11-20 00:16:07 root] (spike_omniquant.py 526): INFO layer 21 iter 5 loss:0.17266790568828583 norm:0.0004170516913291067 max memory_allocated 18332.390625 
+[2026-11-20 00:16:38 root] (spike_omniquant.py 526): INFO layer 21 iter 6 loss:0.172354057431221 norm:0.00041452632285654545 max memory_allocated 18332.390625 
+[2026-11-20 00:17:10 root] (spike_omniquant.py 526): INFO layer 21 iter 7 loss:0.17210228741168976 norm:0.0004056555626448244 max memory_allocated 18332.390625 
+[2026-11-20 00:17:42 root] (spike_omniquant.py 526): INFO layer 21 iter 8 loss:0.17189183831214905 norm:0.00038991239853203297 max memory_allocated 18332.390625 
+[2026-11-20 00:18:14 root] (spike_omniquant.py 526): INFO layer 21 iter 9 loss:0.1717274785041809 norm:0.0003791374620050192 max memory_allocated 18332.390625 
+[2026-11-20 00:18:46 root] (spike_omniquant.py 526): INFO layer 21 iter 10 loss:0.17154303193092346 norm:0.00037675705971196294 max memory_allocated 18332.390625 
+[2026-11-20 00:19:18 root] (spike_omniquant.py 526): INFO layer 21 iter 11 loss:0.1713770031929016 norm:0.0003664109099190682 max memory_allocated 18332.390625 
+[2026-11-20 00:19:50 root] (spike_omniquant.py 526): INFO layer 21 iter 12 loss:0.17123720049858093 norm:0.00036059459671378136 max memory_allocated 18332.390625 
+[2026-11-20 00:20:22 root] (spike_omniquant.py 526): INFO layer 21 iter 13 loss:0.171098992228508 norm:0.0003658357891254127 max memory_allocated 18332.390625 
+[2026-11-20 00:20:54 root] (spike_omniquant.py 526): INFO layer 21 iter 14 loss:0.17096871137619019 norm:0.00036472827196121216 max memory_allocated 18332.390625 
+[2026-11-20 00:21:25 root] (spike_omniquant.py 526): INFO layer 21 iter 15 loss:0.17083364725112915 norm:0.00036714886664412916 max memory_allocated 18332.390625 
+[2026-11-20 00:21:57 root] (spike_omniquant.py 526): INFO layer 21 iter 16 loss:0.17073015868663788 norm:0.0003763030399568379 max memory_allocated 18332.390625 
+[2026-11-20 00:22:29 root] (spike_omniquant.py 526): INFO layer 21 iter 17 loss:0.1706255078315735 norm:0.0003766962909139693 max memory_allocated 18332.390625 
+[2026-11-20 00:23:01 root] (spike_omniquant.py 526): INFO layer 21 iter 18 loss:0.17053815722465515 norm:0.0003729933232534677 max memory_allocated 18332.390625 
+[2026-11-20 00:23:33 root] (spike_omniquant.py 526): INFO layer 21 iter 19 loss:0.17047423124313354 norm:0.0003671820741146803 max memory_allocated 18332.390625 
+[2026-11-20 00:23:40 root] (spike_omniquant.py 421): INFO === Start quantize layer 22 ===
+[2026-11-20 00:26:14 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.090566 -> 0.090776 (+0.23%) | high_MACs 20253696 -> 20249600 (-0.02%) | k_proj:3904/4096(0.953), v_proj:3904/4096(0.953), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3605/4096(0.880), down_proj:9907/11008(0.900), up_proj:3687/4096(0.900)
+[2026-11-20 00:26:46 root] (spike_omniquant.py 526): INFO layer 22 iter 0 loss:0.2517036497592926 norm:0.010576614178717136 max memory_allocated 18333.7890625 
+[2026-11-20 00:27:18 root] (spike_omniquant.py 526): INFO layer 22 iter 1 loss:0.2347186803817749 norm:0.004330705851316452 max memory_allocated 18333.7890625 
+[2026-11-20 00:27:50 root] (spike_omniquant.py 526): INFO layer 22 iter 2 loss:0.22242672741413116 norm:0.00171937036793679 max memory_allocated 18333.7890625 
+[2026-11-20 00:28:22 root] (spike_omniquant.py 526): INFO layer 22 iter 3 loss:0.2167482227087021 norm:0.0011714898282662034 max memory_allocated 18333.7890625 
+[2026-11-20 00:28:54 root] (spike_omniquant.py 526): INFO layer 22 iter 4 loss:0.21487748622894287 norm:0.001019903807900846 max memory_allocated 18333.7890625 
+[2026-11-20 00:29:26 root] (spike_omniquant.py 526): INFO layer 22 iter 5 loss:0.21409982442855835 norm:0.0009363702265545726 max memory_allocated 18333.7890625 
+[2026-11-20 00:29:57 root] (spike_omniquant.py 526): INFO layer 22 iter 6 loss:0.21368394792079926 norm:0.0008946013986133039 max memory_allocated 18333.7890625 
+[2026-11-20 00:30:29 root] (spike_omniquant.py 526): INFO layer 22 iter 7 loss:0.21331137418746948 norm:0.0008517018868587911 max memory_allocated 18333.7890625 
+[2026-11-20 00:31:01 root] (spike_omniquant.py 526): INFO layer 22 iter 8 loss:0.21298037469387054 norm:0.0008246729266829789 max memory_allocated 18333.7890625 
+[2026-11-20 00:31:33 root] (spike_omniquant.py 526): INFO layer 22 iter 9 loss:0.21269413828849792 norm:0.0008103710133582354 max memory_allocated 18333.7890625 
+[2026-11-20 00:32:05 root] (spike_omniquant.py 526): INFO layer 22 iter 10 loss:0.2124328911304474 norm:0.0007848948589526117 max memory_allocated 18333.7890625 
+[2026-11-20 00:32:37 root] (spike_omniquant.py 526): INFO layer 22 iter 11 loss:0.21219603717327118 norm:0.0007834988064132631 max memory_allocated 18333.7890625 
+[2026-11-20 00:33:09 root] (spike_omniquant.py 526): INFO layer 22 iter 12 loss:0.21197953820228577 norm:0.0007740785367786884 max memory_allocated 18333.7890625 
+[2026-11-20 00:33:40 root] (spike_omniquant.py 526): INFO layer 22 iter 13 loss:0.21178987622261047 norm:0.0007844335632398725 max memory_allocated 18333.7890625 
+[2026-11-20 00:34:12 root] (spike_omniquant.py 526): INFO layer 22 iter 14 loss:0.21160468459129333 norm:0.0007749164942651987 max memory_allocated 18333.7890625 
+[2026-11-20 00:34:44 root] (spike_omniquant.py 526): INFO layer 22 iter 15 loss:0.21146325767040253 norm:0.0008006326388567686 max memory_allocated 18333.7890625 
+[2026-11-20 00:35:16 root] (spike_omniquant.py 526): INFO layer 22 iter 16 loss:0.21133466064929962 norm:0.0008145360043272376 max memory_allocated 18333.7890625 
+[2026-11-20 00:35:48 root] (spike_omniquant.py 526): INFO layer 22 iter 17 loss:0.21121397614479065 norm:0.0008244722266681492 max memory_allocated 18333.7890625 
+[2026-11-20 00:36:20 root] (spike_omniquant.py 526): INFO layer 22 iter 18 loss:0.21111367642879486 norm:0.0008327270625159144 max memory_allocated 18333.7890625 
+[2026-11-20 00:36:52 root] (spike_omniquant.py 526): INFO layer 22 iter 19 loss:0.21104130148887634 norm:0.000834926962852478 max memory_allocated 18333.7890625 
+[2026-11-20 00:36:59 root] (spike_omniquant.py 421): INFO === Start quantize layer 23 ===
+[2026-11-20 00:39:34 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.060742 -> 0.061469 (+1.20%) | high_MACs 20253696 -> 20253696 (+0.00%) | k_proj:3906/4096(0.954), v_proj:3466/4096(0.846), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3686/4096(0.900), down_proj:10127/11008(0.920), up_proj:3686/4096(0.900)
+[2026-11-20 00:40:06 root] (spike_omniquant.py 526): INFO layer 23 iter 0 loss:0.2775675058364868 norm:0.0046929833479225636 max memory_allocated 18335.1875 
+[2026-11-20 00:40:38 root] (spike_omniquant.py 526): INFO layer 23 iter 1 loss:0.26644864678382874 norm:0.002375406911596656 max memory_allocated 18335.1875 
+[2026-11-20 00:41:10 root] (spike_omniquant.py 526): INFO layer 23 iter 2 loss:0.25827476382255554 norm:0.0012100056046620011 max memory_allocated 18335.1875 
+[2026-11-20 00:41:41 root] (spike_omniquant.py 526): INFO layer 23 iter 3 loss:0.2542301118373871 norm:0.0006953831179998815 max memory_allocated 18335.1875 
+[2026-11-20 00:42:13 root] (spike_omniquant.py 526): INFO layer 23 iter 4 loss:0.25247126817703247 norm:0.0005082884454168379 max memory_allocated 18335.1875 
+[2026-11-20 00:42:45 root] (spike_omniquant.py 526): INFO layer 23 iter 5 loss:0.25175002217292786 norm:0.000427986349677667 max memory_allocated 18335.1875 
+[2026-11-20 00:43:17 root] (spike_omniquant.py 526): INFO layer 23 iter 6 loss:0.25130438804626465 norm:0.0004004203074146062 max memory_allocated 18335.1875 
+[2026-11-20 00:43:49 root] (spike_omniquant.py 526): INFO layer 23 iter 7 loss:0.2509809732437134 norm:0.00038832498830743134 max memory_allocated 18335.1875 
+[2026-11-20 00:44:21 root] (spike_omniquant.py 526): INFO layer 23 iter 8 loss:0.25068145990371704 norm:0.00038132723420858383 max memory_allocated 18335.1875 
+[2026-11-20 00:44:52 root] (spike_omniquant.py 526): INFO layer 23 iter 9 loss:0.25039029121398926 norm:0.0003702733083628118 max memory_allocated 18335.1875 
+[2026-11-20 00:45:24 root] (spike_omniquant.py 526): INFO layer 23 iter 10 loss:0.25013917684555054 norm:0.00036837783409282565 max memory_allocated 18335.1875 
+[2026-11-20 00:45:56 root] (spike_omniquant.py 526): INFO layer 23 iter 11 loss:0.2499319314956665 norm:0.0003651393635664135 max memory_allocated 18335.1875 
+[2026-11-20 00:46:28 root] (spike_omniquant.py 526): INFO layer 23 iter 12 loss:0.24973055720329285 norm:0.0003590015694499016 max memory_allocated 18335.1875 
+[2026-11-20 00:47:00 root] (spike_omniquant.py 526): INFO layer 23 iter 13 loss:0.24957700073719025 norm:0.0003617818292696029 max memory_allocated 18335.1875 
+[2026-11-20 00:47:32 root] (spike_omniquant.py 526): INFO layer 23 iter 14 loss:0.24943019449710846 norm:0.00035672917147167027 max memory_allocated 18335.1875 
+[2026-11-20 00:48:03 root] (spike_omniquant.py 526): INFO layer 23 iter 15 loss:0.24929356575012207 norm:0.00035823980579152703 max memory_allocated 18335.1875 
+[2026-11-20 00:48:35 root] (spike_omniquant.py 526): INFO layer 23 iter 16 loss:0.2491784244775772 norm:0.0003577771713025868 max memory_allocated 18335.1875 
+[2026-11-20 00:49:07 root] (spike_omniquant.py 526): INFO layer 23 iter 17 loss:0.249077707529068 norm:0.00035896702320314944 max memory_allocated 18335.1875 
+[2026-11-20 00:49:39 root] (spike_omniquant.py 526): INFO layer 23 iter 18 loss:0.24900878965854645 norm:0.0003591549175325781 max memory_allocated 18335.1875 
+[2026-11-20 00:50:11 root] (spike_omniquant.py 526): INFO layer 23 iter 19 loss:0.24893887341022491 norm:0.00036168270162306726 max memory_allocated 18335.1875 
+[2026-11-20 00:50:18 root] (spike_omniquant.py 421): INFO === Start quantize layer 24 ===
+[2026-11-20 00:52:52 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.055821 -> 0.055899 (+0.14%) | high_MACs 20253696 -> 20248320 (-0.03%) | k_proj:3904/4096(0.953), v_proj:3904/4096(0.953), q_proj:3466/4096(0.846), o_proj:3904/4096(0.953), gate_proj:3525/4096(0.861), down_proj:9907/11008(0.900), up_proj:3686/4096(0.900)
+[2026-11-20 00:53:24 root] (spike_omniquant.py 526): INFO layer 24 iter 0 loss:0.3203371465206146 norm:0.005461753346025944 max memory_allocated 18336.5859375 
+[2026-11-20 00:53:56 root] (spike_omniquant.py 526): INFO layer 24 iter 1 loss:0.31086766719818115 norm:0.0027377125807106495 max memory_allocated 18336.5859375 
+[2026-11-20 00:54:27 root] (spike_omniquant.py 526): INFO layer 24 iter 2 loss:0.30346983671188354 norm:0.0016112738521769643 max memory_allocated 18336.5859375 
+[2026-11-20 00:54:59 root] (spike_omniquant.py 526): INFO layer 24 iter 3 loss:0.29889655113220215 norm:0.0011586580658331513 max memory_allocated 18336.5859375 
+[2026-11-20 00:55:31 root] (spike_omniquant.py 526): INFO layer 24 iter 4 loss:0.29700571298599243 norm:0.0010805506026372313 max memory_allocated 18336.5859375 
+[2026-11-20 00:56:03 root] (spike_omniquant.py 526): INFO layer 24 iter 5 loss:0.2962809205055237 norm:0.0010385410860180855 max memory_allocated 18336.5859375 
+[2026-11-20 00:56:35 root] (spike_omniquant.py 526): INFO layer 24 iter 6 loss:0.2957937717437744 norm:0.0010061085922643542 max memory_allocated 18336.5859375 
+[2026-11-20 00:57:07 root] (spike_omniquant.py 526): INFO layer 24 iter 7 loss:0.2954220175743103 norm:0.0010003172792494297 max memory_allocated 18336.5859375 
+[2026-11-20 00:57:38 root] (spike_omniquant.py 526): INFO layer 24 iter 8 loss:0.2950846552848816 norm:0.0009763127891346812 max memory_allocated 18336.5859375 
+[2026-11-20 00:58:10 root] (spike_omniquant.py 526): INFO layer 24 iter 9 loss:0.294770210981369 norm:0.0009708778816275299 max memory_allocated 18336.5859375 
+[2026-11-20 00:58:42 root] (spike_omniquant.py 526): INFO layer 24 iter 10 loss:0.2945006489753723 norm:0.0009743215050548315 max memory_allocated 18336.5859375 
+[2026-11-20 00:59:14 root] (spike_omniquant.py 526): INFO layer 24 iter 11 loss:0.29426565766334534 norm:0.0009605762897990644 max memory_allocated 18336.5859375 
+[2026-11-20 00:59:46 root] (spike_omniquant.py 526): INFO layer 24 iter 12 loss:0.29405009746551514 norm:0.000971417292021215 max memory_allocated 18336.5859375 
+[2026-11-20 01:00:17 root] (spike_omniquant.py 526): INFO layer 24 iter 13 loss:0.29386624693870544 norm:0.0009918147698044777 max memory_allocated 18336.5859375 
+[2026-11-20 01:00:49 root] (spike_omniquant.py 526): INFO layer 24 iter 14 loss:0.29372167587280273 norm:0.0010043589863926172 max memory_allocated 18336.5859375 
+[2026-11-20 01:01:21 root] (spike_omniquant.py 526): INFO layer 24 iter 15 loss:0.2935850918292999 norm:0.0009827190078794956 max memory_allocated 18336.5859375 
+[2026-11-20 01:01:53 root] (spike_omniquant.py 526): INFO layer 24 iter 16 loss:0.29348787665367126 norm:0.0009627774707041681 max memory_allocated 18336.5859375 
+[2026-11-20 01:02:25 root] (spike_omniquant.py 526): INFO layer 24 iter 17 loss:0.2933889329433441 norm:0.0009521940955892205 max memory_allocated 18336.5859375 
+[2026-11-20 01:02:57 root] (spike_omniquant.py 526): INFO layer 24 iter 18 loss:0.29328101873397827 norm:0.0009401902789250016 max memory_allocated 18336.5859375 
+[2026-11-20 01:03:28 root] (spike_omniquant.py 526): INFO layer 24 iter 19 loss:0.2932209372520447 norm:0.0009474355611018836 max memory_allocated 18336.5859375 
+[2026-11-20 01:03:36 root] (spike_omniquant.py 421): INFO === Start quantize layer 25 ===
+[2026-11-20 01:06:10 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.084878 -> 0.084875 (-0.00%) | high_MACs 20253696 -> 20248064 (-0.03%) | k_proj:3686/4096(0.900), v_proj:3686/4096(0.900), q_proj:3686/4096(0.900), o_proj:3684/4096(0.899), gate_proj:3687/4096(0.900), down_proj:9905/11008(0.900), up_proj:3687/4096(0.900)
+[2026-11-20 01:06:41 root] (spike_omniquant.py 526): INFO layer 25 iter 0 loss:0.38224664330482483 norm:0.008348515257239342 max memory_allocated 18337.984375 
+[2026-11-20 01:07:13 root] (spike_omniquant.py 526): INFO layer 25 iter 1 loss:0.3645063042640686 norm:0.004033795557916164 max memory_allocated 18337.984375 
+[2026-11-20 01:07:45 root] (spike_omniquant.py 526): INFO layer 25 iter 2 loss:0.3526243567466736 norm:0.0019403583137318492 max memory_allocated 18337.984375 
+[2026-11-20 01:08:17 root] (spike_omniquant.py 526): INFO layer 25 iter 3 loss:0.34673425555229187 norm:0.001262700418010354 max memory_allocated 18337.984375 
+[2026-11-20 01:08:49 root] (spike_omniquant.py 526): INFO layer 25 iter 4 loss:0.34381812810897827 norm:0.0009700612863525748 max memory_allocated 18337.984375 
+[2026-11-20 01:09:21 root] (spike_omniquant.py 526): INFO layer 25 iter 5 loss:0.342707097530365 norm:0.0008836715715005994 max memory_allocated 18337.984375 
+[2026-11-20 01:09:52 root] (spike_omniquant.py 526): INFO layer 25 iter 6 loss:0.3420596420764923 norm:0.0008063239511102438 max memory_allocated 18337.984375 
+[2026-11-20 01:10:24 root] (spike_omniquant.py 526): INFO layer 25 iter 7 loss:0.34154510498046875 norm:0.0007784910267218947 max memory_allocated 18337.984375 
+[2026-11-20 01:10:56 root] (spike_omniquant.py 526): INFO layer 25 iter 8 loss:0.3411063849925995 norm:0.0007425916264764965 max memory_allocated 18337.984375 
+[2026-11-20 01:11:28 root] (spike_omniquant.py 526): INFO layer 25 iter 9 loss:0.3407254219055176 norm:0.0007259324775077403 max memory_allocated 18337.984375 
+[2026-11-20 01:12:00 root] (spike_omniquant.py 526): INFO layer 25 iter 10 loss:0.34036535024642944 norm:0.0006798781105317175 max memory_allocated 18337.984375 
+[2026-11-20 01:12:32 root] (spike_omniquant.py 526): INFO layer 25 iter 11 loss:0.3401007652282715 norm:0.00067041878355667 max memory_allocated 18337.984375 
+[2026-11-20 01:13:03 root] (spike_omniquant.py 526): INFO layer 25 iter 12 loss:0.33986330032348633 norm:0.000666365900542587 max memory_allocated 18337.984375 
+[2026-11-20 01:13:35 root] (spike_omniquant.py 526): INFO layer 25 iter 13 loss:0.3396645188331604 norm:0.0006646314868703485 max memory_allocated 18337.984375 
+[2026-11-20 01:14:07 root] (spike_omniquant.py 526): INFO layer 25 iter 14 loss:0.33948981761932373 norm:0.0006615109741687775 max memory_allocated 18337.984375 
+[2026-11-20 01:14:39 root] (spike_omniquant.py 526): INFO layer 25 iter 15 loss:0.33933788537979126 norm:0.0006328924209810793 max memory_allocated 18337.984375 
+[2026-11-20 01:15:11 root] (spike_omniquant.py 526): INFO layer 25 iter 16 loss:0.3392252027988434 norm:0.0006430830108001828 max memory_allocated 18337.984375 
+[2026-11-20 01:15:43 root] (spike_omniquant.py 526): INFO layer 25 iter 17 loss:0.33913594484329224 norm:0.0006500050658360124 max memory_allocated 18337.984375 
+[2026-11-20 01:16:14 root] (spike_omniquant.py 526): INFO layer 25 iter 18 loss:0.3390468955039978 norm:0.0006498333532363176 max memory_allocated 18337.984375 
+[2026-11-20 01:16:46 root] (spike_omniquant.py 526): INFO layer 25 iter 19 loss:0.33896970748901367 norm:0.0006366408197209239 max memory_allocated 18337.984375 
+[2026-11-20 01:16:54 root] (spike_omniquant.py 421): INFO === Start quantize layer 26 ===
+[2026-11-20 01:19:27 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.063082 -> 0.062358 (-1.15%) | high_MACs 20253696 -> 20252160 (-0.01%) | k_proj:3466/4096(0.846), v_proj:3466/4096(0.846), q_proj:3906/4096(0.954), o_proj:3906/4096(0.954), gate_proj:3768/4096(0.920), down_proj:9687/11008(0.880), up_proj:3686/4096(0.900)
+[2026-11-20 01:19:59 root] (spike_omniquant.py 526): INFO layer 26 iter 0 loss:0.42489200830459595 norm:0.004280413500964642 max memory_allocated 18339.3828125 
+[2026-11-20 01:20:31 root] (spike_omniquant.py 526): INFO layer 26 iter 1 loss:0.4151642620563507 norm:0.002125795464962721 max memory_allocated 18339.3828125 
+[2026-11-20 01:21:03 root] (spike_omniquant.py 526): INFO layer 26 iter 2 loss:0.4076874852180481 norm:0.0012358889216557145 max memory_allocated 18339.3828125 
+[2026-11-20 01:21:35 root] (spike_omniquant.py 526): INFO layer 26 iter 3 loss:0.40292543172836304 norm:0.0009392707142978907 max memory_allocated 18339.3828125 
+[2026-11-20 01:22:06 root] (spike_omniquant.py 526): INFO layer 26 iter 4 loss:0.40054917335510254 norm:0.0008322475478053093 max memory_allocated 18339.3828125 
+[2026-11-20 01:22:38 root] (spike_omniquant.py 526): INFO layer 26 iter 5 loss:0.39958658814430237 norm:0.0008057283121161163 max memory_allocated 18339.3828125 
+[2026-11-20 01:23:10 root] (spike_omniquant.py 526): INFO layer 26 iter 6 loss:0.39880621433258057 norm:0.000795619678683579 max memory_allocated 18339.3828125 
+[2026-11-20 01:23:42 root] (spike_omniquant.py 526): INFO layer 26 iter 7 loss:0.39823248982429504 norm:0.0007948570419102907 max memory_allocated 18339.3828125 
+[2026-11-20 01:24:14 root] (spike_omniquant.py 526): INFO layer 26 iter 8 loss:0.3977408707141876 norm:0.0007837700541131198 max memory_allocated 18339.3828125 
+[2026-11-20 01:24:46 root] (spike_omniquant.py 526): INFO layer 26 iter 9 loss:0.397341787815094 norm:0.0007921048672869802 max memory_allocated 18339.3828125 
+[2026-11-20 01:25:18 root] (spike_omniquant.py 526): INFO layer 26 iter 10 loss:0.39698711037635803 norm:0.0008090201299637556 max memory_allocated 18339.3828125 
+[2026-11-20 01:25:50 root] (spike_omniquant.py 526): INFO layer 26 iter 11 loss:0.39667975902557373 norm:0.0008058003732003272 max memory_allocated 18339.3828125 
+[2026-11-20 01:26:21 root] (spike_omniquant.py 526): INFO layer 26 iter 12 loss:0.3964376449584961 norm:0.0007988486904650927 max memory_allocated 18339.3828125 
+[2026-11-20 01:26:53 root] (spike_omniquant.py 526): INFO layer 26 iter 13 loss:0.39623576402664185 norm:0.0008050164906308055 max memory_allocated 18339.3828125 
+[2026-11-20 01:27:25 root] (spike_omniquant.py 526): INFO layer 26 iter 14 loss:0.3960651159286499 norm:0.0008071532938629389 max memory_allocated 18339.3828125 
+[2026-11-20 01:27:57 root] (spike_omniquant.py 526): INFO layer 26 iter 15 loss:0.39595794677734375 norm:0.000836521910969168 max memory_allocated 18339.3828125 
+[2026-11-20 01:28:29 root] (spike_omniquant.py 526): INFO layer 26 iter 16 loss:0.39586716890335083 norm:0.0008226765203289688 max memory_allocated 18339.3828125 
+[2026-11-20 01:29:01 root] (spike_omniquant.py 526): INFO layer 26 iter 17 loss:0.395766019821167 norm:0.0008080331608653069 max memory_allocated 18339.3828125 
+[2026-11-20 01:29:33 root] (spike_omniquant.py 526): INFO layer 26 iter 18 loss:0.39566731452941895 norm:0.0008222666219808161 max memory_allocated 18339.3828125 
+[2026-11-20 01:30:04 root] (spike_omniquant.py 526): INFO layer 26 iter 19 loss:0.3955705165863037 norm:0.00081109709572047 max memory_allocated 18339.3828125 
+[2026-11-20 01:30:12 root] (spike_omniquant.py 421): INFO === Start quantize layer 27 ===
+[2026-11-20 01:32:46 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.091016 -> 0.089964 (-1.16%) | high_MACs 20253696 -> 20250880 (-0.01%) | k_proj:3686/4096(0.900), v_proj:3904/4096(0.953), q_proj:3906/4096(0.954), o_proj:3466/4096(0.846), gate_proj:3605/4096(0.880), down_proj:9687/11008(0.880), up_proj:3768/4096(0.920)
+[2026-11-20 01:33:18 root] (spike_omniquant.py 526): INFO layer 27 iter 0 loss:0.4988366961479187 norm:0.005674594081938267 max memory_allocated 18340.78125 
+[2026-11-20 01:33:49 root] (spike_omniquant.py 526): INFO layer 27 iter 1 loss:0.47960811853408813 norm:0.002916645258665085 max memory_allocated 18340.78125 
+[2026-11-20 01:34:21 root] (spike_omniquant.py 526): INFO layer 27 iter 2 loss:0.46741804480552673 norm:0.001133094890974462 max memory_allocated 18340.78125 
+[2026-11-20 01:34:53 root] (spike_omniquant.py 526): INFO layer 27 iter 3 loss:0.4620712101459503 norm:0.0007094588945619762 max memory_allocated 18340.78125 
+[2026-11-20 01:35:25 root] (spike_omniquant.py 526): INFO layer 27 iter 4 loss:0.4597449004650116 norm:0.0006023760070092976 max memory_allocated 18340.78125 
+[2026-11-20 01:35:57 root] (spike_omniquant.py 526): INFO layer 27 iter 5 loss:0.4585677981376648 norm:0.0005401980015449226 max memory_allocated 18340.78125 
+[2026-11-20 01:36:29 root] (spike_omniquant.py 526): INFO layer 27 iter 6 loss:0.45779022574424744 norm:0.0005177368293516338 max memory_allocated 18340.78125 
+[2026-11-20 01:37:01 root] (spike_omniquant.py 526): INFO layer 27 iter 7 loss:0.45718398690223694 norm:0.0004907959373667836 max memory_allocated 18340.78125 
+[2026-11-20 01:37:33 root] (spike_omniquant.py 526): INFO layer 27 iter 8 loss:0.4567262530326843 norm:0.00048285836237482727 max memory_allocated 18340.78125 
+[2026-11-20 01:38:05 root] (spike_omniquant.py 526): INFO layer 27 iter 9 loss:0.45632511377334595 norm:0.0004766317433677614 max memory_allocated 18340.78125 
+[2026-11-20 01:38:37 root] (spike_omniquant.py 526): INFO layer 27 iter 10 loss:0.4559820592403412 norm:0.00047252397052943707 max memory_allocated 18340.78125 
+[2026-11-20 01:39:09 root] (spike_omniquant.py 526): INFO layer 27 iter 11 loss:0.45570820569992065 norm:0.00046331287012435496 max memory_allocated 18340.78125 
+[2026-11-20 01:39:41 root] (spike_omniquant.py 526): INFO layer 27 iter 12 loss:0.4554685354232788 norm:0.0004633994831237942 max memory_allocated 18340.78125 
+[2026-11-20 01:40:13 root] (spike_omniquant.py 526): INFO layer 27 iter 13 loss:0.4552672803401947 norm:0.00046114157885313034 max memory_allocated 18340.78125 
+[2026-11-20 01:40:45 root] (spike_omniquant.py 526): INFO layer 27 iter 14 loss:0.4551009237766266 norm:0.00045595428673550487 max memory_allocated 18340.78125 
+[2026-11-20 01:41:16 root] (spike_omniquant.py 526): INFO layer 27 iter 15 loss:0.4549786150455475 norm:0.0004564747796393931 max memory_allocated 18340.78125 
+[2026-11-20 01:41:48 root] (spike_omniquant.py 526): INFO layer 27 iter 16 loss:0.45490434765815735 norm:0.00046329665929079056 max memory_allocated 18340.78125 
+[2026-11-20 01:42:20 root] (spike_omniquant.py 526): INFO layer 27 iter 17 loss:0.45482349395751953 norm:0.00045938411494717 max memory_allocated 18340.78125 
+[2026-11-20 01:42:52 root] (spike_omniquant.py 526): INFO layer 27 iter 18 loss:0.45475056767463684 norm:0.00046099050086922944 max memory_allocated 18340.78125 
+[2026-11-20 01:43:24 root] (spike_omniquant.py 526): INFO layer 27 iter 19 loss:0.45466840267181396 norm:0.00046561280032619834 max memory_allocated 18340.78125 
+[2026-11-20 01:43:32 root] (spike_omniquant.py 421): INFO === Start quantize layer 28 ===
+[2026-11-20 01:46:06 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.082001 -> 0.082997 (+1.21%) | high_MACs 20253696 -> 20250624 (-0.02%) | k_proj:3466/4096(0.846), v_proj:3466/4096(0.846), q_proj:3686/4096(0.900), o_proj:3466/4096(0.846), gate_proj:3686/4096(0.900), down_proj:10127/11008(0.920), up_proj:3850/4096(0.940)
+[2026-11-20 01:46:38 root] (spike_omniquant.py 526): INFO layer 28 iter 0 loss:0.5694432854652405 norm:0.00500335032120347 max memory_allocated 18342.1796875 
+[2026-11-20 01:47:09 root] (spike_omniquant.py 526): INFO layer 28 iter 1 loss:0.5553924441337585 norm:0.0023251487873494625 max memory_allocated 18342.1796875 
+[2026-11-20 01:47:41 root] (spike_omniquant.py 526): INFO layer 28 iter 2 loss:0.5453483462333679 norm:0.001297781360335648 max memory_allocated 18342.1796875 
+[2026-11-20 01:48:13 root] (spike_omniquant.py 526): INFO layer 28 iter 3 loss:0.5395454168319702 norm:0.001065496588125825 max memory_allocated 18342.1796875 
+[2026-11-20 01:48:45 root] (spike_omniquant.py 526): INFO layer 28 iter 4 loss:0.5366661548614502 norm:0.0009471580851823092 max memory_allocated 18342.1796875 
+[2026-11-20 01:49:17 root] (spike_omniquant.py 526): INFO layer 28 iter 5 loss:0.5354651212692261 norm:0.0008814490865916014 max memory_allocated 18342.1796875 
+[2026-11-20 01:49:49 root] (spike_omniquant.py 526): INFO layer 28 iter 6 loss:0.5346335172653198 norm:0.0008482662378810346 max memory_allocated 18342.1796875 
+[2026-11-20 01:50:21 root] (spike_omniquant.py 526): INFO layer 28 iter 7 loss:0.5339578986167908 norm:0.0008058017701841891 max memory_allocated 18342.1796875 
+[2026-11-20 01:50:53 root] (spike_omniquant.py 526): INFO layer 28 iter 8 loss:0.533387303352356 norm:0.0008023821865208447 max memory_allocated 18342.1796875 
+[2026-11-20 01:51:25 root] (spike_omniquant.py 526): INFO layer 28 iter 9 loss:0.5329105257987976 norm:0.0007870031404308975 max memory_allocated 18342.1796875 
+[2026-11-20 01:51:57 root] (spike_omniquant.py 526): INFO layer 28 iter 10 loss:0.5325635671615601 norm:0.000778577639721334 max memory_allocated 18342.1796875 
+[2026-11-20 01:52:29 root] (spike_omniquant.py 526): INFO layer 28 iter 11 loss:0.5322473049163818 norm:0.0007803120533935726 max memory_allocated 18342.1796875 
+[2026-11-20 01:53:00 root] (spike_omniquant.py 526): INFO layer 28 iter 12 loss:0.531973659992218 norm:0.0007701776339672506 max memory_allocated 18342.1796875 
+[2026-11-20 01:53:32 root] (spike_omniquant.py 526): INFO layer 28 iter 13 loss:0.531783938407898 norm:0.0007811252726241946 max memory_allocated 18342.1796875 
+[2026-11-20 01:54:04 root] (spike_omniquant.py 526): INFO layer 28 iter 14 loss:0.5316128134727478 norm:0.0007639334653504193 max memory_allocated 18342.1796875 
+[2026-11-20 01:54:36 root] (spike_omniquant.py 526): INFO layer 28 iter 15 loss:0.5314760804176331 norm:0.0007536814664490521 max memory_allocated 18342.1796875 
+[2026-11-20 01:55:08 root] (spike_omniquant.py 526): INFO layer 28 iter 16 loss:0.5313429832458496 norm:0.0007488077390007675 max memory_allocated 18342.1796875 
+[2026-11-20 01:55:40 root] (spike_omniquant.py 526): INFO layer 28 iter 17 loss:0.5312768816947937 norm:0.0007621047552675009 max memory_allocated 18342.1796875 
+[2026-11-20 01:56:12 root] (spike_omniquant.py 526): INFO layer 28 iter 18 loss:0.5311990976333618 norm:0.0007700719288550317 max memory_allocated 18342.1796875 
+[2026-11-20 01:56:44 root] (spike_omniquant.py 526): INFO layer 28 iter 19 loss:0.5311062335968018 norm:0.0007729607750661671 max memory_allocated 18342.1796875 
+[2026-11-20 01:56:51 root] (spike_omniquant.py 421): INFO === Start quantize layer 29 ===
+[2026-11-20 01:59:25 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.074762 -> 0.074769 (+0.01%) | high_MACs 20253696 -> 20249344 (-0.02%) | k_proj:3686/4096(0.900), v_proj:3684/4096(0.899), q_proj:3466/4096(0.846), o_proj:3686/4096(0.900), gate_proj:3769/4096(0.920), down_proj:9907/11008(0.900), up_proj:3686/4096(0.900)
+[2026-11-20 01:59:57 root] (spike_omniquant.py 526): INFO layer 29 iter 0 loss:0.6530174016952515 norm:0.005360055714845657 max memory_allocated 18343.578125 
+[2026-11-20 02:00:29 root] (spike_omniquant.py 526): INFO layer 29 iter 1 loss:0.6408284902572632 norm:0.0029937007930129766 max memory_allocated 18343.578125 
+[2026-11-20 02:01:01 root] (spike_omniquant.py 526): INFO layer 29 iter 2 loss:0.6311906576156616 norm:0.001842912402935326 max memory_allocated 18343.578125 
+[2026-11-20 02:01:33 root] (spike_omniquant.py 526): INFO layer 29 iter 3 loss:0.6254238486289978 norm:0.001275789923965931 max memory_allocated 18343.578125 
+[2026-11-20 02:02:05 root] (spike_omniquant.py 526): INFO layer 29 iter 4 loss:0.6227931976318359 norm:0.0010202497942373157 max memory_allocated 18343.578125 
+[2026-11-20 02:02:37 root] (spike_omniquant.py 526): INFO layer 29 iter 5 loss:0.621483564376831 norm:0.0009374344954267144 max memory_allocated 18343.578125 
+[2026-11-20 02:03:09 root] (spike_omniquant.py 526): INFO layer 29 iter 6 loss:0.6205235719680786 norm:0.0008854165789671242 max memory_allocated 18343.578125 
+[2026-11-20 02:03:40 root] (spike_omniquant.py 526): INFO layer 29 iter 7 loss:0.6196931600570679 norm:0.0008575314423069358 max memory_allocated 18343.578125 
+[2026-11-20 02:04:12 root] (spike_omniquant.py 526): INFO layer 29 iter 8 loss:0.6190395355224609 norm:0.000863353896420449 max memory_allocated 18343.578125 
+[2026-11-20 02:04:44 root] (spike_omniquant.py 526): INFO layer 29 iter 9 loss:0.6185629367828369 norm:0.000866471033077687 max memory_allocated 18343.578125 
+[2026-11-20 02:05:16 root] (spike_omniquant.py 526): INFO layer 29 iter 10 loss:0.6182085275650024 norm:0.0008863828261382878 max memory_allocated 18343.578125 
+[2026-11-20 02:05:48 root] (spike_omniquant.py 526): INFO layer 29 iter 11 loss:0.6179071068763733 norm:0.0008926240843720734 max memory_allocated 18343.578125 
+[2026-11-20 02:06:20 root] (spike_omniquant.py 526): INFO layer 29 iter 12 loss:0.6176865100860596 norm:0.0009006839245557785 max memory_allocated 18343.578125 
+[2026-11-20 02:06:52 root] (spike_omniquant.py 526): INFO layer 29 iter 13 loss:0.6175106167793274 norm:0.0009039142169058323 max memory_allocated 18343.578125 
+[2026-11-20 02:07:24 root] (spike_omniquant.py 526): INFO layer 29 iter 14 loss:0.6173822283744812 norm:0.0008972054347395897 max memory_allocated 18343.578125 
+[2026-11-20 02:07:56 root] (spike_omniquant.py 526): INFO layer 29 iter 15 loss:0.6172335147857666 norm:0.0008970542112365365 max memory_allocated 18343.578125 
+[2026-11-20 02:08:28 root] (spike_omniquant.py 526): INFO layer 29 iter 16 loss:0.6171449422836304 norm:0.0009076988790184259 max memory_allocated 18343.578125 
+[2026-11-20 02:09:00 root] (spike_omniquant.py 526): INFO layer 29 iter 17 loss:0.6170201897621155 norm:0.0008966063614934683 max memory_allocated 18343.578125 
+[2026-11-20 02:09:32 root] (spike_omniquant.py 526): INFO layer 29 iter 18 loss:0.6169180870056152 norm:0.0008949585608206689 max memory_allocated 18343.578125 
+[2026-11-20 02:10:03 root] (spike_omniquant.py 526): INFO layer 29 iter 19 loss:0.6168293952941895 norm:0.0008988397312350571 max memory_allocated 18343.578125 
+[2026-11-20 02:10:11 root] (spike_omniquant.py 421): INFO === Start quantize layer 30 ===
+[2026-11-20 02:12:45 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.903671 -> 0.894543 (-1.01%) | high_MACs 20253696 -> 20252416 (-0.01%) | k_proj:3904/4096(0.953), v_proj:3466/4096(0.846), q_proj:3686/4096(0.900), o_proj:3686/4096(0.900), gate_proj:3604/4096(0.880), down_proj:10127/11008(0.920), up_proj:3687/4096(0.900)
+[2026-11-20 02:13:17 root] (spike_omniquant.py 526): INFO layer 30 iter 0 loss:1.378078818321228 norm:nan max memory_allocated 18344.9765625 
+[2026-11-20 02:13:49 root] (spike_omniquant.py 526): INFO layer 30 iter 1 loss:1.309428334236145 norm:0.11187560856342316 max memory_allocated 18344.9765625 
+[2026-11-20 02:14:20 root] (spike_omniquant.py 526): INFO layer 30 iter 2 loss:1.2540099620819092 norm:0.08108361810445786 max memory_allocated 18344.9765625 
+[2026-11-20 02:14:52 root] (spike_omniquant.py 526): INFO layer 30 iter 3 loss:1.2164243459701538 norm:0.07362283766269684 max memory_allocated 18344.9765625 
+[2026-11-20 02:15:24 root] (spike_omniquant.py 526): INFO layer 30 iter 4 loss:1.1780908107757568 norm:0.06496546417474747 max memory_allocated 18344.9765625 
+[2026-11-20 02:15:56 root] (spike_omniquant.py 526): INFO layer 30 iter 5 loss:1.1256778240203857 norm:0.06187830865383148 max memory_allocated 18344.9765625 
+[2026-11-20 02:16:28 root] (spike_omniquant.py 526): INFO layer 30 iter 6 loss:1.0660922527313232 norm:0.05829528719186783 max memory_allocated 18344.9765625 
+[2026-11-20 02:17:00 root] (spike_omniquant.py 526): INFO layer 30 iter 7 loss:1.0062310695648193 norm:0.05347173660993576 max memory_allocated 18344.9765625 
+[2026-11-20 02:17:32 root] (spike_omniquant.py 526): INFO layer 30 iter 8 loss:0.9511723518371582 norm:0.04982418194413185 max memory_allocated 18344.9765625 
+[2026-11-20 02:18:04 root] (spike_omniquant.py 526): INFO layer 30 iter 9 loss:0.8956268429756165 norm:nan max memory_allocated 18344.9765625 
+[2026-11-20 02:18:36 root] (spike_omniquant.py 526): INFO layer 30 iter 10 loss:0.8509252071380615 norm:0.061064861714839935 max memory_allocated 18344.9765625 
+[2026-11-20 02:19:08 root] (spike_omniquant.py 526): INFO layer 30 iter 11 loss:0.8317394256591797 norm:0.04342280328273773 max memory_allocated 18344.9765625 
+[2026-11-20 02:19:40 root] (spike_omniquant.py 526): INFO layer 30 iter 12 loss:0.8182767033576965 norm:0.051840540021657944 max memory_allocated 18344.9765625 
+[2026-11-20 02:20:11 root] (spike_omniquant.py 526): INFO layer 30 iter 13 loss:0.810860812664032 norm:0.032647766172885895 max memory_allocated 18344.9765625 
+[2026-11-20 02:20:43 root] (spike_omniquant.py 526): INFO layer 30 iter 14 loss:0.8060752749443054 norm:0.03280971944332123 max memory_allocated 18344.9765625 
+[2026-11-20 02:21:15 root] (spike_omniquant.py 526): INFO layer 30 iter 15 loss:0.8002185821533203 norm:0.028781123459339142 max memory_allocated 18344.9765625 
+[2026-11-20 02:21:47 root] (spike_omniquant.py 526): INFO layer 30 iter 16 loss:0.798064112663269 norm:0.02673448994755745 max memory_allocated 18344.9765625 
+[2026-11-20 02:22:19 root] (spike_omniquant.py 526): INFO layer 30 iter 17 loss:0.7958635687828064 norm:0.020778240635991096 max memory_allocated 18344.9765625 
+[2026-11-20 02:22:51 root] (spike_omniquant.py 526): INFO layer 30 iter 18 loss:0.792675793170929 norm:0.01987912692129612 max memory_allocated 18344.9765625 
+[2026-11-20 02:23:23 root] (spike_omniquant.py 526): INFO layer 30 iter 19 loss:0.7907693982124329 norm:0.022524142637848854 max memory_allocated 18344.9765625 
+[2026-11-20 02:23:30 root] (spike_omniquant.py 421): INFO === Start quantize layer 31 ===
+[2026-11-20 02:26:04 root] (spike_omniquant.py 259): INFO [random_quota] block MSE 0.414395 -> 0.417626 (+0.78%) | high_MACs 20253696 -> 20249856 (-0.02%) | k_proj:3904/4096(0.953), v_proj:3684/4096(0.899), q_proj:3904/4096(0.953), o_proj:3906/4096(0.954), gate_proj:3524/4096(0.860), down_proj:9907/11008(0.900), up_proj:3605/4096(0.880)
+[2026-11-20 02:26:36 root] (spike_omniquant.py 526): INFO layer 31 iter 0 loss:1.5755494832992554 norm:nan max memory_allocated 18346.375 
+[2026-11-20 02:27:08 root] (spike_omniquant.py 526): INFO layer 31 iter 1 loss:1.5029011964797974 norm:0.024483302608132362 max memory_allocated 18346.375 
+[2026-11-20 02:27:40 root] (spike_omniquant.py 526): INFO layer 31 iter 2 loss:1.4346576929092407 norm:0.01881890557706356 max memory_allocated 18346.375 
+[2026-11-20 02:28:12 root] (spike_omniquant.py 526): INFO layer 31 iter 3 loss:1.4048292636871338 norm:0.015430787578225136 max memory_allocated 18346.375 
+[2026-11-20 02:28:44 root] (spike_omniquant.py 526): INFO layer 31 iter 4 loss:1.3928673267364502 norm:0.013790582306683064 max memory_allocated 18346.375 
+[2026-11-20 02:29:16 root] (spike_omniquant.py 526): INFO layer 31 iter 5 loss:1.384787678718567 norm:0.012347301468253136 max memory_allocated 18346.375 
+[2026-11-20 02:29:48 root] (spike_omniquant.py 526): INFO layer 31 iter 6 loss:1.379006266593933 norm:0.010829509235918522 max memory_allocated 18346.375 
+[2026-11-20 02:30:20 root] (spike_omniquant.py 526): INFO layer 31 iter 7 loss:1.3746938705444336 norm:0.010151391848921776 max memory_allocated 18346.375 
+[2026-11-20 02:30:52 root] (spike_omniquant.py 526): INFO layer 31 iter 8 loss:1.3720952272415161 norm:0.009942924603819847 max memory_allocated 18346.375 
+[2026-11-20 02:31:23 root] (spike_omniquant.py 526): INFO layer 31 iter 9 loss:1.3701105117797852 norm:0.009648559615015984 max memory_allocated 18346.375 
+[2026-11-20 02:31:55 root] (spike_omniquant.py 526): INFO layer 31 iter 10 loss:1.3684874773025513 norm:0.009286660701036453 max memory_allocated 18346.375 
+[2026-11-20 02:32:27 root] (spike_omniquant.py 526): INFO layer 31 iter 11 loss:1.3664896488189697 norm:0.009006520733237267 max memory_allocated 18346.375 
+[2026-11-20 02:32:59 root] (spike_omniquant.py 526): INFO layer 31 iter 12 loss:1.3652393817901611 norm:0.008968143723905087 max memory_allocated 18346.375 
+[2026-11-20 02:33:31 root] (spike_omniquant.py 526): INFO layer 31 iter 13 loss:1.363648772239685 norm:0.008717918768525124 max memory_allocated 18346.375 
+[2026-11-20 02:34:03 root] (spike_omniquant.py 526): INFO layer 31 iter 14 loss:1.3629368543624878 norm:0.008654274046421051 max memory_allocated 18346.375 
+[2026-11-20 02:34:35 root] (spike_omniquant.py 526): INFO layer 31 iter 15 loss:1.3626586198806763 norm:0.008771762251853943 max memory_allocated 18346.375 
+[2026-11-20 02:35:07 root] (spike_omniquant.py 526): INFO layer 31 iter 16 loss:1.3623051643371582 norm:0.008627057075500488 max memory_allocated 18346.375 
+[2026-11-20 02:35:39 root] (spike_omniquant.py 526): INFO layer 31 iter 17 loss:1.3618288040161133 norm:0.008517698384821415 max memory_allocated 18346.375 
+[2026-11-20 02:36:11 root] (spike_omniquant.py 526): INFO layer 31 iter 18 loss:1.3607958555221558 norm:0.008311945013701916 max memory_allocated 18346.375 
+[2026-11-20 02:36:43 root] (spike_omniquant.py 526): INFO layer 31 iter 19 loss:1.3601387739181519 norm:0.008281562477350235 max memory_allocated 18346.375 
+[2026-11-20 02:36:50 root] (main.py 399): INFO 25353.095375537872
+[2026-11-20 02:36:57 root] (main.py 103): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2026-11-20 02:41:37 root] (main.py 147): INFO wikitext2 : 7.999397277832031
+[2026-11-20 02:41:37 root] (main.py 103): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2026-11-20 02:48:50 root] (main.py 147): INFO c4 : 10.725493431091309

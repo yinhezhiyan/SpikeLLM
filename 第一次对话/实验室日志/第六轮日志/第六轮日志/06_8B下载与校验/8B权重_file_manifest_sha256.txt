@@ -1,0 +1,15 @@
+8B 权重文件清单与 sha256（提交后实测）  2026-11-02 20:00:30
+目录: C:\Users\admin\Desktop\spikellm\SpikeLLM\models\Meta-Llama-3-8B
+
+  model-00001-of-00004.safetensors         4976698672  f2c144103072514542e327fa8080bd375cb300f2d453fba9ca3aea81d0d4cf33
+  model-00002-of-00004.safetensors         4999802720  d9eee5f23d94405d90b7e9ff88b9443fee42f8528a658f54214c2aba7530d80c
+  model-00003-of-00004.safetensors         4915916176  4b8fbc5e113f69768dd8de84661ea20af8a32b734a9976144b4236c447b40ccc
+  model-00004-of-00004.safetensors         1168138808  5dc34e6bdf2da9e35f0d93b5c333c870f3677dc43dc3a91ea3a8ad28a1fe1acb
+  tokenizer.json                              9085698  e134af98b985517b4f068e3755ae90d4e9cd2d45d328325dc503f1c6b2d06cc7
+  config.json                                     654  2430cee764b6530ff8673cf9ba8561e1d5a33152d503cd0de909ff5718261441
+  model.safetensors.index.json                  23950  146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b
+  tokenizer_config.json                         50566  690727b4fed286383df1c7ca5e805124cb70c6eb4529f807c7b2e60ff741da7e
+  generation_config.json                          177  93caf96e269e32b9ee33ad78b0d76d910408d11a63a8b2c49241030836759311
+  special_tokens_map.json                          73  462d91939dbc37178aa5a3eae7068d1990ccc92e09f288cc71f42cdf139d69cc
+
+  4 分片合计字节: 16060556376 (16.06 GB)
